@@ -1,0 +1,28 @@
+{
+  "alumnos": [
+    {
+      "nombre": "Aguilera Hitos, Jorge",
+      "numero_lista": 1,
+      "sale": false,
+      "veces_salidas": 0
+    },
+    {
+      "nombre": "Aguilera, Jorge",
+      "numero_lista": 1,
+      "sale": false,
+      "veces_salidas": 0
+    },
+    {
+      "nombre": "asdf",
+      "numero_lista": 1,
+      "sale": false,
+      "veces_salidas": 0
+    },
+    {
+      "nombre": "qqq",
+      "numero_lista": 1,
+      "sale": false,
+      "veces_salidas": 0
+    }
+  ]
+}
