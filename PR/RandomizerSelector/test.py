@@ -8,8 +8,12 @@ import json
 from typing import final
 from setuptools import Command
 
-
-
+## Está ok, añade elementos a la lista
+random_number = randint(1, 30)
+print(random_number)
+with open("data1.json", "r") as f:
+    data = json.load(f)
+    print(data["alumnos"][random_number]["numero_lista"])
 
 # with open("data1.json") as f:
 #     data = json.load(f)

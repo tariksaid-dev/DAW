@@ -15,3 +15,11 @@ El objetivo es crear un programa que cumpla las siguientes funciones:
 2. Guardar la información sobre qué alumnos han sido seleccionados de manera acumulativa.
 3. Idear un método para que los alumnos seleccionados tengan menor probabilidad de ser elegidos la siguiente vez.
 4. Añadir dicho método al punto 2.1
+
+# Bugs conocidos
+
+### Alumnos.py
+
+1. Al hacer click en siguiente al final de la lista, el programa dará error. Soluciones:
+   1. Hacer un if en la función siguiente(), donde usando como parámetro un data\["alumnos"].lenght nos cierre guardando o de un aviso al llegar al final.
+   2. Añadir un elemento final a data.json que indique que hemos llegado al final de la lista y que es necesario clickar en finish.
