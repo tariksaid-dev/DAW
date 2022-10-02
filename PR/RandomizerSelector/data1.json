@@ -3,26 +3,26 @@
     {
       "nombre": "Aguilera Hitos, Jorge",
       "numero_lista": 1,
-      "sale": true,
-      "veces_salidas": 0
+      "sale": false,
+      "veces_salidas": 0.5
     },
     {
       "nombre": "Aguilera, Jorge",
       "numero_lista": 1,
       "sale": true,
-      "veces_salidas": 2
+      "veces_salidas": 0.25
     },
     {
       "nombre": "asdf",
       "numero_lista": 1,
       "sale": true,
-      "veces_salidas": 1
+      "veces_salidas": 0.5
     },
     {
       "nombre": "qqq",
       "numero_lista": 1,
       "sale": true,
-      "veces_salidas": 14
+      "veces_salidas": 0.25
     }
   ]
 }

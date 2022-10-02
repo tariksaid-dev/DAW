@@ -3,17 +3,33 @@ from ctypes import pointer
 from textwrap import indent
 from tkinter import *
 from tkinter import messagebox
-from random import choice, randint, shuffle
 import json
 from typing import final
 from setuptools import Command
+# from numpy.random import choice
+import random
 
-## Está ok, añade elementos a la lista
-random_number = randint(1, 30)
-print(random_number)
+#para hacer el weighted choice, hay que hacerlo con numpy. 
+#habrá que hacer un for loop del json y añadir el valor "veces salidas" a una lista que luego servirá como probabilidades para el choice de numpy
 with open("data1.json", "r") as f:
     data = json.load(f)
-    print(data["alumnos"][random_number]["numero_lista"])
+    probabilities = []
+    for alumno in data["alumnos"]:
+        probabilities.append(alumno["veces_salidas"])
+    print(probabilities)
+    selected = random.choices(data["alumnos"], probabilities)
+
+    print(selected)
+    print(selected[0]["nombre"])
+
+    #✅
+
+## Está ok, añade elementos a la lista
+# random_number = randint(1, 30)
+# print(random_number)
+# with open("data1.json", "r") as f:
+#     data = json.load(f)
+#     print(data["alumnos"][random_number]["numero_lista"])
 
 # with open("data1.json") as f:
 #     data = json.load(f)
