@@ -3,7 +3,7 @@ import random
 import json
 
 #reading json
-with open("data1.json", "r") as f:
+with open("data1.json", "r", encoding="utf8") as f:
     data = json.load(f)
 
 
@@ -17,7 +17,8 @@ def pressed():
         # solucion 1: hacer otra lista vacía, .append los objetos true, calcular probabilidades + elegir de esa lista ✅
 
         probabilities.append(alumno["veces_salidas"])
-    print(probabilities)
+    print(probabilities)#forTESTonly
+    print(len(probabilities))#forTESTonly
     selected = random.choices(data["alumnos"], probabilities)
 
     #cambio de imagen
@@ -29,7 +30,7 @@ def pressed():
 
 
 def boton_finish_f():
-    with open("data1.json", "w") as f:
+    with open("data1.json", "w", encoding="utf8") as f:
         json.dump(data, f, indent=2)
     window.destroy()
     

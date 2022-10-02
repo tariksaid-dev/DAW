@@ -5,7 +5,7 @@ import json
 pointer_position = 0
 
 # lecutra de data y creacion del objeto {data}
-with open("data1.json", "r") as f:
+with open("data1.json", "r", encoding="utf8") as f:
         data = json.load(f)
 
 
@@ -33,7 +33,7 @@ def boton_no_f():
 
 # reescribimos el json con el objeto {data} modificado y cerramos la ventana
 def boton_finish_f():
-    with open("data1.json", "w") as f:
+    with open("data1.json", "w", encoding="utf8") as f:
         json.dump(data, f, indent=2)
     window.destroy()
 
@@ -54,12 +54,12 @@ nombre_en_canvas = canvas.create_text(120, 75, text=data["alumnos"][pointer_posi
 
 """Button"""
 
-boton_si = Button(text="SI", width=21, command=boton_si_f)
+boton_si = Button(text="SI", width=21, command=boton_si_f) #podemos añadir un lambda: [(si), (next)] para ahorrarnos el doble click
 boton_si.grid(row=1, column=0)
-boton_no = Button(text="NO", width=21, command=boton_no_f)
+boton_no = Button(text="NO", width=21, command=boton_no_f) #igual que en boton_si
 boton_no.grid(row=1, column=1)
 boton_next = Button(text="Siguiente", width= 21, command=boton_next_f)
-boton_next.grid(row=2, column=0)
+boton_next.grid(row=2, column=0) #si añadimos next en si/no, botón funcionalmente irrelevante
 boton_finish = Button(text="Terminar", width=21, command=boton_finish_f)
 boton_finish.grid(row=2, column=1)
 

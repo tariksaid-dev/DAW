@@ -9,199 +9,199 @@
     {
       "nombre": "Aidani, Mohamed",
       "numero_lista": 2,
-      "sale": false,
-      "veces_salidas": 0.5
-    },
-    {
-      "nombre": "Mart\u00edn, Carlos",
-      "numero_lista": 3,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Avil\u00e9s, Javier",
-      "numero_lista": 4,
-      "sale": false,
-      "veces_salidas": 0.5
+      "nombre": "Martín, Carlos",
+      "numero_lista": 3,
+      "sale": true,
+      "veces_salidas": 1
     },
     {
-      "nombre": "B\u00e9jar, Sergio",
+      "nombre": "Avilés, Javier",
+      "numero_lista": 4,
+      "sale": true,
+      "veces_salidas": 1
+    },
+    {
+      "nombre": "Béjar, Sergio",
       "numero_lista": 5,
-      "sale": false,
-      "veces_salidas": 0.5
+      "sale": true,
+      "veces_salidas": 1
     },
     {
       "nombre": "Blanco, Pablo",
       "numero_lista": 6,
-      "sale": false,
-      "veces_salidas": 0.5
+      "sale": true,
+      "veces_salidas": 1
     },
     {
       "nombre": "Calvo, Alejandro",
       "numero_lista": 7,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Fern\u00e1ndez, Raquel",
+      "nombre": "Fernández, Raquel",
       "numero_lista": 8,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Garc\u00eda, Arturo",
+      "nombre": "García, Arturo",
       "numero_lista": 9,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Garc\u00eda, Eva",
+      "nombre": "García, Eva",
       "numero_lista": 10,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Gir\u00f3n, Alejandro",
+      "nombre": "Girón, Alejandro",
       "numero_lista": 11,
-      "sale": false,
-      "veces_salidas": 0.5
+      "sale": true,
+      "veces_salidas": 1
     },
     {
-      "nombre": "G\u00f3mez, Carlos",
+      "nombre": "Gómez, Carlos",
       "numero_lista": 12,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
       "nombre": "Iglesias, Ambrosio",
       "numero_lista": 13,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Mart\u00ednez, Abel",
+      "nombre": "Martínez, Abel",
       "numero_lista": 14,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Martos, Rosa Mar\u00eda",
+      "nombre": "Martos, Rosa María",
       "numero_lista": 15,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
       "nombre": "Moreno, Patrick",
       "numero_lista": 16,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Moreno, \u00c1lvaro",
+      "nombre": "Moreno, Álvaro",
       "numero_lista": 17,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
       "nombre": "Morillas, Carlos",
       "numero_lista": 18,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Navarro, \u00c1lvaro",
+      "nombre": "Navarro, Álvaro",
       "numero_lista": 19,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Ortega, Miguel Jes\u00fas",
+      "nombre": "Ortega, Miguel Jesús",
       "numero_lista": 20,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "P\u00e9rez, Antonio Jos\u00e9",
+      "nombre": "Pérez, Antonio José",
       "numero_lista": 21,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Pesqueira, Aar\u00f3n",
+      "nombre": "Pesqueira, Aarón",
       "numero_lista": 22,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
       "nombre": "Puente, Daniel",
       "numero_lista": 23,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Requena, Ra\u00fal",
+      "nombre": "Requena, Raúl",
       "numero_lista": 24,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Rivera, Jos\u00e9 Antonio",
+      "nombre": "Rivera, José Antonio",
       "numero_lista": 25,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
       "nombre": "Romero, Yerai",
       "numero_lista": 26,
-      "sale": false,
-      "veces_salidas": 0.5
+      "sale": true,
+      "veces_salidas": 1
     },
     {
-      "nombre": "Ruiz, Bel\u00e9n",
+      "nombre": "Ruiz, Belén",
       "numero_lista": 27,
-      "sale": false,
-      "veces_salidas": 0.5
+      "sale": true,
+      "veces_salidas": 1
     },
     {
       "nombre": "Said, Tarik",
       "numero_lista": 28,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "S\u00e1nchez, Rogelio",
+      "nombre": "Sánchez, Rogelio",
       "numero_lista": 29,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Soler, Jes\u00fas",
+      "nombre": "Soler, Jesús",
       "numero_lista": 30,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Sol\u00eds, Andrea",
+      "nombre": "Solís, Andrea",
       "numero_lista": 31,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "V\u00edlchez, Ismael",
+      "nombre": "Vílchez, Ismael",
       "numero_lista": 32,
-      "sale": false,
-      "veces_salidas": 0.5
-    },
-    {
-      "nombre": "V\u00edlchez, Pedro",
-      "numero_lista": 33,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
-      "nombre": "Zamora, Rub\u00e9n",
+      "nombre": "Vílchez, Pedro",
+      "numero_lista": 33,
+      "sale": true,
+      "veces_salidas": 1
+    },
+    {
+      "nombre": "Zamora, Rubén",
       "numero_lista": 34,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     }
   ]
