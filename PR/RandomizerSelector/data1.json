@@ -3,13 +3,13 @@
     {
       "nombre": "Aguilera, Jorge",
       "numero_lista": 1,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 1
     },
     {
       "nombre": "Aidani, Mohamed",
       "numero_lista": 2,
-      "sale": false,
+      "sale": true,
       "veces_salidas": 0.5
     },
     {
