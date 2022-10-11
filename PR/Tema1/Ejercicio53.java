@@ -10,6 +10,6 @@ public class Ejercicio53 {
 // si el número de dedos que ha sacado cada amigo es:
         String[] amigos = {"Pedro", "Luis", "Miguel", "Jorge", "Juan", "Manolo", "Pepe"};
         int position = 4 + 5 + 1 + 0 + 3 + 2 + 3;
-        System.out.println("Le tocará jugar a " + amigos[position % amigos.length - 1]);
+        System.out.println("Le tocará jugar a " + amigos[position % amigos.length]);
     }
 }
