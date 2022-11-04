@@ -1,0 +1,9 @@
+h1 {
+  margin: 0px;
+  text-align: center;
+}
+
+.parte1 {
+  border: 5px;
+  border-style: groove;
+}
