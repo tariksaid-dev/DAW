@@ -10,15 +10,52 @@
   <body>
     <h1>HOJA DE INSCRIPCIÓN</h1>
     <h1>EN LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h1>
-    <form action="">
-      <div class="parte1">
-        <label for="nombre">Nombre</label>
-        <label for="apellido">Apellido</label>
-        <label for="dni">DNI </label> <br />
-        <input type="text" value="Tu nombre aquí" />
-        <input type="text" value="Tu apellido aquí" />
-        <input type="text" value="Tu dni aquí" />
-      </div>
+    <form>
+      <fieldset class="fs1">
+        <legend>Datos Personales</legend>
+        <div class="column">
+          <label for="nombre">Nombre:</label>
+          <input id="nombre" type="text" />
+        </div>
+        <div class="column">
+          <label for="apellido">Apellidos:</label>
+          <input id="apellido" type="text" />
+        </div>
+        <div class="column">
+          <label for="dni">DNI:</label>
+          <input id="dni" type="text" />
+        </div>
+        <br style="clear: both" />
+
+        <div class="column">
+          <label for="localidad">Localidad Nacimiento:</label>
+          <input id="localidad" type="text" />
+        </div>
+        <div class="column">
+          <label for="provincia">Provincia:</label>
+          <input id="provincia" type="text" />
+        </div>
+        <div class="column">
+          <label for="fecha">Fecha Nacimiento:</label>
+          <input id="fecha" type="text" value="dd/mm/aaa" />
+        </div>
+        <br style="clear: both" />
+        <div class="column2">
+          <label for="dirección">Dirección:</label>
+          <input id="dirección" type="text" size="40" />
+        </div>
+        <div class="column">
+          <label for="cp">Código Postal:</label>
+          <input id="cp" type="text" />
+        </div>
+      </fieldset>
+      <fieldset class="fs2">
+        <legend>Forma de acceso</legend>
+        <div>
+          <input type="radio" />
+          <label for="">Direct</label>
+        </div>
+      </fieldset>
     </form>
   </body>
 </html>

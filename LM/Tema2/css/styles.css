@@ -3,7 +3,36 @@ h1 {
   text-align: center;
 }
 
-.parte1 {
-  border: 5px;
-  border-style: groove;
+label,
+input {
+  display: block;
+}
+
+legend {
+  border-style: solid;
+  border-width: 1px;
+  background-color: white;
+}
+
+.fs1 {
+  background-color: #dcbeed;
+}
+
+.fs2 {
+  background-color: #f2c7aa;
+}
+
+.column {
+  float: left;
+  margin-right: 20px;
+}
+
+.column2 {
+  float: left;
+  margin-right: 80px;
+}
+
+.row {
+  float: left;
+  margin-right: 20px;
 }
