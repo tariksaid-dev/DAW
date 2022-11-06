@@ -49,7 +49,7 @@ public class Ejercicio9 {
         Point p2 = new Point(107, 178);
         Dimension d2 = new Dimension(73, 90);
         Rectangle rectangle2 = new Rectangle(p2, d2);
-        // Sprite 1
+        // Sprite 3
         Point p3 = new Point(202, 178);
         Dimension d3 = new Dimension(72, 90);
         Rectangle rectangle3 = new Rectangle(p3, d3);

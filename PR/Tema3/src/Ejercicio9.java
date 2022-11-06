@@ -1,7 +1,7 @@
 import bpc.daw.consola.*;
 import java.awt.*;
 import java.lang.Thread;
-import java.util.Random;
+import java.util.*;
 
 public class Ejercicio9 {
     public static void main(String[] args) {
@@ -30,10 +30,12 @@ public class Ejercicio9 {
         } else {
             ct.cls();
             for(int i=0; i != ent; i++) {
-                int R = new Random().nextInt(256);
-                int G = new Random().nextInt(256);
-                int B = new Random().nextInt(256);
-                Color x = new Color(R, G, B);
+                ArrayList<Integer> list = new ArrayList<>();
+                for(int j=0; j<3; j++) {
+                    int rgb = new Random().nextInt(256);
+                    list.add(rgb);
+                }
+                Color x = new Color(list.get(0), list.get(1), list.get(2));
                 int height = new Random().nextInt(d.height);
                 int width = new Random().nextInt(d.width);
                 g2d.setColor(x);
