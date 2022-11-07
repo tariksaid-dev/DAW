@@ -2,6 +2,7 @@ import bpc.daw.consola.*;
 import java.awt.*;
 import java.lang.Thread;
 import java.util.*;
+import java.util.List;
 
 public class Ejercicio9 {
     public static void main(String[] args) {
@@ -30,7 +31,7 @@ public class Ejercicio9 {
         } else {
             ct.cls();
             for(int i=0; i != ent; i++) {
-                ArrayList<Integer> list = new ArrayList<>();
+                List<Integer> list = new ArrayList<>();
                 for(int j=0; j<3; j++) {
                     int rgb = new Random().nextInt(256);
                     list.add(rgb);
