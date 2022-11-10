@@ -41,7 +41,9 @@ public class Ejercicio26 {
             System.out.println("5. Consultar todos los mensajes");
             System.out.println("6. Borrar toda la lista");
             System.out.println("7. Salir");
+
             int opt = new Scanner(System.in).nextInt();
+            
             switch (opt) {
                 case 1 -> {
                     System.out.println("Introduce una frase:");

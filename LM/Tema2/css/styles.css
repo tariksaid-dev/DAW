@@ -22,6 +22,10 @@ legend {
   background-color: #f2c7aa;
 }
 
+.fs3 {
+  background-color: rgba(217, 100, 100, 0.823);
+}
+
 .column {
   float: left;
   margin-right: 20px;
@@ -35,4 +39,12 @@ legend {
 .row {
   float: left;
   margin-right: 20px;
+}
+
+.row2 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.flex-cointainer > div {
 }
