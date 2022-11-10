@@ -36,5 +36,4 @@ public class Ejercicio14 {
         System.out.println("La nota media es " + a);
 
     }
-    
 }

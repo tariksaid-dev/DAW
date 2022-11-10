@@ -32,7 +32,7 @@ public class Ejercicio13 {
                     String dir = new Scanner(System.in).nextLine();
                     System.out.println("Introduce el teléfono:");
                     String tlf = new Scanner(System.in).nextLine();
-                    List<String> list = new ArrayList<>(Arrays.asList(dni,  name, dir, tlf));
+                    List<String> list = new ArrayList<>(Arrays.asList(dni, name, dir, tlf));
                     try {
                         File f = new File("C:/Users/trutr/Desktop/" + dni + ".txt");
                         PrintWriter pw = new PrintWriter(f);

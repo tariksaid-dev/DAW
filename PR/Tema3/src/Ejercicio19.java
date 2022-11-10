@@ -10,16 +10,16 @@ public class Ejercicio19 {
 // dirección IP, midiendo el tiempo empleado en hacer cada uno (clases Instant y Duration), y
 // mostrará el resultado de esta forma:
         
-
         System.out.println("Introduce una dirección IP:");
         String s = new Scanner(System.in).nextLine();
         System.out.println("Introduce un número:");
         int t = new Scanner(System.in).nextInt();
         try {
-            InetAddress url = Inet4Address.getByName(s);
+            InetAddress url = InetAddress.getByName(s);
             for(int i=0; i<t; i++) {
                 Instant i1 = Instant.now();
                 System.out.println("Haciendo ping a " + url.getHostName() + " [" + url.getHostAddress() + "]");
+                Boolean ping = url.isReachable(i);
                 Instant i2 = Instant.now();
                 System.out.println("Respuesta desde " + url.getHostAddress() + ": tiempo=" + Duration.between(i1, i2).toMillis() + "ms");
             }
@@ -28,5 +28,3 @@ public class Ejercicio19 {
         } 
     }
 }
-
-
