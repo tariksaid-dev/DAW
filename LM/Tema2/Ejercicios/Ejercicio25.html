@@ -8,90 +8,94 @@
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
-    <h1>HOJA DE INSCRIPCIÓN</h1>
-    <h1>EN LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h1>
+    <div style="margin-bottom: 15px">
+      <h1>HOJA DE INSCRIPCIÓN</h1>
+      <h1>EN LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h1>
+    </div>
     <form>
       <fieldset class="fs1">
         <legend>Datos Personales</legend>
         <div class="column">
-          <label for="nombre">Nombre:</label>
-          <input id="nombre" type="text" />
+          <label class="block" for="nombre">Nombre:</label>
+          <input class="block" id="nombre" type="text" />
         </div>
         <div class="column">
-          <label for="apellido">Apellidos:</label>
-          <input id="apellido" type="text" />
+          <label class="block" for="apellido">Apellidos:</label>
+          <input class="block" id="apellido" type="text" />
         </div>
         <div class="column">
-          <label for="dni">DNI:</label>
-          <input id="dni" type="text" />
+          <label class="block" for="dni">DNI:</label>
+          <input class="block" id="dni" type="text" />
         </div>
         <br style="clear: both" />
-
         <div class="column">
-          <label for="localidad">Localidad Nacimiento:</label>
-          <input id="localidad" type="text" />
+          <label class="block" for="localidad">Localidad Nacimiento:</label>
+          <input class="block" id="localidad" type="text" />
+        </div>
+        <div class="column" style="margin-right: 40px">
+          <label class="block" for="provincia">Provincia:</label>
+          <select id="provincia" style="width: 158px">
+            <option hidden selected>-selecciona-</option>
+            <option value="">Granada</option>
+            <option value="">Jaén</option>
+            <option value="">Córdoba</option>
+            <option value="">Sevilla</option>
+            <option value="">Huelva</option>
+            <option value="">Cádiz</option>
+            <option value="">Málaga</option>
+            <option value="">Almería</option>
+          </select>
         </div>
         <div class="column">
-          <label for="provincia">Provincia:</label>
-          <input id="provincia" type="text" />
-        </div>
-        <div class="column">
-          <label for="fecha">Fecha Nacimiento:</label>
-          <input id="fecha" type="text" value="dd/mm/aaa" />
+          <label class="block" for="fecha">Fecha Nacimiento:</label>
+          <input class="block" id="fecha" type="text" value="dd/mm/aaa" />
         </div>
         <br style="clear: both" />
         <div class="column2">
-          <label for="dirección">Dirección:</label>
-          <input id="dirección" type="text" size="40" />
+          <label class="block" for="dirección">Dirección:</label>
+          <input class="block" id="dirección" type="text" size="40" />
         </div>
         <div class="column">
-          <label for="cp">Código Postal:</label>
-          <input id="cp" type="text" />
+          <label class="block" for="cp">Código Postal:</label>
+          <input class="block" id="cp" type="text" />
         </div>
       </fieldset>
       <fieldset class="fs2">
         <legend>Forma de acceso</legend>
-        <div class="row2">
-          <input type="radio" />
-          <label for="">Direct</label>
+        <input id="direct" type="radio" />
+        <label for="direct">Direct</label>
+        <br />
+        <div style="margin-left: 50px">
+          <input id="logse" type="radio" />
+          <label for="logse">Bachillerato LOGSE Modalidad</label>
+          <input id="logse" type="text" /><br />
+          <input id="experimental" type="radio" />
+          <label for="experimental">Bachillerato Experimental</label><br />
+          <input id="cou" type="radio" />
+          <label for="cou">COU, Opción</label>
+          <input id="cou" type="text" /><br />
+          <input id="fp2" type="radio" />
+          <label for="fp2">FP2</label><br />
+          <input id="otros" type="radio" />
+          <label for="otros">Otros (especifique)</label>
+          <input id="otros" type="text" />
         </div>
-        <div class="row2">
-          <input type="radio" />
-          <label for="">Bachillerato LOGSE Modalidad</label>
-          <input type="text" /> <br />
-          <div class="row2">
-            <input type="radio" />
-            <label for="">Bachillerato Experimental</label> <br />
-            <input type="text" />
-          </div>
-          <input type="radio" />
-          <label for="">COU, Opción</label>
-          <input type="text" /><br />
-          <input type="radio" />
-          <label for="">FP2</label>
-          <input type="text" /> <br />
-          <input type="radio" />
-          <label for="">Otros (especifique)</label>
-          <input type="text" />
-        </div>
-        <div>
-          <input type="radio" />
-          <label for="">Otros</label>
-          <input type="text" />
-        </div>
+        <input id="plibre" type="radio" />
+        <label for="plibre">Prueba libre</label>
       </fieldset>
       <fieldset class="fs3">
         <legend>Documentos adjuntados</legend>
         <div>
-          <input type="button" />
-          <label for="">Fotocopia DNI</label>
-          <input type="button" />
-          <label for="">Certificado Académico</label>
-          <input type="button" />
+          <input type="checkbox" />
+          <label class="m1" for="">Fotocopia DNI</label>
+          <input type="checkbox" />
+          <label for="">Certificado Académico</label> <br />
+          <input type="checkbox" />
           <label for="">Otros documentos (especifique)</label>
           <input type="text" />
         </div>
       </fieldset>
+      <input type="submit" value="Enviar Solicitud" style="margin-top: 20px" />
     </form>
   </body>
 </html>

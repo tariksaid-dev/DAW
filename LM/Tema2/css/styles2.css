@@ -1,7 +1,21 @@
+table,
+td,
+th {
+  width: 700px;
+  border: 1px double;
+  border-style: inset;
+  /* border-style: solid; */
+}
+
 td {
   text-align: center;
 }
 
 .cabecera {
-  height: 50px;
+  background-color: rgb(106, 73, 25);
+  color: white;
+}
+
+.row1 {
+  background-color: rgba(241, 223, 105, 0.886);
 }
