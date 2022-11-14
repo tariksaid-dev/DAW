@@ -17,13 +17,7 @@ public class Ejercicio52 {
         String[] Skey = {"123535ABC", "98525KWX", "17632MSE", "85321ABC"};
         Color[] Svalue = {Color.red, Color.yellow, Color.green, Color.yellow};
         Map<String, Color> map = new HashMap<String, Color>();
-        // List<String> key = new ArrayList<String>(Arrays.asList(Skey));
-        // List<Color> value = new ArrayList<Color>();
-        // Collections.addAll(value, Svalue);
-        // map.put(key.get(0), value.get(0));
-        // map.put(key.get(1), value.get(1));
-        // map.put(key.get(2), value.get(2));
-        // map.put(key.get(3), value.get(3));
+
         map.put(Skey[0], Svalue[0]);
         map.put(Skey[1], Svalue[1]);
         map.put(Skey[2], Svalue[2]);

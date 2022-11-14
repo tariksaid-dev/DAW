@@ -13,7 +13,7 @@ public class Ejercicio17 {
         String finDominoEs = ".es";
         String finDominoCom = ".com";
         
-        if (dominio.contains(finDominoEs) || dominio.contains(finDominoCom)) {
+        if (dominio.endsWith(finDominoEs) || dominio.endsWith(finDominoCom)) {
             System.out.println("Tu correo es " + nombre + dominio);
         } else {
             System.out.println("El dominio es incorrecto");
