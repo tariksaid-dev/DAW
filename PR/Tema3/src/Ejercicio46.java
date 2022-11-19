@@ -23,17 +23,18 @@ public class Ejercicio46{
         // STARTER POINT
         int x = 45;
         int y = 15;
+        ct.print(y, x, "O");
         // Tesoro (random)
         int trX = new Random().nextInt(0, 73);
         int trY = new Random().nextInt(2, 25);
         
-        ct.print(y, x, "O");
-        
+        // FUNCIONALIDAD
         for(int movimientos=80; movimientos>0; movimientos--) {
             // TESORO (debug purposes)
             ct.print(trY, trX, "$");
             double distance = Math.sqrt(Math.pow((x - trX), 2) + Math.pow((y - trY), 2));
             // HEADER
+            // Win condition
             if (distance == 0) {
                 ct.print(0, 60, win);
                 puntos+= movimientos;
@@ -42,6 +43,7 @@ public class Ejercicio46{
                 trX = new Random().nextInt(0, 73);
                 trY = new Random().nextInt(2, 25);
                 distance = Math.sqrt(Math.pow((x - trX), 2) + Math.pow((y - trY), 2));
+            // Else
             } else if(distance < 5) {
                 ct.print(0, 60, quemando);
             } else if(distance < 15) {
