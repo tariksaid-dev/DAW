@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.AbstractCollection;
 
-public class test {
+public class Ejercicio9_2 {
     public static void main(String[] args) {
 //         Añade al ejercicio 5 un pájaro que vaya volando en línea recta desde el lado izquierdo
 // de la pantalla hacia el lado derecho. Para ello deberás usar la imagen adjunta
@@ -58,7 +58,8 @@ public class test {
         Dimension d3 = new Dimension(72, 90);
         Rectangle rectangle3 = new Rectangle(p3, d3);
 
-        List<Rectangle> list = new ArrayList<>(Arrays.asList(rectangle1, rectangle2, rectangle3));
+        // List<Rectangle> list = new ArrayList<>(Arrays.asList(rectangle1, rectangle2, rectangle3));
+        Rectangle[] y = {rectangle1, rectangle2, rectangle3};
 
         // Pájaro
         CapaSprites sprites = c.getCapaSprites();
@@ -67,9 +68,9 @@ public class test {
             
             int x = 50;
             while (x<1440) {
-                // x = 50; scope?
-                for(int i=1; i<4; i++) {
-                    Sprite sprite = sprites.crearSprite(pajaro, list.get(i), x+=10, 160);
+                for(int i=0; i<3; i++) {
+                    Sprite sprite = sprites.crearSprite(pajaro, y[i], x+=10, 160);
+                    Thread.sleep(100);
                     sprites.eliminarSprite(sprite);
                 }
 

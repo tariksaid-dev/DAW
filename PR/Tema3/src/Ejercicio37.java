@@ -12,13 +12,24 @@ public class Ejercicio37 {
 // el recorrido dicha variable es 0 el número es primo.
             System.out.println("Introduce un número:");
             int num = new Scanner(System.in).nextInt();
-            int aux = 0;
-            for(int i=2; i<=num; i++) {
+            // 1
+            boolean esPrimo = true;
+            for(int i=2; i<num && num%2==0; i++) {
+                esPrimo = false;
+            }
+            if(esPrimo==true) {
+                System.out.println("El número es primo");
+            } else {
+                System.out.println("El número no es primo");
+            }
+            // 2
+            int div = 0;
+            for(int i=2; i<num; i++) {
                 if(num%i==0) {
-                    aux++;
+                    div++;
                 }
             }
-            if(aux==0) {
+            if(div==0) {
                 System.out.println("El número es primo");
             } else {
                 System.out.println("El número no es primo");
