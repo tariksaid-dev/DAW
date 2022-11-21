@@ -14,7 +14,7 @@ public class Ejercicio37 {
             int num = new Scanner(System.in).nextInt();
             // 1
             boolean esPrimo = true;
-            for(int i=2; i<num && num%2==0; i++) {
+            for(int i=2; i<num && num%2==0 && esPrimo; i++) {
                 esPrimo = false;
             }
             if(esPrimo==true) {

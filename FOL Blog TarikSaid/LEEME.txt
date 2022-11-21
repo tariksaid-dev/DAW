@@ -1,0 +1,4 @@
+Para "abrir" el blog, clicar en cualquiera de los archivos .html, por defecto se debería abrir el navegador y funcionar de manera correcta
+(el archivo index.html es la página principal, aunque puedes llegar desde el mismo blog).
+
+Contácteme si tiene cualquier problema.
