@@ -11,17 +11,20 @@ public class Ejercicio48 {
         System.out.println("Introduce un nombre:");
         String inputName = new Scanner(System.in).nextLine();
         System.out.println("Introduce un pin:");
-        String inputPin = new Scanner(System.in).nextLine();
+        int inputPin = new Scanner(System.in).nextInt();
 
         // Loop
+        boolean found = false;
         for(String key : map.keySet()) {
             if(key.equalsIgnoreCase(inputName)) {
-                if(map.get(key).equals(Integer.parseInt(inputPin))) {
+                if(map.get(key).equals(inputPin)) {
                     System.out.println("Acceso permitido");
-                } else {
-                    System.out.println("Usuario incorrecto");
+                    found = true;
                 }
             }
+        }
+        if(found == false) {
+            System.out.println("Usuario/Pin incorrecto");
         }
     }
 }
