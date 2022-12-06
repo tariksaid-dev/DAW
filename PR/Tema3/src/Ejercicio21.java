@@ -1,7 +1,4 @@
 import bpc.daw.consola.*;
-import java.time.*;
-
-import javax.swing.text.Position;
 
 import java.awt.*;
 public class Ejercicio21 {

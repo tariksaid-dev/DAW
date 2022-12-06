@@ -4,10 +4,6 @@ import java.awt.*;
 import javax.imageio.ImageIO;
 import java.awt.image.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.AbstractCollection;
 
 public class Ejercicio9_2 {
     public static void main(String[] args) {
