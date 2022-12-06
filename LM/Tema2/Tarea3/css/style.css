@@ -1,32 +1,39 @@
-li {
-  float: left;
-  margin-right: 20px;
+body {
+  box-sizing: border-box;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+p {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .topul {
-  list-style-type: none;
-  margin: 0;
-  padding: 15px;
-  overflow: hidden;
+  position: sticky;
   top: 0;
+  z-index: 2;
   background-color: #b6b4b4;
+  overflow: hidden
 }
 
 .bottomul {
-  list-style-type: none;
-  margin: 0;
   position: fixed;
-  padding: 15px;
   bottom: 0;
+  left: 0;
+  right: 0;
   background-color: #b6b4b4;
 }
 
-.marginleft20 {
-  margin-left: 20px;
+.titulopositionrelative {
+  position: relative;
+  left: 20px;
 }
 
 .bluebackground {
   background-color: #35dee7a3;
+  
 }
 
 .pinkbackground {
@@ -51,8 +58,19 @@ li {
 
 .square1 {
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-color: red;
-  position: relative;
+  top: 50px;
+  left: 80px;
+  z-index: 1;
+}
+
+.square2 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: greenyellow;
+  top: 30px;
+  left: 100px;
 }
