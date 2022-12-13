@@ -38,4 +38,24 @@ public class MarcadorBaloncesto {
         this.puntosLocal = 0;
         this.puntosVisitante = 0;
     }
+
+    public int getPuntosLocal() {
+        return this.puntosLocal;
+    }
+
+    public int getPuntosVisitante() {
+        return this.puntosVisitante;
+    }
+
+    public boolean ganaLocal() {
+        return this.puntosLocal > this.puntosVisitante;
+    }
+
+    public boolean ganaVisitante() {
+        return this.puntosVisitante > this.puntosLocal;
+    }
+
+    public boolean hayEmpate() {
+        return this.puntosLocal == this.puntosVisitante;
+    }
 }
