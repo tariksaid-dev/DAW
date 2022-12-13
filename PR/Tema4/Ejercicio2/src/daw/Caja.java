@@ -1,8 +1,8 @@
 package daw;
 
 public class Caja {
-    public boolean abierto;
-    public String mensaje;
+    private boolean abierto;
+    private String mensaje;
 
 
     public Caja (String m) {
@@ -24,5 +24,21 @@ public class Caja {
 
     public void pasarMayusculas() {
         this.mensaje = this.mensaje.toUpperCase();
+    }
+
+    public void abrir() {
+        this.abierto = true;
+    }
+
+    public void cerrar() {
+        this.abierto = false;
+    }
+
+    public String getMensaje() {
+        if(this.abierto) {
+            return this.mensaje;
+        } else {
+            return null;
+        }
     }
 }

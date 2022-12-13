@@ -3,8 +3,8 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class Oficina {
-    public String nombre;
-    public ArrayList<Persona> trabajadores;
+    private String nombre;
+    private ArrayList<Persona> trabajadores;
     
     public Oficina(String nombre) {
         this(nombre, 0);
@@ -41,5 +41,50 @@ public class Oficina {
 
     public void añadirEmpleado(String nombre, String DNI, double sueldo, LocalDate fechaNac) {
         this.trabajadores.add(new Persona(nombre, new DNI(DNI), sueldo, fechaNac, new CuentaCorriente()));
+    }
+
+    public int getTotalEmpleados() {
+        return this.trabajadores.size();
+    }
+
+    public int getTotalEmpleadosMileuristas() {
+        int total = 0;
+        for(Persona p : this.trabajadores) {
+            if(p.getSueldo() < 1200) {
+                total++;
+            }
+        }
+        return total;
+    }
+
+    public List<Persona> getMileuristas() {
+        List<Persona> mileuristas = new ArrayList<Persona>();
+        for(Persona p : this.trabajadores) {
+            if(p.getSueldo() < 1200) {
+                mileuristas.add(p);
+            }
+        }
+        return mileuristas;
+    }
+
+    public boolean trabaja(Persona p) {
+        return this.trabajadores.contains(p);
+    }
+
+    public void pagarEmpleados() {
+        for(Persona p : this.trabajadores) {
+            p.cobrarSueldo();
+        }
+    }
+
+    public void mostrarInformeEmpleados() {
+        for (Persona p : this.trabajadores) {
+            System.out.println(p.getNombre() + ", DNI: " + p.getDNI() + ", sueldo: " + p.getSueldo());
+            if(p.esMileurista()) {
+                System.out.print(", es mileurista");
+            } else {
+                System.out.print(", no es mileurista");
+            }
+        }
     }
 }
