@@ -19,7 +19,6 @@ public class Oficina {
             this.trabajadores = new ArrayList<Persona>(List.of(
                 new Persona("Antonio Pérez Pérez", 11111111, 'H', 900, LocalDate.of(2000, 2, 28))));
         } else if (tipo == 2) {
-            // trabajador nuevo y el trabajador del tipo 1
             this.trabajadores = new ArrayList<Persona>(List.of(
                 new Persona("Antonio Pérez Pérez", 11111111, 'H', 900, LocalDate.of(2000, 2, 28)), 
                 new Persona("Luis López López", 22222222, 'J', 1000, LocalDate.of(1995, 9, 10))));
