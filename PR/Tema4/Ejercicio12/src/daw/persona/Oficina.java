@@ -8,6 +8,7 @@ public class Oficina {
     
     public Oficina(String nombre) {
         this(nombre, 0);
+        this.trabajadores = new ArrayList<Persona>();
     }
 
     public Oficina(String nombre, int tipo) {
