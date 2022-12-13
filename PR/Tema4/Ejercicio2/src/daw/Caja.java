@@ -17,4 +17,12 @@ public class Caja {
     public Caja() {
         this(false, "Viva el tema 7");
     }
+
+    public void setMensaje(String m) {
+        this.mensaje = m;
+    }
+
+    public void pasarMayusculas() {
+        this.mensaje = this.mensaje.toUpperCase();
+    }
 }

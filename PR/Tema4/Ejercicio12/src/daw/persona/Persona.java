@@ -2,11 +2,11 @@ package daw.persona;
 import java.time.LocalDate;
 
 public class Persona {
-    public String nombre;
-    public DNI dni;
-    public double sueldo;
-    public LocalDate fechaNacimiento;
-    public CuentaCorriente cuenta;
+    private String nombre;
+    private DNI dni;
+    private double sueldo;
+    private LocalDate fechaNacimiento;
+    private CuentaCorriente cuenta;
 
     public Persona(String n, DNI d, double s, LocalDate fn, CuentaCorriente c) {
         this.nombre = n;
@@ -34,5 +34,37 @@ public class Persona {
 
     public void cobrarSueldo() {
         this.cuenta.añadirDinero((int)this.sueldo);
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public DNI getDNI() {
+        return this.dni;
+    }
+
+    public double getSueldo() {
+        return this.sueldo;
+    }
+
+    public LocalDate getFechaNacimiento() {
+        return this.fechaNacimiento;
+    }
+
+    public CuentaCorriente getCuenta() {
+        return this.cuenta;
+    }
+
+    public boolean esMayorEdad() {
+        return this.fechaNacimiento.isBefore(LocalDate.now().minusYears(18));
+    }
+
+    public boolean tieneDinero() {
+        return this.cuenta.saldo > 0;
+    }
+
+    public boolean esMileurista() {
+        return this.sueldo < 1200;
     }
 }
