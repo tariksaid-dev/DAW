@@ -6,12 +6,11 @@ public class Oficina {
     private String nombre;
     private ArrayList<Persona> trabajadores;
     
-    public Oficina(String nombre) {
+    private Oficina(String nombre) {
         this(nombre, 0);
-        this.trabajadores = new ArrayList<Persona>();
     }
 
-    public Oficina(String nombre, int tipo) {
+    private Oficina(String nombre, int tipo) {
         this.nombre = nombre;
         if(tipo == 0 || tipo > 3 ) {
             this.trabajadores = new ArrayList<Persona>();
@@ -30,7 +29,7 @@ public class Oficina {
         }             
     }
 
-    public Oficina() {
+    private Oficina() {
         this("Industrias DAW", 3);
     }
 
@@ -96,5 +95,21 @@ public class Oficina {
             total += p.getSueldo();
         }
         return total / this.trabajadores.size();
+    }
+
+    public static Oficina getOficinaVacia(String nombre) {
+        return new Oficina(nombre);
+    }
+
+    public static Oficina getOficinaPequeña(String nombre) {
+        return new Oficina(nombre, 1);
+    }
+
+    public static Oficina getOficinaMediana(String nombre) {
+        return new Oficina(nombre, 2);
+    }
+
+    public static Oficina getOficinaGrande(String nombre) {
+        return new Oficina(nombre, 3);
     }
 }
