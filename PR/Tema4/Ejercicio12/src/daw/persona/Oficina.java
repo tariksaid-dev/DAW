@@ -86,4 +86,15 @@ public class Oficina {
             }
         }
     }
+
+    public double getMediaSueldos() throws Exception {
+        if(this.trabajadores.size() == 0) {
+            throw new Exception("No hay empleados en la oficina");
+        }
+        double total = 0;
+        for(Persona p : this.trabajadores) {
+            total += p.getSueldo();
+        }
+        return total / this.trabajadores.size();
+    }
 }

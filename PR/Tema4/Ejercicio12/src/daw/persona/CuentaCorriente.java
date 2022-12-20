@@ -22,7 +22,11 @@ public class CuentaCorriente {
         this.saldo += cantidad;
     }
 
-    public void retirarDinero(int cantidad) {
-        this.saldo -= cantidad;
+    public void retirarDinero(int cantidad) throws Exception {
+        if (cantidad > this.saldo) {
+            throw new Exception("Saldo insuficiente");
+        } else {
+            this.saldo -= cantidad;
+        }
     }
 }

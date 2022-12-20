@@ -1,6 +1,8 @@
 package daw;
 
+
 import java.time.LocalDate;
+import java.io.*;
 
 public class MarcadorBaloncesto {
     private String nombreLocal;
@@ -26,14 +28,6 @@ public class MarcadorBaloncesto {
         this.fecha = LocalDate.now();
     }
 
-    public void añadirCanasta(char equipo, int puntos) {
-        if(equipo == 'L') {
-            this.puntosLocal += puntos;
-        } else if (equipo == 'V') {
-            this.puntosVisitante += puntos;
-        }
-    }
-
     public void reset() {
         this.puntosLocal = 0;
         this.puntosVisitante = 0;
@@ -57,5 +51,26 @@ public class MarcadorBaloncesto {
 
     public boolean hayEmpate() {
         return this.puntosLocal == this.puntosVisitante;
+    }
+
+    public void guardar(String ruta) throws IOException  {
+        FileWriter fw = new FileWriter(ruta);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(
+            "Nombre equipo local: " + this.nombreLocal +
+            "\nPuntos equipo local: " + this.puntosLocal +
+            "\nNombre equipo visitante: " + this.nombreVisitante + 
+            "\nPuntos equipo visitante: " + this.puntosVisitante);
+        bw.close();
+    }
+
+    public void añadirCanasta(char equipo, int puntos) {
+        if (equipo == 'L' && puntos > 0 && puntos <= 3) {
+            this.puntosLocal += puntos;
+        } else if (equipo == 'V' && puntos > 0 && puntos <= 3) {
+            this.puntosVisitante += puntos;
+        } else {
+            throw new IllegalArgumentException("El equipo debe ser L o V");
+        }
     }
 }
