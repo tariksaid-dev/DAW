@@ -60,7 +60,7 @@ public class App {
             player.actuar(g, t);
             ac.actuar();
             e.actuar(g, t);
-
+            m.actuar();
 
             // Con esto el while va a 60FPS
             c.esperarSiguienteFrame();
