@@ -27,9 +27,19 @@ public class Nido {
         lineaTiempo++;
         if(lineaTiempo== aleatorio) {
             lineaTiempo = 0;
-            aleatorio = new Random().nextInt(500);
+            aleatorio = new Random().nextInt(150);
             murcielagos.add(new Murcielago(sprites, imagen));
         }
 
+    public boolean hayColision(PersonajePrincipal p) {
+        boolean choque = false;
+        Sprite sprite1 = p.getSprite();
+        for (int i=0; i<murcielagos.size() && !choque; i++) {
+            Murcielago m = this.murcielagos.get(i);
+            if (sprite1.comprobarColision(m.getSprite())) {
+                choque = true;
+            }
+        }
+        return choque;
     }
 }

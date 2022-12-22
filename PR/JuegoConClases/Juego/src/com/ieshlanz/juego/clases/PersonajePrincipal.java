@@ -110,4 +110,8 @@ public class PersonajePrincipal {
     public void moverX(int px) {
         this.sprite.moverX(px);
     }
+
+    public Sprite getSprite() {
+        return this.sprite;
+    }
 }
