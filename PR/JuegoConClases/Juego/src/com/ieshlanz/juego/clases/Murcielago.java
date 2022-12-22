@@ -18,10 +18,14 @@ public class Murcielago {
     private int lineaTiempo;
     private int rectangulo;
     private int alturaInicial;
+    private int amplitud;
+    private int frecuencia;
     
     public Murcielago(CapaSprites sprite, Image imagen) {
         rectangulo = 0;
         lineaTiempo = 360;
+        this.amplitud = new Random().nextInt(80, 200);
+        this.frecuencia = new Random().nextInt(3, 15);
         int resX = Toolkit.getDefaultToolkit().getScreenSize().width-400;
         int resY = Toolkit.getDefaultToolkit().getScreenSize().height-600;
         int y = new Random().nextInt(resY);
@@ -32,7 +36,7 @@ public class Murcielago {
     public void actuar() {
         sprite.moverX(-5);
         int y = (int)(this.alturaInicial + 150 * Math.sin(Math.toRadians(lineaTiempo)));
-        lineaTiempo-=10;
+        lineaTiempo-=this.frecuencia;
         if(lineaTiempo<0) {
             lineaTiempo = 360;
         }
