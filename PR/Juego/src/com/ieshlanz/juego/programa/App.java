@@ -74,6 +74,8 @@ public class App {
         // Fila y columna del rectángulo del frame del personaje principal 
         int filaPersonajePrincipal = 0;
         int columnaPersonajePrincipal = 0;
+
+        int lineaTiempoPersonajePrincipal = 0;
         
         
         Sprite player = sprites.crearSprite(
@@ -103,8 +105,25 @@ public class App {
             }
             if(t.teclaPulsada(KeyEvent.VK_D)) {
                 player.moverX(4);
+                // Incrementamos la linea de tiempo del player
+                lineaTiempoPersonajePrincipal ++;
+                // Calculo con la linea de tiempo el frame que debo mostrar
+                columnaPersonajePrincipal = lineaTiempoPersonajePrincipal<10?0:
+                    lineaTiempoPersonajePrincipal<20?1:
+                    lineaTiempoPersonajePrincipal<30?2:
+                    lineaTiempoPersonajePrincipal<40?3:
+                    lineaTiempoPersonajePrincipal<50?4:
+                    lineaTiempoPersonajePrincipal<60?5:
+                    lineaTiempoPersonajePrincipal<70?6:
+                    lineaTiempoPersonajePrincipal<80?7:0;
+
+                if(lineaTiempoPersonajePrincipal == 90) {
+                   lineaTiempoPersonajePrincipal = 0;
             }
-            
+
+            player.setRectanguloFrame(rectangulosPersonajePrincipal[filaPersonajePrincipal][columnaPersonajePrincipal]);
+            }
+
             // Con esto el while va a 60FPS
             c.esperarSiguienteFrame();
         }
