@@ -31,11 +31,12 @@ public class Murcielago {
 
     public void actuar() {
         sprite.moverX(-5);
-        int y = this.alturaInicial + 30 * (int)Math.sin(Math.toRadians(lineaTiempo));
-        lineaTiempo--;
+        int y = (int)(this.alturaInicial + 150 * Math.sin(Math.toRadians(lineaTiempo)));
+        lineaTiempo-=10;
         if(lineaTiempo<0) {
             lineaTiempo = 360;
         }
+        sprite.setPosicion(this.sprite.getX(), y);
     }
 
 
