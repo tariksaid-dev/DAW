@@ -61,12 +61,14 @@ public class App {
             ac.actuar();
             e.actuar(g, t);
             m.actuar(sprites, fotos.get("bat.png"));
+            if (m.hayColision(player)) {
+                repetir = false;
+            }
 
             // Con esto el while va a 60FPS
             c.esperarSiguienteFrame();
         }
-
-
-        // t.leerCaracter();
+        ct.println("GAME OVER");
+        t.leerCadenaCaracteres();
     }
 }
