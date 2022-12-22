@@ -28,7 +28,7 @@ public class PersonajePrincipal {
             new Rectangle (433, 152, 94, 105),
             new Rectangle (540, 153, 109, 101),
             new Rectangle (645, 159, 103, 131),
-            new Rectangle (763, 115, 82, 112)
+            new Rectangle (753, 150, 82, 112)
     }
 
         
@@ -47,7 +47,7 @@ public class PersonajePrincipal {
                 fotos.get("animacion.png"),
                 rectangulosPersonajePrincipal[filaPersonajePrincipal][columnaPersonajePrincipal],
                 150, 
-                900
+                700
             );
         }
 
@@ -60,18 +60,21 @@ public class PersonajePrincipal {
                 this.sprite.moverY(4);
             }
             if(t.teclaPulsada(KeyEvent.VK_A)) {
-                this.sprite.moverX(-4);
+                this.moverIzquierda();
             }
             if(t.teclaPulsada(KeyEvent.VK_D)) {
                 this.moverDerecha();
             }
         }
 
-        private void moverDerecha() {
-            this.sprite.moverX(4);
-            // Incrementamos la linea de tiempo del player
-            lineaTiempoPersonajePrincipal ++;
+        private void gestionarLineaDeTiempo() {
             // Calculo con la linea de tiempo el frame que debo mostrar
+            if(lineaTiempoPersonajePrincipal < 0) {
+                lineaTiempoPersonajePrincipal = 79;
+            }
+            if(lineaTiempoPersonajePrincipal > 90) {
+                lineaTiempoPersonajePrincipal = 0;
+            }
             columnaPersonajePrincipal = lineaTiempoPersonajePrincipal<10?0:
                 lineaTiempoPersonajePrincipal<20?1:
                 lineaTiempoPersonajePrincipal<30?2:
@@ -85,4 +88,26 @@ public class PersonajePrincipal {
         }
         this.sprite.setRectanguloFrame(rectangulosPersonajePrincipal[filaPersonajePrincipal][columnaPersonajePrincipal]);
         }
+
+        private void moverDerecha() {
+            this.sprite.moverX(4);
+            lineaTiempoPersonajePrincipal ++;
+            filaPersonajePrincipal = 0;
+            this.gestionarLineaDeTiempo();
+        }
+
+        public void moverIzquierda() {
+            this.sprite.moverX(-4);
+            lineaTiempoPersonajePrincipal --;
+            filaPersonajePrincipal = 1;
+            this.gestionarLineaDeTiempo();
+    }
+
+    public int getX() {
+        return this.sprite.getX();
+    }
+
+    public void moverX(int px) {
+        this.sprite.moverX(px);
+    }
 }

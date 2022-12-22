@@ -47,8 +47,9 @@ public class App {
 
 
         PersonajePrincipal player = new PersonajePrincipal(sprites, fotos);
+        Escenario e = new Escenario(fotos.get("fondo1.jpg"));
+        ActualizadorCamara ac = new ActualizadorCamara(player, e);
         
-   
         // Game loop
         boolean repetir = true;
         while (repetir) {
@@ -56,6 +57,8 @@ public class App {
                 repetir = false;
             }
             player.actuar(g, t);
+            ac.actuar();
+            e.actuar(g, t);
             // Con esto el while va a 60FPS
             c.esperarSiguienteFrame();
         }
