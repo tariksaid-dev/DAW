@@ -49,6 +49,7 @@ public class App {
         PersonajePrincipal player = new PersonajePrincipal(sprites, fotos);
         Escenario e = new Escenario(fotos.get("fondo1.jpg"));
         ActualizadorCamara ac = new ActualizadorCamara(player, e);
+        Murcielago m = new Murcielago(sprites, fotos.get("bat.png"));
         
         // Game loop
         boolean repetir = true;
@@ -59,6 +60,8 @@ public class App {
             player.actuar(g, t);
             ac.actuar();
             e.actuar(g, t);
+
+
             // Con esto el while va a 60FPS
             c.esperarSiguienteFrame();
         }
