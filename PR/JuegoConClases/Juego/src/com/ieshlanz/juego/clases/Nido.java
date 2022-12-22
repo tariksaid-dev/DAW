@@ -30,6 +30,7 @@ public class Nido {
             aleatorio = new Random().nextInt(150);
             murcielagos.add(new Murcielago(sprites, imagen));
         }
+    }
 
     public boolean hayColision(PersonajePrincipal p) {
         boolean choque = false;
