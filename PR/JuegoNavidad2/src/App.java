@@ -21,16 +21,37 @@ public class App {
         CapaCanvas canvas = c.getCapaCanvas();
         CapaSprites sprites = c.getCapaSprites();
         Graphics g = canvas.getGraphics();
-
         Rain r = new Rain();
+
+
         try {
-            r.dibujar(g, ct);
-            
-        } catch (Exception e) {
-            // TODO: handle exception
+            Thread hilo1 = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        r.dibujar(g, ct);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
+            });
+            Thread hilo2 = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        r.dibujar(g, ct);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
+            });
+            hilo1.start();
+            hilo2.start();
+            t.leerCaracter();
+        }   
+        catch (Exception e) {
+            System.out.println(e);
         }
-        
-        t.leerCaracter();
     }
 
         

@@ -3,6 +3,8 @@ import bpc.daw.consola.*;
 import java.awt.*;
 import java.util.*;
 import java.awt.Color;
+
+
 public class Rain {
     private int x = Toolkit.getDefaultToolkit().getScreenSize().width;
     private int y = Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -50,8 +52,4 @@ public class Rain {
         int caracter = r.nextInt(94) + 33;
         return  (char) caracter;
     }
-
-
-
-    
 }
