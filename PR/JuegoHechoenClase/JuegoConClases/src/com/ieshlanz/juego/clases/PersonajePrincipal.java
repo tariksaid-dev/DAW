@@ -85,8 +85,8 @@ public class PersonajePrincipal {
                 lineaTiempoPersonajePrincipal<80?7:0;
             if(lineaTiempoPersonajePrincipal == 90) {
                lineaTiempoPersonajePrincipal = 0;
-        }
-        this.sprite.setRectanguloFrame(rectangulosPersonajePrincipal[filaPersonajePrincipal][columnaPersonajePrincipal]);
+            }
+            this.sprite.setRectanguloFrame(rectangulosPersonajePrincipal[filaPersonajePrincipal][columnaPersonajePrincipal]);
         }
 
         private void moverDerecha() {
