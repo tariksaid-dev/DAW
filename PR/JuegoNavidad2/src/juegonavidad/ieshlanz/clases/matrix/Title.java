@@ -19,7 +19,7 @@ public class Title {
     private int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 
     
-    public Title(CapaSprites sprites, Image imagen, int parte) {
+    public Title(CapaSprites sprites, Image imagen, int parte, CapaTexto ct) {
         int x = 0;
         int y = 0;
         if (parte == 0) {
@@ -36,6 +36,7 @@ public class Title {
             y);
     }
 
+
     public void actuarThe() {
         if(this.sprite.getX() < Toolkit.getDefaultToolkit().getScreenSize().width / 2 - 100) {
             this.sprite.moverX(5);
@@ -46,6 +47,14 @@ public class Title {
         if(this.sprite.getX() > Toolkit.getDefaultToolkit().getScreenSize().width/2 - 300) {
             this.sprite.moverX(-5);
         }
+    }
+
+    public int getX() {
+        return this.sprite.getX();
+    }
+
+    public void borrar(CapaSprites sprites) {
+        sprites.eliminarSprite(this.sprite);
     }
 
     
