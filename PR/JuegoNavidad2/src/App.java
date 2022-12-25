@@ -55,8 +55,10 @@ public class App {
 
             boolean seguir = false; 
             if(t.leerCaracter() == (KeyEvent.VK_ENTER)) {
+                Thread.sleep(100);
+                c.esperarSiguienteFrame();
                 seguir = true;
-                System.out.println("b");
+                System.out.println("traza2");
                 pab.borrar(sprites);
                 the.borrar(sprites);
                 matrix.borrar(sprites);
@@ -68,8 +70,22 @@ public class App {
             Selector s = new Selector(sprites, foto4);
             while (seguir) {
                 mm.actuar(t, sprites, s);
+
                 c.esperarSiguienteFrame();
+
+                if(mm.getState() == false) {
+                    mm.borrar(sprites);
+                    s.borrar(sprites);
+                    seguir = false;
+                }
             }
+            System.out.println("traza4");
+            Image foto5 = ImageIO.read(new File("img/introduceNombre.png"));
+            NuevoJuego nj = new NuevoJuego(sprites, foto5);
+            
+
+
+
 
 
         } catch (Exception e) {

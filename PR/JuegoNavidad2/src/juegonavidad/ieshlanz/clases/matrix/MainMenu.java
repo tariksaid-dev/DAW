@@ -26,25 +26,31 @@ public class MainMenu {
             this.height - (this.height - 200));
     }
 
-    public void actuar(Teclado t, CapaSprites sprites, Selector s) {
+    public void actuar(Teclado t, CapaSprites sprites, Selector s) throws InterruptedException{
+        this.state = true;
+        // Se puede cambiar de números a las arrows metiendo un thread.sleep muy corto (1-3ms)2
         if(t.teclaPulsada(KeyEvent.VK_1)) {
             s.moverA1();
+            Thread.sleep(5);
             this.option = 0;
         }
         if(t.teclaPulsada(KeyEvent.VK_2)) {
             s.moverA2();
+            Thread.sleep(5);
             this.option = 1;
         }
         if(t.teclaPulsada(KeyEvent.VK_3)) {
             s.moverA3();
+            Thread.sleep(5);
             this.option = 2;
         }
         if(t.teclaPulsada(KeyEvent.VK_ENTER)) {
             this.enter();
+            Thread.sleep(5);
         }
     }
 
-
+    // programar opciones
     public void enter() {
         if(this.option == 0) {
             // nueva partida
@@ -63,6 +69,12 @@ public class MainMenu {
     public void borrar(CapaSprites sprites) {
         sprites.eliminarSprite(sprite);
     }
+
+    public boolean getState() {
+        return this.state;
+    }
+
+
         
     
 
