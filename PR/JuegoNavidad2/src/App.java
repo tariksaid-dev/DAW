@@ -82,14 +82,22 @@ public class App {
             System.out.println("traza4");
             Image foto5 = ImageIO.read(new File("img/introduceNombre.png"));
             NuevoJuego nj = new NuevoJuego(sprites, foto5);
-            
+
+            Image foto6 = ImageIO.read(new File("img/letrasGreen.png"));
+            Letras l = new Letras(sprites, foto6);
+
+            while (!l.isDone()) {
+                l.actuar(t, foto6, sprites);
+                Thread.sleep(130);
+            }
+        
 
 
 
 
 
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
 
 
