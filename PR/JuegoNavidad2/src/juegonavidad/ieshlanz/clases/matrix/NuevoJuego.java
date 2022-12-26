@@ -37,4 +37,8 @@ public class NuevoJuego {
     public void setDificultad(int dificultad) {
         this.dificultad = dificultad;
     }
+
+    public void borrar(CapaSprites sprites) {
+        sprites.eliminarSprite(this.sprite);
+    }
 }

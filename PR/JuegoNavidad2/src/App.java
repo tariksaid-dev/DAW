@@ -1,8 +1,6 @@
 import juegonavidad.ieshlanz.clases.matrix.*;
 
-import java.awt.Graphics;
 import java.util.List;
-import java.awt.Image;
 import java.awt.event.KeyEvent;
 import javax.imageio.ImageIO;
 import java.util.*;
@@ -55,7 +53,7 @@ public class App {
 
             boolean seguir = false; 
             if(t.leerCaracter() == (KeyEvent.VK_ENTER)) {
-                Thread.sleep(100);
+                Thread.sleep(150);
                 c.esperarSiguienteFrame();
                 seguir = true;
                 System.out.println("traza2");
@@ -79,6 +77,7 @@ public class App {
                     seguir = false;
                 }
             }
+            Thread.sleep(200);
             System.out.println("traza4");
             Image foto5 = ImageIO.read(new File("img/introduceNombre.png"));
             NuevoJuego nj = new NuevoJuego(sprites, foto5);
@@ -86,21 +85,48 @@ public class App {
             Image foto6 = ImageIO.read(new File("img/letrasGreen.png"));
             Letras l = new Letras(sprites, foto6);
 
-            while (!l.isDone()) {
-                l.actuar(t, foto6, sprites);
+            while (l.isDone()== false) {
                 Thread.sleep(130);
+                c.esperarSiguienteFrame();
+                l.actuar(t, foto6, sprites);
+                System.out.println(l.getNombre());
+                System.out.println(l.getPosicionPuntero());
+                }
+            System.out.println("traza5 postDone");
+            if (l.isDone() == true) {
+                l.borrar(sprites);
+                nj.borrar(sprites);
             }
-        
+
+            Image foto7 = ImageIO.read(new File("img/dificultades.png"));
+            ElegirDificultad ed = new ElegirDificultad(sprites, foto7);
+            Selector s2 = new Selector(sprites, foto4);
+            while (ed.isDone() == false) {
+                Thread.sleep(130);
+                c.esperarSiguienteFrame();
+                ed.actuar(t, sprites, s2);
+            }
+            if (ed.isDone() == true) {
+                ed.borrar(sprites);
+                s2.borrar(sprites);
+            }
+            System.out.println(sprites.getNumeroSprites() + "numero sprites" );
+            sprites.setVisible(false);
 
 
 
+
+            hilo.stop();
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
+        CapaFondo fondo = c.getCapaFondo();
+        FondoColorSolido f = new FondoColorSolido(Color.BLACK);
+        fondo.setFondo(f);
+        g.clearRect(0, 0, (int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+        
 
 
 
@@ -108,7 +134,7 @@ public class App {
 
 
         t.leerCaracter();
-
+        
 
 
 

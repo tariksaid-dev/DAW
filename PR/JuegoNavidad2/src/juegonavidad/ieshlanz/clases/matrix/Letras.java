@@ -14,9 +14,36 @@ public class Letras {
         {
             new Rectangle (9, 11, 38, 51),
             new Rectangle (69, 11, 38, 51),
+            new Rectangle (138, 11, 38, 51),
+            new Rectangle(202, 11, 38, 51),
+            new Rectangle(267, 11, 38, 51),
+            new Rectangle(332, 11, 38, 51),
+            new Rectangle(404, 11, 38, 51),
+            new Rectangle (467, 11, 38, 51),
         }, 
         {
-            new Rectangle (32, 0, 32, 32),
+            new Rectangle (0, 95, 38, 51),
+            new Rectangle (69, 95, 38, 51),
+            new Rectangle (137, 95, 38, 51),
+            new Rectangle (200, 95, 38, 51),
+            new Rectangle (271, 95, 38, 51),
+            new Rectangle (335, 95, 38, 51),
+            new Rectangle (406, 95, 38, 51),
+            new Rectangle (465, 95, 38, 51),
+        }, 
+        {
+            new Rectangle (0, 175, 38, 51), // resize Q
+            new Rectangle (69, 179, 38, 51),
+            new Rectangle (138, 179, 38, 51),
+            new Rectangle (203, 179, 38, 51),
+            new Rectangle (269, 179, 38, 51),
+            new Rectangle (337, 179, 38, 51),
+            new Rectangle (410, 179, 38, 51), // resize W
+            new Rectangle (470, 179, 38, 51),
+        },
+        {
+            new Rectangle (7, 264, 38, 51),
+            new Rectangle (71, 264, 38, 51),
         }
     };
     private boolean done = false;
@@ -25,7 +52,7 @@ public class Letras {
     private int columnaLetra = 0;
     private Sprite sprite; 
     private int PosicionY = 360;
-    private List <Integer> posicionLetra = new ArrayList <>(List.of(1140, 1080, 1020, 960, 900, 840, 780));
+    private List <Integer> posicionLetra = new ArrayList <>(List.of(780, 840, 900, 960, 1020, 1080, 1140));
     private int posicionPuntero;
 
     public Letras(CapaSprites sprite, Image imagen) {
@@ -35,12 +62,16 @@ public class Letras {
     }
 
     public void actuar(Teclado t, Image imagen, CapaSprites sprite) throws Exception{
-        if (t.teclaPulsada(KeyEvent.VK_DELETE)){
+        if (t.teclaPulsada(KeyEvent.VK_BACK_SPACE)){
             if(this.posicionPuntero > 0) {
+                System.out.println("traza delete");
                 this.posicionPuntero--;
-                this.nombre = this.nombre.substring(1); // posible fallo
-                // Thread.sleep(150);
-                this.sprite.setAlfa(0);
+                this.rellenarHueco(sprite);
+                this.nombre = this.nombre.substring(this.nombre.length());
+            } else {
+                System.out.println("traza delete pos 0");
+                this.rellenarHueco(sprite);
+                this.nombre = "";
             }
         }
         if (t.teclaPulsada(KeyEvent.VK_ENTER)) {
@@ -203,7 +234,7 @@ public class Letras {
             this.nuevaLetra(sprite);
             this.nombre += "Z";
         }
-        
+
         
     }
 
@@ -221,10 +252,30 @@ public class Letras {
         }
     }
 
+    private void rellenarHueco(CapaSprites sprite) throws Exception {
+        Image foto = ImageIO.read(new File("img/justBlack.png"));
+        sprite.crearSprite(
+            foto,
+            new Rectangle(0, 0, 38, 51), 
+            this.posicionLetra.get(this.posicionPuntero),
+            this.PosicionY);
+    }
+
+
     public boolean isDone() {
         return this.done;
     }
 
-}
+    public String getNombre() {
+        return this.nombre;
+    }
+    public int getPosicionPuntero() {
+        return this.posicionPuntero;
+    }
 
-// Para que las letras no hagan overlap, modificar la imagen letrasGreen cambiando la transparencia por negro (así tapan la de abajo).
+    public void borrar(CapaSprites sprites) throws Exception {
+        sprites.eliminarSprite(this.sprite);
+    }
+
+    
+}
