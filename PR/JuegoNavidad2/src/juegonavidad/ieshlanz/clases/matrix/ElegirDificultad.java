@@ -68,4 +68,8 @@ public class ElegirDificultad {
     public void borrar(CapaSprites sprites) {
         sprites.eliminarSprite(this.sprite);
     }
+
+    public int getOption() {
+        return this.option;
+    }
 }

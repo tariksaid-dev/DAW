@@ -72,6 +72,10 @@ public class MainMenu {
         return this.state;
     }
 
+    public int getOption() {
+        return this.option;
+    }
+
 
         
     
