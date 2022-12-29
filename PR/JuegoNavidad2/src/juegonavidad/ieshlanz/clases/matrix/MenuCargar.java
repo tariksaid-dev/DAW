@@ -22,6 +22,9 @@ public class MenuCargar {
     private Sprite sprite;
     private Image image;
 
+    public static String jugador;
+    public static double dificultad;
+
     public MenuCargar(CapaSprites sprites, Image imagen) {
         this.image = imagen;
     }
@@ -33,6 +36,8 @@ public class MenuCargar {
         } else {
             this.movimientoSelector(t, s);
             if (t.teclaPulsada(KeyEvent.VK_ENTER)) {
+                jugador = Guardar.nombre.get(this.option);
+                dificultad = Guardar.dificultad.get(this.option);
                 this.done = true;
                 s.borrar(sprites);
                 sprites.eliminarSprite(sprite);
@@ -134,4 +139,5 @@ public class MenuCargar {
             this.option = 9;
         }
     }
+
 }

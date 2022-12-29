@@ -1,9 +1,9 @@
 package juegonavidad.ieshlanz.clases.matrix;
+
 import bpc.daw.consola.*;
 import java.awt.*;
 import java.util.*;
 import java.awt.Color;
-
 
 public class Rain {
     private int x = Toolkit.getDefaultToolkit().getScreenSize().width;
@@ -13,11 +13,8 @@ public class Rain {
     private int filas = this.y / 40;
     private int posicionX = 0;
     private int posicionY = 0;
-    
 
-
-
-    public void dibujar(Graphics g, CapaTexto ct) throws InterruptedException {
+    public void dibujar(Graphics g) throws InterruptedException {
         g.setColor(this.color);
         g.setFont(new Font("mono", Font.BOLD, 44));
         while (true) {
@@ -37,7 +34,7 @@ public class Rain {
     private void oscurecer(Graphics g) {
         g.setColor(new Color(0, 0, 1, 3));
         g.fillRect(0, 0, this.x, this.y);
-        
+
     }
 
     // haz una función que haga que las letras caigan verticalmente hacia abajo
@@ -49,8 +46,7 @@ public class Rain {
     private char caracterAzar() {
         Random r = new Random();
         int caracter = r.nextInt(33) + 33;
-        return  (char) caracter;
+        return (char) caracter;
     }
-
 
 }

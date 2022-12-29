@@ -1,5 +1,5 @@
 import juegonavidad.ieshlanz.clases.matrix.*;
-
+import juegonavidad.ieshlanz.clases.juego.*;
 import java.util.List;
 import java.awt.event.KeyEvent;
 import javax.imageio.ImageIO;
@@ -24,11 +24,12 @@ public class App {
         Title the = null;
         Title matrix = null;
         PressAnyButton pab = null;
+        Jugador j = null;
 
         Thread hilo = new Thread() {
             public synchronized void run() {
                 try {
-                    r.dibujar(g, ct);
+                    r.dibujar(g);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -135,7 +136,6 @@ public class App {
                 }
 
             }
-
             if (hilo.isAlive()) {
                 hilo.stop();
             }
@@ -149,7 +149,18 @@ public class App {
         System.out.println(sprites.getNumeroSprites());
         // ESTOY POR AQUÍ
 
-        t.leerCaracter();
+        try {
 
+            NivelBase nb = new NivelBase();
+            nb.añadirSpritesMapa(sprites);
+            while (nb.getVidas() > 0) {
+                nb.actuar(sprites, t);
+                c.esperarSiguienteFrame();
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
+        t.leerCaracter();
     }
 }
