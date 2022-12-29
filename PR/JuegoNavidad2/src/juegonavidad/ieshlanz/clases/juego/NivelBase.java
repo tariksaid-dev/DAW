@@ -1,46 +1,21 @@
 package juegonavidad.ieshlanz.clases.juego;
 
 import juegonavidad.ieshlanz.clases.matrix.*;
-import java.io.BufferedReader;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.io.FileReader;
-import java.io.FileWriter;
+
 import java.io.IOException;
 import java.util.*;
 import bpc.daw.consola.*;
-import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.KeyEvent;
 import javax.imageio.ImageIO;
-import java.util.*;
-import java.util.List;
 import java.io.*;
 import java.awt.*;
 
-// clase que representa los sprite, no los pinta, solo hace las referencias
-class rSprite {
-    int x, y;
-    char letter;
-
-    public rSprite(int x, int y, char letter) {
-        this.x = x;
-        this.y = y;
-        this.letter = letter;
-    }
-}
-
-public class NivelBase implements KeyListener {
+public class NivelBase {
 
     private Image imagen;
     private int width = Toolkit.getDefaultToolkit().getScreenSize().width;
     private int height = Toolkit.getDefaultToolkit().getScreenSize().height;
-    private Rectangle[][] rectangulosLetras = Letras.rectangulosLetras;
-    private List<Sprite> letras;
-    private List<Sprite> letrasSeleccionadas = new ArrayList<Sprite>();
     private int vidas = 3;
-    private int random;
-    private boolean done;
     private Map<Character, Sprite> spritesMap = new HashMap<>();
 
     public void actuar(CapaSprites sprites, Teclado t) throws Exception {
@@ -63,7 +38,6 @@ public class NivelBase implements KeyListener {
             }
         };
         hilo.start();
-
     }
 
     public void añadirSpritesMapa(CapaSprites sprites) throws IOException {
@@ -125,22 +99,5 @@ public class NivelBase implements KeyListener {
 
     public int getVidas() {
         return vidas;
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        spritesMap.remove(e.getKeyChar());
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-    }
-
-    public void eliminarLetra() {
-
     }
 }
