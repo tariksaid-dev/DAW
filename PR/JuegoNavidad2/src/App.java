@@ -158,16 +158,18 @@ public class App {
             jugador = Guardar.nombre.get(MenuCargar.getOption());
             dificultad = Guardar.dificultad.get(MenuCargar.getOption()).intValue();
 
-            Cinematica1.primeraPantalla(g, jugador);
-            Cinematica1.segundaPantalla(g, jugador, sprites);
+            // Cinematica1.primeraPantalla(g, jugador);
+            // Cinematica1.segundaPantalla(g, jugador, sprites);
 
             NivelBase nb = new NivelBase();
             nb.añadirSpritesMapa(sprites);
+            nb.contador(g);
+            nb.FondoVidas(g);
             while (nb.getVidas() > 0) {
+                System.out.println(Thread.activeCount());
                 nb.actuar(sprites, t);
                 c.esperarSiguienteFrame();
             }
-            System.out.println(hilo.isAlive());
         } catch (Exception e) {
             e.printStackTrace();
         }

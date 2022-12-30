@@ -49,7 +49,6 @@ public class Cinematica1 {
     }
 
     public static void segundaPantalla(Graphics g, String jugador, CapaSprites sprites) throws Exception {
-
         Image fondo1 = ImageIO.read(new File("img/fondo1.png"));
         Sprite conejo = sprites.crearSprite(
                 fondo1,
