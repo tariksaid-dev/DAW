@@ -25,4 +25,5 @@ public class Jugador {
     public int getDificultad() {
         return this.dificultad;
     }
+
 }

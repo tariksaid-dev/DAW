@@ -18,7 +18,7 @@ public class MenuCargar {
     private List<Integer> ejeY;
     private int numPartidasGuardadas = Guardar.nombre.size();
     private boolean done;
-    private int option;
+    private static int option;
     private Sprite sprite;
     private Image image;
 
@@ -138,6 +138,10 @@ public class MenuCargar {
             s.moveTo(ejeX.get(2) - 200, ejeY.get(2) - 75);
             this.option = 9;
         }
+    }
+
+    public static int getOption() {
+        return option;
     }
 
 }

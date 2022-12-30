@@ -25,6 +25,8 @@ public class App {
         Title matrix = null;
         PressAnyButton pab = null;
         Jugador j = null;
+        String jugador = null;
+        int dificultad = 0;
 
         Thread hilo = new Thread() {
             public synchronized void run() {
@@ -119,6 +121,7 @@ public class App {
                 System.out.println(Guardar.nombre);
                 System.out.println(Guardar.dificultad);
                 hilo.stop();
+
                 g.clearRect(0, 0, (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(),
                         (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight());
                 g.setColor(Color.green);
@@ -133,8 +136,11 @@ public class App {
                     Thread.sleep(130);
                     c.esperarSiguienteFrame();
                     mc.actuar(t, s3, g, sprites);
-                }
 
+                    // Aquí se supone que nos hemos llevado el nombre y la dificultad de la partida
+                    // a las variables arriba declaradas.
+
+                }
             }
             if (hilo.isAlive()) {
                 hilo.stop();
@@ -147,9 +153,13 @@ public class App {
         }
 
         System.out.println(sprites.getNumeroSprites());
-        // ESTOY POR AQUÍ
 
         try {
+            jugador = Guardar.nombre.get(MenuCargar.getOption());
+            dificultad = Guardar.dificultad.get(MenuCargar.getOption()).intValue();
+
+            Cinematica1.primeraPantalla(g, jugador);
+            Cinematica1.segundaPantalla(g, jugador, sprites);
 
             NivelBase nb = new NivelBase();
             nb.añadirSpritesMapa(sprites);
@@ -157,8 +167,9 @@ public class App {
                 nb.actuar(sprites, t);
                 c.esperarSiguienteFrame();
             }
+            System.out.println(hilo.isAlive());
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
 
         t.leerCaracter();

@@ -42,51 +42,15 @@ public class NivelBase {
 
     public void añadirSpritesMapa(CapaSprites sprites) throws IOException {
         this.imagen = ImageIO.read(new File("img/letrasGreen.png"));
-        this.spritesMap.put('a', sprites.crearSprite( // A
-                this.imagen,
-                Letras.rectangulosLetras[0][0],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
-        this.spritesMap.put('s', sprites.crearSprite( // S
-                this.imagen,
-                Letras.rectangulosLetras[2][2],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
-        this.spritesMap.put('d', sprites.crearSprite( // D
-                this.imagen,
-                Letras.rectangulosLetras[0][3],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
-        this.spritesMap.put('f', sprites.crearSprite( // F
-                this.imagen,
-                Letras.rectangulosLetras[0][5],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
-        this.spritesMap.put('g', sprites.crearSprite( // G
-                this.imagen,
-                Letras.rectangulosLetras[0][6],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
-        this.spritesMap.put('h', sprites.crearSprite( // H
-                this.imagen,
-                Letras.rectangulosLetras[0][7],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
-        this.spritesMap.put('j', sprites.crearSprite( // J
-                this.imagen,
-                Letras.rectangulosLetras[1][1],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
-        this.spritesMap.put('k', sprites.crearSprite( // K
-                this.imagen,
-                Letras.rectangulosLetras[1][2],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
-        this.spritesMap.put('l', sprites.crearSprite( // L
-                this.imagen,
-                Letras.rectangulosLetras[1][3],
-                this.ejeXAleatorio(),
-                this.ejeYAleatorio()));
+        this.spritesMap.put('a', SpritesLetras.generarLetra_a(sprites, imagen));
+        this.spritesMap.put('s', SpritesLetras.generarLetra_s(sprites, imagen));
+        this.spritesMap.put('d', SpritesLetras.generarLetra_d(sprites, imagen));
+        this.spritesMap.put('f', SpritesLetras.generarLetra_f(sprites, imagen));
+        this.spritesMap.put('g', SpritesLetras.generarLetra_g(sprites, imagen));
+        this.spritesMap.put('h', SpritesLetras.generarLetra_h(sprites, imagen));
+        this.spritesMap.put('j', SpritesLetras.generarLetra_j(sprites, imagen));
+        this.spritesMap.put('k', SpritesLetras.generarLetra_k(sprites, imagen));
+        this.spritesMap.put('l', SpritesLetras.generarLetra_l(sprites, imagen));
     }
 
     private int ejeXAleatorio() {

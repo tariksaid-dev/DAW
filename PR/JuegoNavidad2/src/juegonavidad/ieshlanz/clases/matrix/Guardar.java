@@ -60,4 +60,9 @@ public class Guardar {
         }
         br.close();
     }
+    // haz un ḿetodo que devuelva un arraylist con los nombres de las partidas
+    // guardadas
+    // y otro que devuelva un arraylist con las dificultades de las partidas
+    // guardadas
+
 }

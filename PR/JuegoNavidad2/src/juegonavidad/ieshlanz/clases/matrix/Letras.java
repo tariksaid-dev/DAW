@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 import java.util.*;
 import java.util.List;
 import java.io.*;
+import java.text.RuleBasedCollator;
 import java.awt.*;
 
 public class Letras {
@@ -46,19 +47,94 @@ public class Letras {
             {
                     new Rectangle(7, 264, 38, 51), // Y
                     new Rectangle(71, 264, 38, 51), // Z
+                    new Rectangle(136, 264, 38, 51), // a
+                    new Rectangle(200, 264, 38, 51), // b
+                    new Rectangle(267, 264, 38, 51), // c
+                    new Rectangle(333, 264, 38, 51), // d
+                    new Rectangle(400, 264, 38, 51), // e
+                    new Rectangle(462, 264, 38, 51), // f
+
+            },
+            {
+                    new Rectangle(6, 360, 38, 51), // g
+                    new Rectangle(68, 348, 38, 51), // h
+                    new Rectangle(125, 348, 38, 51), // i
+                    new Rectangle(203, 349, 37, 62), // j
+                    new Rectangle(265, 348, 38, 51), // k
+                    new Rectangle(325, 348, 38, 51), // l
+                    new Rectangle(401, 356, 49, 44), // m
+                    new Rectangle(464, 355, 38, 44), // n
+            },
+            {
+                    new Rectangle(3, 435, 38, 51), // o
+                    new Rectangle(68, 444, 38, 51), // p
+                    new Rectangle(138, 444, 44, 51), // q
+                    new Rectangle(196, 435, 38, 51), // r
+                    new Rectangle(268, 435, 38, 51), // s
+                    new Rectangle(331, 435, 38, 51), // t
+                    new Rectangle(400, 435, 38, 51), // u
+                    new Rectangle(467, 435, 38, 51), // v
             },
             { // NUMEROS
+                    new Rectangle(8, 518, 47, 51), // w
+                    new Rectangle(70, 518, 38, 51), // x
+                    new Rectangle(135, 528, 38, 51), // y
+                    new Rectangle(201, 518, 38, 51), // z
+                    new Rectangle(267, 515, 38, 51), // 0
                     new Rectangle(330, 515, 38, 51), // 1
                     new Rectangle(400, 515, 38, 51), // 2
                     new Rectangle(467, 515, 38, 51), // 3
+            },
+            {
+
                     new Rectangle(5, 602, 38, 51), // 4
                     new Rectangle(68, 602, 38, 51), // 5
                     new Rectangle(136, 602, 38, 51), // 6
                     new Rectangle(201, 602, 38, 51), // 7
                     new Rectangle(267, 602, 38, 51), // 8
                     new Rectangle(332, 602, 38, 51), // 9
-                    new Rectangle(267, 515, 38, 51), // 0
+                    new Rectangle(392, 602, 38, 51), // .
+                    new Rectangle(455, 608, 38, 51), // ,
+            },
+            {
+                    new Rectangle(0, 695, 28, 51), // ;
+                    new Rectangle(66, 689, 28, 51), // :
+                    new Rectangle(136, 685, 38, 51), // ?
+                    new Rectangle(194, 685, 38, 51), // !
+                    new Rectangle(263, 685, 38, 51), // -
+                    new Rectangle(335, 694, 38, 51), // _
+                    new Rectangle(401, 685, 38, 51), // ~
+                    new Rectangle(467, 685, 38, 51), // #
+            },
+            {
+                    new Rectangle(0, 772, 38, 51), // ""
+                    new Rectangle(59, 772, 38, 51), // ''
+                    new Rectangle(135, 772, 38, 51), // &
+                    new Rectangle(197, 768, 38, 59), // (
+                    new Rectangle(262, 768, 38, 59), // )
+                    new Rectangle(328, 768, 38, 59), // [
+                    new Rectangle(395, 768, 38, 59), // ]
+                    new Rectangle(356, 768, 38, 59), // |
 
+            },
+            {
+                    new Rectangle(6, 854, 38, 51), // ` (no se ve)
+                    new Rectangle(64, 854, 38, 51), // \
+                    new Rectangle(131, 854, 38, 51), // /
+                    new Rectangle(203, 854, 44, 57), // @
+                    new Rectangle(264, 854, 38, 51), // º
+                    new Rectangle(334, 853, 38, 51), // +
+                    new Rectangle(399, 853, 38, 51), // =
+                    new Rectangle(466, 853, 38, 51), // *
+            },
+            {
+                    new Rectangle(4, 939, 38, 51), // $
+                    new Rectangle(68, 939, 38, 51), // ?? libra creo
+                    new Rectangle(139, 939, 38, 51), // €
+                    new Rectangle(200, 939, 38, 51), // <
+                    new Rectangle(267, 939, 38, 51), // >
+                    new Rectangle(337, 939, 38, 51), // %
+            // tengo 2 espacios vacíos por si necesito {} o algo así
             }
     };
     private boolean done = false;
