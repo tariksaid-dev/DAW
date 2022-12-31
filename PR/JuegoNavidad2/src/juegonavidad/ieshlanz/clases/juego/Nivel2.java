@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 import java.io.*;
 import java.awt.*;
 
-public class NivelBase {
+public class Nivel2 {
 
     private Image imagen;
     private int width = Toolkit.getDefaultToolkit().getScreenSize().width;
@@ -17,7 +17,7 @@ public class NivelBase {
     private Map<Character, Sprite> spritesMap = new HashMap<>();
     private boolean acabado;
 
-    public NivelBase(int dificultad) {
+    public Nivel2(int dificultad) {
         vidas = dificultad;
     }
 
@@ -34,7 +34,7 @@ public class NivelBase {
     public void cazaLetras(Teclado t) throws Exception {
         Thread hilo = new Thread() {
             public void run() {
-                while (NivelBase.vidas > 0) {
+                while (Nivel2.vidas > 0) {
                     char x = t.leerCaracter();
                     System.out.println("hilo número " + Thread.currentThread().getId() + " ejecutándose");
                     if (spritesMap.containsKey(x)) {
@@ -50,14 +50,31 @@ public class NivelBase {
     public void añadirSpritesMapa(CapaSprites sprites) throws IOException {
         this.imagen = ImageIO.read(new File("img/letrasGreen.png"));
         this.spritesMap.put('a', SpritesLetras.generarLetra_a(sprites, imagen));
-        this.spritesMap.put('s', SpritesLetras.generarLetra_s(sprites, imagen));
+        this.spritesMap.put('b', SpritesLetras.generarLetra_b(sprites, imagen));
+        this.spritesMap.put('c', SpritesLetras.generarLetra_c(sprites, imagen));
         this.spritesMap.put('d', SpritesLetras.generarLetra_d(sprites, imagen));
+        this.spritesMap.put('e', SpritesLetras.generarLetra_e(sprites, imagen));
         this.spritesMap.put('f', SpritesLetras.generarLetra_f(sprites, imagen));
         this.spritesMap.put('g', SpritesLetras.generarLetra_g(sprites, imagen));
         this.spritesMap.put('h', SpritesLetras.generarLetra_h(sprites, imagen));
+        this.spritesMap.put('i', SpritesLetras.generarLetra_i(sprites, imagen));
         this.spritesMap.put('j', SpritesLetras.generarLetra_j(sprites, imagen));
         this.spritesMap.put('k', SpritesLetras.generarLetra_k(sprites, imagen));
         this.spritesMap.put('l', SpritesLetras.generarLetra_l(sprites, imagen));
+        this.spritesMap.put('m', SpritesLetras.generarLetra_m(sprites, imagen));
+        this.spritesMap.put('n', SpritesLetras.generarLetra_n(sprites, imagen));
+        this.spritesMap.put('o', SpritesLetras.generarLetra_o(sprites, imagen));
+        this.spritesMap.put('p', SpritesLetras.generarLetra_p(sprites, imagen));
+        this.spritesMap.put('q', SpritesLetras.generarLetra_q(sprites, imagen));
+        this.spritesMap.put('r', SpritesLetras.generarLetra_r(sprites, imagen));
+        this.spritesMap.put('s', SpritesLetras.generarLetra_s(sprites, imagen));
+        this.spritesMap.put('t', SpritesLetras.generarLetra_t(sprites, imagen));
+        this.spritesMap.put('u', SpritesLetras.generarLetra_u(sprites, imagen));
+        this.spritesMap.put('v', SpritesLetras.generarLetra_v(sprites, imagen));
+        this.spritesMap.put('w', SpritesLetras.generarLetra_w(sprites, imagen));
+        this.spritesMap.put('x', SpritesLetras.generarLetra_x(sprites, imagen));
+        this.spritesMap.put('y', SpritesLetras.generarLetra_y(sprites, imagen));
+        this.spritesMap.put('z', SpritesLetras.generarLetra_z(sprites, imagen));
     }
 
     public void FondoVidas(Graphics g) throws IOException {
@@ -82,7 +99,7 @@ public class NivelBase {
         return vidas;
     }
 
-    public void contador(Graphics g, NivelBase nb) throws Exception {
+    public void contador(Graphics g, Nivel2 nb) throws Exception {
         Thread hilo2 = new Thread() {
             int timer = 60;
             boolean parar = false;

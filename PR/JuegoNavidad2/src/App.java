@@ -29,7 +29,7 @@ public class App {
         int dificultad = 0;
 
         Thread hilo = new Thread() {
-            public synchronized void run() {
+            public void run() {
                 try {
                     r.dibujar(g);
                 } catch (InterruptedException e) {
@@ -155,25 +155,88 @@ public class App {
         System.out.println(sprites.getNumeroSprites());
 
         try {
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        try {
             jugador = Guardar.nombre.get(MenuCargar.getOption());
             dificultad = Guardar.dificultad.get(MenuCargar.getOption()).intValue();
 
             // Cinematica1.primeraPantalla(g, jugador);
             // Cinematica1.segundaPantalla(g, jugador, sprites);
 
-            NivelBase nb = new NivelBase();
-            nb.añadirSpritesMapa(sprites);
-            nb.contador(g);
-            nb.FondoVidas(g);
-            while (nb.getVidas() > 0) {
-                System.out.println(Thread.activeCount());
-                nb.actuar(sprites, t);
-                c.esperarSiguienteFrame();
-            }
+            // NivelBase nb = new NivelBase(dificultad);
+            // System.out.println(Thread.activeCount()); // dios sabe porque tengo 5 hilos
+            // abiertos aquí
+            // nb.añadirSpritesMapa(sprites);
+            // nb.contador(g, nb);
+            // nb.FondoVidas(g);
+            // nb.cazaLetras(t);
+            // while (nb.getVidas() > 0 && !nb.isAcabado()) {
+            // if (nb.getVidas() == 2) {
+            // nb.FondoVidas(g);
+            // } else if (nb.getVidas() == 1) {
+            // nb.FondoVidas(g);
+            // }
+            // System.out.println(Thread.activeCount());
+            // nb.actuar(sprites);
+            // c.esperarSiguienteFrame();
+            // }
+
+            // if (nb.getVidas() > 0) {
+            // FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasGanado.png")), 500, 400,
+            // 30);
+            // } else {
+            // FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasPerdido.png")), 500,
+            // 400, 30);
+            // }
+            // Thread.sleep(200);
+            // nb.clearScreen(g, sprites);
+
+            Cinematica2.primeraPantalla(g, jugador, sprites);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+        try {
+            Nivel2 nb = new Nivel2(dificultad);
+            System.out.println(Thread.activeCount()); // dios sabe porque tengo 5 hilos abiertos aquí
+            nb.añadirSpritesMapa(sprites);
+            nb.contador(g, nb);
+            nb.FondoVidas(g);
+            nb.cazaLetras(t);
+            while (nb.getVidas() > 0 && !nb.isAcabado()) {
+                if (nb.getVidas() == 2) {
+                    nb.FondoVidas(g);
+                } else if (nb.getVidas() == 1) {
+                    nb.FondoVidas(g);
+                }
+                System.out.println(Thread.activeCount());
+                nb.actuar(sprites);
+                c.esperarSiguienteFrame();
+            }
 
+            if (nb.getVidas() > 0) {
+                FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasGanado.png")), 500, 400,
+                        30);
+            } else {
+                FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasPerdido.png")), 500,
+                        400, 30);
+            }
+            Thread.sleep(200);
+            nb.clearScreen(g, sprites);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
         t.leerCaracter();
     }
+
+    // cinematica 3
+
+    // nivel 3 todo con mayusculas incluidas
+
+    // cinematica 5 final
+
+    // nivel 4 final, todos los symbolos
 }
