@@ -13,9 +13,6 @@ public class Cinematica2 {
     public static void primeraPantalla(Graphics g, String jugador, CapaSprites sprites) throws Exception {
         int tiempoLetras = 20;
         Image fondo1 = ImageIO.read(new File("img/fondo1.png"));
-        // Image black = ImageIO.read(new File("img/justBlack.png"));
-        // FadeIn.efectoFadeout(g, black.getScaledInstance(2000, 12000,
-        // Image.SCALE_FAST), 0, 0, 100);
         Sprite conejo = sprites.crearSprite(
                 fondo1,
                 new Rectangle(0, 0, fondo1.getWidth(null), height),
@@ -46,7 +43,7 @@ public class Cinematica2 {
 
         g.clearRect(0, 0, width, height);
 
-        String texto2 = "Recuerda que puedes pul- sar la tecla 'ESC' durante la partida para volver a ver la ayuda. Suerte!";
+        String texto2 = "Recuerda que puedes pul- sar la tecla 'ESC' durante la partida para volver a ver la ayuda. ";
         char[] texto2C = texto2.toCharArray();
         anchoActual = 0;
         anchuraMáxima = 672;

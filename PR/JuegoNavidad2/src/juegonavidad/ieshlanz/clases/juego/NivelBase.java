@@ -109,10 +109,8 @@ public class NivelBase {
 
             public void run() {
                 while (!parar && nb.getVidas() > 0) {
-                    System.out.println("contador iniciado");
                     try {
                         if (NivelBase.pausa == true) {
-                            System.out.println("pausa");
                             Thread.sleep(7000);
                         }
                         g.drawString("" + timer, width / 2 - 30, 80);

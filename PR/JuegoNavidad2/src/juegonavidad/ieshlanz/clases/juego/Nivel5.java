@@ -41,7 +41,6 @@ public class Nivel5 {
             public void run() {
                 while (Nivel5.vidas > 0 && !acabado) {
                     char x = t.leerCaracter();
-                    System.out.println("hilo número " + Thread.currentThread().getId() + " ejecutándose");
                     if (spritesMap.containsKey(x)) {
                         System.out.println("Tecla: " + x);
                         spritesMap.get(x).setPosicion(ejeXAleatorio(), ejeYAleatorio());
@@ -211,7 +210,6 @@ public class Nivel5 {
                         e.printStackTrace();
                     }
                 }
-                System.out.println("hilo contador parado");
             }
         };
         hilo2.start();

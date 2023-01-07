@@ -5,6 +5,7 @@ import javax.imageio.ImageIO;
 import java.io.*;
 import java.awt.*;
 import bpc.daw.consola.*;
+import bpc.daw.reproductor.*;
 
 public class App {
     public static void main(String[] args) {
@@ -25,8 +26,11 @@ public class App {
         String jugador = null;
         int dificultad = 1;
         boolean juego = true;
+        ArchivoMP3 musica = new ArchivoMP3("musica/clubbedToDeath.mp3");
+        Reproductor rep = new Reproductor(musica, false, false);
 
         while (juego) {
+            rep.play();
 
             // ALGORITMO MATRIX
             Thread hilo = new Thread() {

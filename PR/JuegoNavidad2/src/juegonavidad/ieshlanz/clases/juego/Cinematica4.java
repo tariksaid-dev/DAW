@@ -11,25 +11,23 @@ public class Cinematica4 {
     private static int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 
     public static void primeraPantalla(Graphics g, String jugador, CapaSprites sprites) throws Exception {
+        int tiempoLetras = 20;
         Image fondo1 = ImageIO.read(new File("img/fondo1.png"));
-        // Image black = ImageIO.read(new File("img/justBlack.png"));
-        // FadeIn.efectoFadeout(g, black.getScaledInstance(2000, 12000,
-        // Image.SCALE_FAST), 0, 0, 100);
         Sprite conejo = sprites.crearSprite(
                 fondo1,
                 new Rectangle(0, 0, fondo1.getWidth(null), height),
                 0, 0);
-        String texto1 = "INCREÍBLE! No sabía que fueras tan rápido. Ya solo nos queda un último paso y estarás listo para enfrentarte al Mecanógrofo. Vamos a añadir los números, así que no te confíes.";
+        String texto1 = "INCREÍBLE! No sabía que fu-eras tan rápido. Ya solo nos queda un último paso y estar-ás listo para enfrentarte al Mecanógrofo. Vamos a añadir los números, así que no te confíes.";
         char[] texto1C = texto1.toCharArray();
         FontMetrics fm = g.getFontMetrics();
         int anchoActual = 0;
-        int anchuraMáxima = 672;
-        int x = 700;
+        int anchuraMáxima = 700;
+        int x = 670;
         int y = 350;
         for (char caracter : texto1C) {
             int anchoCaracter = fm.charWidth(caracter);
             if (anchoActual + anchoCaracter > anchuraMáxima) {
-                x = 700;
+                x = 670;
                 y += 50;
                 anchoActual = 0;
             } else {
@@ -38,7 +36,7 @@ public class Cinematica4 {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
         }
 
         Thread.sleep(4000);
@@ -63,7 +61,7 @@ public class Cinematica4 {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
         }
 
         Thread.sleep(4000);
@@ -88,7 +86,7 @@ public class Cinematica4 {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
         }
         Thread.sleep(4000);
 

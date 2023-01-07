@@ -35,13 +35,13 @@ public class Letras {
                     new Rectangle(465, 95, 38, 51), // P
             },
             {
-                    new Rectangle(0, 175, 38, 51), // resize Q
+                    new Rectangle(7, 179, 46, 63), // resized Q
                     new Rectangle(69, 179, 38, 51), // R
                     new Rectangle(138, 179, 38, 51), // S
                     new Rectangle(203, 179, 38, 51), // T
                     new Rectangle(269, 179, 38, 51), // U
                     new Rectangle(337, 179, 38, 51), // V
-                    new Rectangle(410, 179, 38, 51), // resize W
+                    new Rectangle(407, 177, 46, 53), // resized W
                     new Rectangle(470, 179, 38, 51), // X
             },
             {
