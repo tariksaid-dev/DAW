@@ -1,9 +1,5 @@
 package juegonavidad.ieshlanz.clases.juego;
 
-import juegonavidad.ieshlanz.clases.matrix.*;
-
-import java.io.IOException;
-import java.util.*;
 import bpc.daw.consola.*;
 import java.awt.Image;
 import javax.imageio.ImageIO;
@@ -25,30 +21,31 @@ public class Cinematica1 {
         char[] texto4 = texto4S.toCharArray();
         for (int i = 0; i < texto1.length; i++) {
             g.drawChars(texto1, 0, i, 200, 200);
-            Thread.sleep(100);
+            Thread.sleep(50);
         }
         Thread.sleep(1000);
         g.clearRect(0, 0, width, height);
         for (int i = 0; i < texto2.length; i++) {
             g.drawChars(texto2, 0, i, 200, 200);
-            Thread.sleep(100);
+            Thread.sleep(50);
         }
         Thread.sleep(1000);
         g.clearRect(0, 0, width, height);
         for (int i = 0; i < texto3.length; i++) {
             g.drawChars(texto3, 0, i, 200, 200);
-            Thread.sleep(100);
+            Thread.sleep(50);
         }
         Thread.sleep(1000);
         g.clearRect(0, 0, width, height);
         for (int i = 0; i < texto4.length; i++) {
             g.drawChars(texto4, 0, i, 200, 200);
-            Thread.sleep(100);
+            Thread.sleep(50);
         }
         Thread.sleep(1000);
     }
 
     public static void segundaPantalla(Graphics g, String jugador, CapaSprites sprites) throws Exception {
+        int tiempoLetras = 20;
         Image fondo1 = ImageIO.read(new File("img/fondo1.png"));
         Sprite conejo = sprites.crearSprite(
                 fondo1,
@@ -73,7 +70,7 @@ public class Cinematica1 {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
         }
 
         Thread.sleep(4000);
@@ -98,7 +95,7 @@ public class Cinematica1 {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
         }
 
         Thread.sleep(4000);
@@ -123,7 +120,7 @@ public class Cinematica1 {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
         }
 
         Thread.sleep(4000);
@@ -143,8 +140,8 @@ public class Cinematica1 {
         Thread.sleep(4000);
         g.clearRect(0, 0, width, height);
 
-        g.drawString("La idea es uses cada dedo para pulsar la tecla", 450, 800);
-        g.drawString("correspondiente en cada momento.", 450, 840);
+        g.drawString("La idea es uses cada dedo para pulsar la tecla correspondiente ", 200, 800);
+        g.drawString("en cada momento para hacer desaparecer las letras de la pantalla. ", 180, 840);
 
         Thread.sleep(4000);
 
@@ -156,7 +153,7 @@ public class Cinematica1 {
                 fondo1,
                 new Rectangle(0, 0, fondo1.getWidth(null), height),
                 0, 0);
-        String texto4 = "Vamos a practicar un poco en los primeros niveles de la Typix. Suerte!";
+        String texto4 = "Vamos a practicar un poco en los primeros niveles de la Typix. ";
         char[] texto4C = texto4.toCharArray();
         anchoActual = 0;
         anchuraMáxima = 672;
@@ -174,7 +171,31 @@ public class Cinematica1 {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
+        }
+
+        Thread.sleep(4000);
+        g.clearRect(0, 0, width, height);
+
+        String texto5 = "Recuerda que puedes pul- sar la tecla 'ESC' durante la partida para volver a ver la ayuda. Suerte! ";
+        char[] texto5C = texto5.toCharArray();
+        anchoActual = 0;
+        anchuraMáxima = 672;
+        x = 700;
+        y = 350;
+        for (char caracter : texto5C) {
+            int anchoCaracter = fm.charWidth(caracter);
+            if (anchoActual + anchoCaracter > anchuraMáxima) {
+                x = 700;
+                y += 50;
+                anchoActual = 0;
+            } else {
+                anchoActual += anchoCaracter;
+            }
+
+            g.drawChars(new char[] { caracter }, 0, 1, x, y);
+            x += fm.charWidth(caracter);
+            Thread.sleep(tiempoLetras);
         }
 
         Thread.sleep(4000);

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.*;
 import bpc.daw.consola.*;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import javax.imageio.ImageIO;
 import java.io.*;
 import java.awt.*;
@@ -16,12 +17,18 @@ public class Nivel2 {
     public static int vidas;
     private Map<Character, Sprite> spritesMap = new HashMap<>();
     private boolean acabado;
+    public static boolean pausa;
 
-    public Nivel2(int dificultad) {
-        vidas = dificultad;
+    public Nivel2() {
+        vidas = 3;
     }
 
-    public void actuar(CapaSprites sprites) throws Exception {
+    public void actuar(CapaSprites sprites, Teclado t) throws Exception {
+        if (t.teclaPulsada(KeyEvent.VK_ESCAPE)) {
+            NivelBase.pausa = true;
+            Thread.sleep(7000);
+            NivelBase.pausa = false;
+        }
         spritesMap.forEach((k, v) -> {
             v.moverY(1);
             if (v.getY() > height) {
@@ -31,15 +38,26 @@ public class Nivel2 {
         });
     }
 
-    public void cazaLetras(Teclado t) throws Exception {
+    public void cazaLetras(Teclado t, CapaSprites sprites) throws Exception {
         Thread hilo = new Thread() {
             public void run() {
-                while (Nivel2.vidas > 0) {
+                while (Nivel2.vidas > 0 && !acabado) {
                     char x = t.leerCaracter();
-                    System.out.println("hilo número " + Thread.currentThread().getId() + " ejecutándose");
                     if (spritesMap.containsKey(x)) {
                         System.out.println("Tecla: " + x);
                         spritesMap.get(x).setPosicion(ejeXAleatorio(), ejeYAleatorio());
+                    }
+                    if (t.teclaPulsada(KeyEvent.VK_ESCAPE)) {
+                        try {
+                            Sprite consejo = sprites.crearSprite(
+                                    ImageIO.read(new File("img/consejo.png")),
+                                    new Rectangle(0, 0, 590, 339),
+                                    695, 270);
+                            Thread.sleep(7000);
+                            sprites.eliminarSprite(consejo);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
@@ -48,47 +66,48 @@ public class Nivel2 {
     }
 
     public void añadirSpritesMapa(CapaSprites sprites) throws IOException {
+        int y = -1000;
         this.imagen = ImageIO.read(new File("img/letrasGreen.png"));
-        this.spritesMap.put('a', SpritesLetras.generarLetra_a(sprites, imagen));
-        this.spritesMap.put('b', SpritesLetras.generarLetra_b(sprites, imagen));
-        this.spritesMap.put('c', SpritesLetras.generarLetra_c(sprites, imagen));
-        this.spritesMap.put('d', SpritesLetras.generarLetra_d(sprites, imagen));
-        this.spritesMap.put('e', SpritesLetras.generarLetra_e(sprites, imagen));
-        this.spritesMap.put('f', SpritesLetras.generarLetra_f(sprites, imagen));
-        this.spritesMap.put('g', SpritesLetras.generarLetra_g(sprites, imagen));
-        this.spritesMap.put('h', SpritesLetras.generarLetra_h(sprites, imagen));
-        this.spritesMap.put('i', SpritesLetras.generarLetra_i(sprites, imagen));
-        this.spritesMap.put('j', SpritesLetras.generarLetra_j(sprites, imagen));
-        this.spritesMap.put('k', SpritesLetras.generarLetra_k(sprites, imagen));
-        this.spritesMap.put('l', SpritesLetras.generarLetra_l(sprites, imagen));
-        this.spritesMap.put('m', SpritesLetras.generarLetra_m(sprites, imagen));
-        this.spritesMap.put('n', SpritesLetras.generarLetra_n(sprites, imagen));
-        this.spritesMap.put('o', SpritesLetras.generarLetra_o(sprites, imagen));
-        this.spritesMap.put('p', SpritesLetras.generarLetra_p(sprites, imagen));
-        this.spritesMap.put('q', SpritesLetras.generarLetra_q(sprites, imagen));
-        this.spritesMap.put('r', SpritesLetras.generarLetra_r(sprites, imagen));
-        this.spritesMap.put('s', SpritesLetras.generarLetra_s(sprites, imagen));
-        this.spritesMap.put('t', SpritesLetras.generarLetra_t(sprites, imagen));
-        this.spritesMap.put('u', SpritesLetras.generarLetra_u(sprites, imagen));
-        this.spritesMap.put('v', SpritesLetras.generarLetra_v(sprites, imagen));
-        this.spritesMap.put('w', SpritesLetras.generarLetra_w(sprites, imagen));
-        this.spritesMap.put('x', SpritesLetras.generarLetra_x(sprites, imagen));
-        this.spritesMap.put('y', SpritesLetras.generarLetra_y(sprites, imagen));
-        this.spritesMap.put('z', SpritesLetras.generarLetra_z(sprites, imagen));
+        this.spritesMap.put('a', SpritesLetras.generarLetra_a(sprites, imagen, y));
+        this.spritesMap.put('b', SpritesLetras.generarLetra_b(sprites, imagen, y));
+        this.spritesMap.put('c', SpritesLetras.generarLetra_c(sprites, imagen, y));
+        this.spritesMap.put('d', SpritesLetras.generarLetra_d(sprites, imagen, y));
+        this.spritesMap.put('e', SpritesLetras.generarLetra_e(sprites, imagen, y));
+        this.spritesMap.put('f', SpritesLetras.generarLetra_f(sprites, imagen, y));
+        this.spritesMap.put('g', SpritesLetras.generarLetra_g(sprites, imagen, y));
+        this.spritesMap.put('h', SpritesLetras.generarLetra_h(sprites, imagen, y));
+        this.spritesMap.put('i', SpritesLetras.generarLetra_i(sprites, imagen, y));
+        this.spritesMap.put('j', SpritesLetras.generarLetra_j(sprites, imagen, y));
+        this.spritesMap.put('k', SpritesLetras.generarLetra_k(sprites, imagen, y));
+        this.spritesMap.put('l', SpritesLetras.generarLetra_l(sprites, imagen, y));
+        this.spritesMap.put('m', SpritesLetras.generarLetra_m(sprites, imagen, y));
+        this.spritesMap.put('n', SpritesLetras.generarLetra_n(sprites, imagen, y));
+        this.spritesMap.put('o', SpritesLetras.generarLetra_o(sprites, imagen, y));
+        this.spritesMap.put('p', SpritesLetras.generarLetra_p(sprites, imagen, y));
+        this.spritesMap.put('q', SpritesLetras.generarLetra_q(sprites, imagen, y));
+        this.spritesMap.put('r', SpritesLetras.generarLetra_r(sprites, imagen, y));
+        this.spritesMap.put('s', SpritesLetras.generarLetra_s(sprites, imagen, y));
+        this.spritesMap.put('t', SpritesLetras.generarLetra_t(sprites, imagen, y));
+        this.spritesMap.put('u', SpritesLetras.generarLetra_u(sprites, imagen, y));
+        this.spritesMap.put('v', SpritesLetras.generarLetra_v(sprites, imagen, y));
+        this.spritesMap.put('w', SpritesLetras.generarLetra_w(sprites, imagen, y));
+        this.spritesMap.put('x', SpritesLetras.generarLetra_x(sprites, imagen, y));
+        this.spritesMap.put('y', SpritesLetras.generarLetra_y(sprites, imagen, y));
+        this.spritesMap.put('z', SpritesLetras.generarLetra_z(sprites, imagen, y));
     }
 
     public void FondoVidas(Graphics g) throws IOException {
         switch (vidas) {
-            case 1 -> this.imagen = ImageIO.read(new File("img/nivel1vidas1.png"));
-            case 2 -> this.imagen = ImageIO.read(new File("img/nivel1vidas2.png"));
-            case 3 -> this.imagen = ImageIO.read(new File("img/nivel1vidas3.png"));
+            case 1 -> this.imagen = ImageIO.read(new File("img/nivel2vidas1.png"));
+            case 2 -> this.imagen = ImageIO.read(new File("img/nivel2vidas2.png"));
+            case 3 -> this.imagen = ImageIO.read(new File("img/nivel2vidas3.png"));
         }
         ;
         g.drawImage(imagen, 0, 20, width, height, null);
     }
 
     private int ejeXAleatorio() {
-        return new Random().nextInt(10, this.width - 10);
+        return new Random().nextInt(10, this.width - 30);
     }
 
     private int ejeYAleatorio() {
@@ -99,7 +118,7 @@ public class Nivel2 {
         return vidas;
     }
 
-    public void contador(Graphics g, Nivel2 nb) throws Exception {
+    public void contador(Graphics g, Nivel2 nb, Teclado t) throws Exception {
         Thread hilo2 = new Thread() {
             int timer = 60;
             boolean parar = false;
@@ -107,19 +126,21 @@ public class Nivel2 {
             public void run() {
                 while (!parar && nb.getVidas() > 0) {
                     try {
+                        if (Nivel2.pausa == true) {
+                            Thread.sleep(7000);
+                        }
                         g.drawString("" + timer, width / 2 - 30, 80);
                         Thread.sleep(1000);
                         g.clearRect(width / 2 - 60, 43, 100, 60);
                         timer--;
                         if (timer == 0) {
                             parar = true;
-                            nb.setAcabado(parar);
+                            nb.setAcabado(true);
                         }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                System.out.println("hilo contador parado");
             }
         };
         hilo2.start();

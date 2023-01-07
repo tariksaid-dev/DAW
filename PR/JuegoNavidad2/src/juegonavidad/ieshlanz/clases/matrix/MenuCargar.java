@@ -29,18 +29,18 @@ public class MenuCargar {
         this.image = imagen;
     }
 
-    public void actuar(Teclado t, Selector s, Graphics g, CapaSprites sprites) throws IOException {
+    public void actuar(Teclado t, Selector s, CapaSprites sprites) throws IOException {
         // aqui crearemos el loop con el selector y la opción que cargará al dar a enter
         if (this.numPartidasGuardadas == 0) {
             this.volver(t);
         } else {
             this.movimientoSelector(t, s);
             if (t.teclaPulsada(KeyEvent.VK_ENTER)) {
-                jugador = Guardar.nombre.get(this.option);
-                dificultad = Guardar.dificultad.get(this.option);
+                jugador = Guardar.nombre.get(option);
+                dificultad = Guardar.dificultad.get(option);
                 this.done = true;
                 s.borrar(sprites);
-                sprites.eliminarSprite(sprite);
+                sprites.eliminarSprite(this.sprite);
             }
         }
     }
@@ -103,45 +103,44 @@ public class MenuCargar {
     private void movimientoSelector(Teclado t, Selector s) {
         if (t.teclaPulsada(KeyEvent.VK_1) && this.numPartidasGuardadas >= 1) {
             s.moveTo(ejeX.get(0) - 200, ejeY.get(0) - 75);
-            this.option = 1;
+            option = 0;
         }
         if (t.teclaPulsada(KeyEvent.VK_2) && this.numPartidasGuardadas >= 2) {
             s.moveTo(ejeX.get(1) - 200, ejeY.get(0) - 75);
-            this.option = 2;
+            option = 1;
         }
         if (t.teclaPulsada(KeyEvent.VK_3) && this.numPartidasGuardadas >= 3) {
             s.moveTo(ejeX.get(2) - 200, ejeY.get(0) - 75);
-            this.option = 3;
+            option = 2;
         }
 
         if (t.teclaPulsada(KeyEvent.VK_4) && this.numPartidasGuardadas >= 4) {
             s.moveTo(ejeX.get(0) - 200, ejeY.get(1) - 75);
-            this.option = 4;
+            option = 3;
         }
         if (t.teclaPulsada(KeyEvent.VK_5) && this.numPartidasGuardadas >= 5) {
             s.moveTo(ejeX.get(1) - 200, ejeY.get(1) - 75);
-            this.option = 5;
+            option = 4;
         }
         if (t.teclaPulsada(KeyEvent.VK_6) && this.numPartidasGuardadas >= 6) {
             s.moveTo(ejeX.get(2) - 200, ejeY.get(1) - 75);
-            this.option = 6;
+            option = 5;
         }
         if (t.teclaPulsada(KeyEvent.VK_7) && this.numPartidasGuardadas >= 7) {
             s.moveTo(ejeX.get(0) - 200, ejeY.get(2) - 75);
-            this.option = 7;
+            option = 6;
         }
         if (t.teclaPulsada(KeyEvent.VK_8) && this.numPartidasGuardadas >= 8) {
             s.moveTo(ejeX.get(1) - 200, ejeY.get(2) - 75);
-            this.option = 8;
+            option = 7;
         }
         if (t.teclaPulsada(KeyEvent.VK_9) && this.numPartidasGuardadas >= 9) {
             s.moveTo(ejeX.get(2) - 200, ejeY.get(2) - 75);
-            this.option = 9;
+            option = 8;
         }
     }
 
     public static int getOption() {
         return option;
     }
-
 }

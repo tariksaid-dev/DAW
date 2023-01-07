@@ -1,14 +1,8 @@
 package juegonavidad.ieshlanz.clases.matrix;
 
 import bpc.daw.consola.*;
-import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.KeyEvent;
-import javax.imageio.ImageIO;
-import java.util.*;
-import java.io.*;
 import java.awt.*;
-import java.util.List;
 
 public class Selector {
     private Sprite sprite;
@@ -37,6 +31,26 @@ public class Selector {
 
     public void moverA3() {
         this.sprite.setPosicion(this.width / 3 + 30, height - 620);
+    }
+
+    public void moverNivel1() {
+        this.sprite.setPosicion(610, 115);
+    }
+
+    public void moverNivel2() {
+        this.sprite.setPosicion(610, 245);
+    }
+
+    public void moverNivel3() {
+        this.sprite.setPosicion(610, 380);
+    }
+
+    public void moverNivel4() {
+        this.sprite.setPosicion(610, 510);
+    }
+
+    public void moverNivel5() {
+        this.sprite.setPosicion(610, 645);
     }
 
     public void moveTo(int x, int y) {
