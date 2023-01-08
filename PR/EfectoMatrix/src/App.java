@@ -38,7 +38,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Consola c = new Consola();
         CapaCanvas canvas = c.getCapaCanvas();
-        g = canvas.getGraphics2D();
+        g = canvas.getGraphics2D(); // podemos usar graphics
         g.setColor(new Color(0, 0, 0, 0));
         g.fillRect(0, 0, w, h);
         Font f = Font.createFont(Font.TRUETYPE_FONT, new File("fonts/matrix.ttf"));
