@@ -78,7 +78,7 @@ public class Nivel4 {
         hilo.start();
     }
 
-    public void añadirSpritesMapa(CapaSprites sprites) throws IOException {
+    public void añadirSpritesMapa(CapaSprites sprites, Graphics g) throws IOException {
         int y = -2000;
         this.imagen = ImageIO.read(new File("img/letrasGreen.png"));
         this.spritesMap.put('a', SpritesLetras.generarLetra_a(sprites, imagen, y));
@@ -143,6 +143,8 @@ public class Nivel4 {
         this.spritesMap.put('8', SpritesLetras.generarLetra_8(sprites, imagen, y));
         this.spritesMap.put('9', SpritesLetras.generarLetra_9(sprites, imagen, y));
         this.spritesMap.put('0', SpritesLetras.generarLetra_0(sprites, imagen, y));
+        this.imagen = ImageIO.read(new File("img/nivel4vidas3.png"));
+        g.drawImage(imagen, 0, 20, width, height, null);
 
     }
 

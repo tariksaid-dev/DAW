@@ -209,9 +209,8 @@ public class App {
                     Cinematica2.primeraPantalla(g, jugador, sprites);
 
                     Nivel2 nb = new Nivel2();
-                    nb.añadirSpritesMapa(sprites);
+                    nb.añadirSpritesMapa(sprites, g);
                     nb.contador(g, nb, t);
-                    nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
                         nb.actuar(sprites, t, g);
@@ -244,9 +243,8 @@ public class App {
                     Cinematica3.primeraPantalla(g, jugador, sprites);
 
                     Nivel3 nb = new Nivel3();
-                    nb.añadirSpritesMapa(sprites);
+                    nb.añadirSpritesMapa(sprites, g);
                     nb.contador(g, nb, t);
-                    nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
                         nb.actuar(sprites, t, g);
@@ -279,9 +277,8 @@ public class App {
                     Cinematica4.primeraPantalla(g, jugador, sprites);
 
                     Nivel4 nb = new Nivel4();
-                    nb.añadirSpritesMapa(sprites);
+                    nb.añadirSpritesMapa(sprites, g);
                     nb.contador(g, nb, t);
-                    nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
                         nb.actuar(sprites, t, g);
@@ -315,7 +312,6 @@ public class App {
                     Nivel5 nb = new Nivel5();
                     nb.añadirSpritesMapa(sprites);
                     nb.contador(g, nb, t);
-                    nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
                         nb.actuar(sprites, t, g);
