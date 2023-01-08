@@ -190,7 +190,7 @@ public class Nivel5 {
     }
 
     private int ejeXAleatorio() {
-        return new Random().nextInt(10, this.width - 10);
+        return new Random().nextInt(10, this.width - 30);
     }
 
     // Adaptado para más cantidad de letras
