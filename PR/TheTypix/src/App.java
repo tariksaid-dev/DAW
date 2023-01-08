@@ -310,7 +310,6 @@ public class App {
                 try {
                     // NIVEL5
                     Cinematica5.primeraPantalla(g, jugador, sprites);
-
                     Nivel5 nb = new Nivel5();
                     nb.añadirSpritesMapa(sprites);
                     nb.contador(g, nb, t);
@@ -321,15 +320,17 @@ public class App {
                         c.esperarSiguienteFrame();
                     }
                     if (nb.getVidas() > 0) {
-                        FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasGanado.png")), 500, 400, 30);
+                        FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasGanado.png")), 500, 400,
+                                30);
                         CinematicaFinal.primeraPantalla(g, jugador, sprites);
-                        CinematicaFinal.segundaPantalla(g, jugador, sprites);
                     } else {
                         FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasPerdido.png")), 500,
                                 400, 30);
                     }
                     Thread.sleep(200);
                     nb.clearScreen(g, sprites);
+
+                    CinematicaFinal.primeraPantalla(g, jugador, sprites);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

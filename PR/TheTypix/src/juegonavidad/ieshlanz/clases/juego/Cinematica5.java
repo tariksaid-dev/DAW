@@ -50,10 +50,10 @@ public class Cinematica5 {
                 new Rectangle(0, 0, fondo2.getWidth(null), height),
                 0, 0);
 
-        String texto2 = "Vaya, así que tu eres el el-egido, ¿eh? Podrías haberte quedado tranquilo en la m-atrix que hice para ti, pero no, tenías que intentar destruirlo todo. ";
+        String texto2 = "Vaya, así que tu eres el el-egido, ¿eh? Podrías haberte quedado tranquilo en la ma-trix que hice para ti, pero   no, tenías que intentar destruirlo todo. ";
         char[] texto2C = texto2.toCharArray();
         anchoActual = 0;
-        anchuraMáxima = 680;
+        anchuraMáxima = 690;
         x = 690;
         y = 350;
         for (char caracter : texto2C) {

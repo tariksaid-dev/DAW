@@ -11,11 +11,9 @@ public class CinematicaFinal {
     private static int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 
     public static void primeraPantalla(Graphics g, String jugador, CapaSprites sprites) throws Exception {
+        int tiempoLetras = 20;
         Image fondo1 = ImageIO.read(new File("img/fondo1_conejo.png"));
         Image fondo2 = ImageIO.read(new File("img/fondo1_villain.png"));
-        // Image black = ImageIO.read(new File("img/justBlack.png"));
-        // FadeIn.efectoFadeout(g, black.getScaledInstance(2000, 12000,
-        // Image.SCALE_FAST), 0, 0, 100);
         Sprite mecanografo = sprites.crearSprite(
                 fondo2,
                 new Rectangle(0, 0, fondo2.getWidth(null), height),
@@ -24,13 +22,13 @@ public class CinematicaFinal {
         char[] texto1C = texto1.toCharArray();
         FontMetrics fm = g.getFontMetrics();
         int anchoActual = 0;
-        int anchuraMáxima = 672;
-        int x = 700;
+        int anchuraMáxima = 680;
+        int x = 690;
         int y = 350;
         for (char caracter : texto1C) {
             int anchoCaracter = fm.charWidth(caracter);
             if (anchoActual + anchoCaracter > anchuraMáxima) {
-                x = 700;
+                x = 690;
                 y += 50;
                 anchoActual = 0;
             } else {
@@ -39,11 +37,10 @@ public class CinematicaFinal {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
         }
 
         Thread.sleep(4000);
-
         g.clearRect(0, 0, width, height);
         sprites.eliminarSprite(mecanografo);
 
@@ -52,16 +49,17 @@ public class CinematicaFinal {
                 new Rectangle(0, 0, fondo1.getWidth(null), height),
                 0, 0);
 
-        String texto2 = "Maravilloso, " + jugador + ", has conseguido derrotar a Mecanógrafo. ¡Enhorabuena!";
+        String texto2 = "Maravilloso, " + jugador
+                + ", has de-rrotado al Mecanógrafo y la humanidad puede volver a la realidad. ¡Enhorabuena!";
         char[] texto2C = texto2.toCharArray();
         anchoActual = 0;
-        anchuraMáxima = 672;
-        x = 700;
+        anchuraMáxima = 680;
+        x = 690;
         y = 350;
         for (char caracter : texto2C) {
             int anchoCaracter = fm.charWidth(caracter);
             if (anchoActual + anchoCaracter > anchuraMáxima) {
-                x = 700;
+                x = 690;
                 y += 50;
                 anchoActual = 0;
             } else {
@@ -70,15 +68,11 @@ public class CinematicaFinal {
 
             g.drawChars(new char[] { caracter }, 0, 1, x, y);
             x += fm.charWidth(caracter);
-            Thread.sleep(10);
+            Thread.sleep(tiempoLetras);
         }
 
         Thread.sleep(4000);
         g.clearRect(0, 0, width, height);
         sprites.eliminarSprite(conejo);
-    }
-
-    public static void segundaPantalla(Graphics g, String jugador, CapaSprites sprites) throws Exception {
-        // THE END
     }
 }
