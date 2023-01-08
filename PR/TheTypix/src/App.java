@@ -26,11 +26,15 @@ public class App {
         String jugador = null;
         int dificultad = 1;
         boolean juego = true;
+        boolean gameOver = false;
         ArchivoMP3 musica = new ArchivoMP3("musica/clubbedToDeath.mp3");
         Reproductor rep = new Reproductor(musica, false, false);
 
+        t.setVisible(false);
+
         while (juego) {
             rep.play();
+            gameOver = false;
 
             // ALGORITMO MATRIX
             Thread hilo = new Thread() {
@@ -63,7 +67,6 @@ public class App {
                     Thread.sleep(150);
                     c.esperarSiguienteFrame();
                     seguir = true;
-                    System.out.println("traza2");
                     pab.borrar(sprites);
                     the.borrar(sprites);
                     matrix.borrar(sprites);
@@ -156,7 +159,6 @@ public class App {
 
                 }
                 hilo.stop();
-                System.out.println("hilo stop post menu principal");
                 g.clearRect(0, 0, (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(),
                         (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight());
             } catch (Exception e) {
@@ -170,19 +172,12 @@ public class App {
                     Cinematica1.segundaPantalla(g, jugador, sprites);
 
                     NivelBase nb = new NivelBase();
-                    System.out.println(Thread.activeCount() + "hilos activos, línea 178");
-                    nb.añadirSpritesMapa(sprites);
+                    nb.añadirSpritesMapa(sprites, g);
                     nb.contador(g, nb, t);
-                    nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
-                        if (nb.getVidas() == 2) {
-                            nb.FondoVidas(g);
-                        } else if (nb.getVidas() == 1) {
-                            nb.FondoVidas(g);
-                        }
                         // System.out.println(Thread.activeCount());
-                        nb.actuar(sprites, t);
+                        nb.actuar(sprites, t, g);
                         c.esperarSiguienteFrame();
                     }
                     if (nb.getVidas() > 0) {
@@ -197,6 +192,7 @@ public class App {
                     } else {
                         FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasPerdido.png")), 500,
                                 400, 30);
+                        gameOver = true;
                     }
                     Thread.sleep(200);
                     nb.clearScreen(g, sprites);
@@ -206,7 +202,7 @@ public class App {
             }
 
             // NIVEL2
-            if (ElegirNivel.getOption() == 2 || dificultad == 2) {
+            if ((ElegirNivel.getOption() == 2 || dificultad == 2) && !gameOver) {
                 try {
                     Cinematica2.primeraPantalla(g, jugador, sprites);
 
@@ -216,12 +212,7 @@ public class App {
                     nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
-                        if (nb.getVidas() == 2) {
-                            nb.FondoVidas(g);
-                        } else if (nb.getVidas() == 1) {
-                            nb.FondoVidas(g);
-                        }
-                        nb.actuar(sprites, t);
+                        nb.actuar(sprites, t, g);
                         c.esperarSiguienteFrame();
                     }
                     if (nb.getVidas() > 0) {
@@ -236,6 +227,7 @@ public class App {
                     } else {
                         FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasPerdido.png")), 500,
                                 400, 30);
+                        gameOver = true;
                     }
                     Thread.sleep(200);
                     nb.clearScreen(g, sprites);
@@ -245,7 +237,7 @@ public class App {
             }
 
             // NIVEL3
-            if (ElegirNivel.getOption() == 3 || dificultad == 3) {
+            if ((ElegirNivel.getOption() == 3 || dificultad == 3) && !gameOver) {
                 try {
                     Cinematica3.primeraPantalla(g, jugador, sprites);
 
@@ -255,12 +247,7 @@ public class App {
                     nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
-                        if (nb.getVidas() == 2) {
-                            nb.FondoVidas(g);
-                        } else if (nb.getVidas() == 1) {
-                            nb.FondoVidas(g);
-                        }
-                        nb.actuar(sprites, t);
+                        nb.actuar(sprites, t, g);
                         c.esperarSiguienteFrame();
                     }
                     if (nb.getVidas() > 0) {
@@ -275,6 +262,7 @@ public class App {
                     } else {
                         FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasPerdido.png")), 500,
                                 400, 30);
+                        gameOver = true;
                     }
                     Thread.sleep(200);
                     nb.clearScreen(g, sprites);
@@ -283,7 +271,7 @@ public class App {
                 }
             }
 
-            if (ElegirNivel.getOption() == 4 || dificultad == 4) {
+            if ((ElegirNivel.getOption() == 4 || dificultad == 4) && !gameOver) {
                 try {
                     // NIVEL4
                     Cinematica4.primeraPantalla(g, jugador, sprites);
@@ -294,12 +282,7 @@ public class App {
                     nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
-                        if (nb.getVidas() == 2) {
-                            nb.FondoVidas(g);
-                        } else if (nb.getVidas() == 1) {
-                            nb.FondoVidas(g);
-                        }
-                        nb.actuar(sprites, t);
+                        nb.actuar(sprites, t, g);
                         c.esperarSiguienteFrame();
                     }
                     if (nb.getVidas() > 0) {
@@ -314,6 +297,7 @@ public class App {
                     } else {
                         FadeIn.efectoFadein(g, ImageIO.read(new File("img/hasPerdido.png")), 500,
                                 400, 30);
+                        gameOver = true;
                     }
                     Thread.sleep(200);
                     nb.clearScreen(g, sprites);
@@ -322,7 +306,7 @@ public class App {
                 }
             }
 
-            if (ElegirNivel.getOption() == 5 || dificultad == 5) {
+            if ((ElegirNivel.getOption() == 5 || dificultad == 5) && !gameOver) {
                 try {
                     // NIVEL5
                     Cinematica5.primeraPantalla(g, jugador, sprites);
@@ -333,12 +317,7 @@ public class App {
                     nb.FondoVidas(g);
                     nb.cazaLetras(t, sprites);
                     while (nb.getVidas() > 0 && !nb.isAcabado()) {
-                        if (nb.getVidas() == 2) {
-                            nb.FondoVidas(g);
-                        } else if (nb.getVidas() == 1) {
-                            nb.FondoVidas(g);
-                        }
-                        nb.actuar(sprites, t);
+                        nb.actuar(sprites, t, g);
                         c.esperarSiguienteFrame();
                     }
                     if (nb.getVidas() > 0) {
@@ -357,6 +336,7 @@ public class App {
             }
 
             try {
+                rep.stop();
                 FadeIn.efectoFadein(g, ImageIO.read(new File("img/gameOver.png")), 0, 0, 30);
                 Thread.sleep(5000);
                 g.clearRect(0, 0, 1920, 1080);

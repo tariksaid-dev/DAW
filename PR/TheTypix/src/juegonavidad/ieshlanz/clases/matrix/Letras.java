@@ -1,14 +1,12 @@
 package juegonavidad.ieshlanz.clases.matrix;
 
 import bpc.daw.consola.*;
-import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
 import javax.imageio.ImageIO;
 import java.util.*;
 import java.util.List;
 import java.io.*;
-import java.text.RuleBasedCollator;
 import java.awt.*;
 
 public class Letras {

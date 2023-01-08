@@ -22,7 +22,7 @@ public class Nivel4 {
         vidas = 3;
     }
 
-    public void actuar(CapaSprites sprites, Teclado t) throws Exception {
+    public void actuar(CapaSprites sprites, Teclado t, Graphics g) throws Exception {
         if (t.teclaPulsada(KeyEvent.VK_ESCAPE)) {
             NivelBase.pausa = true;
             Thread.sleep(7000);
@@ -33,6 +33,20 @@ public class Nivel4 {
             if (v.getY() > height) {
                 v.setPosicion(this.ejeXAleatorio(), this.ejeYAleatorio());
                 vidas--;
+                try {
+                    if (vidas == 2) {
+                        this.imagen = ImageIO.read(new File("img/nivel4vidas2.png"));
+                        g.drawImage(this.imagen, 0, 20, width, height, null);
+                    } else if (vidas == 1) {
+                        this.imagen = ImageIO.read(new File("img/nivel4vidas1.png"));
+                        g.drawImage(this.imagen, 0, 20, width, height, null);
+                    } else if (vidas == 0) {
+                        this.imagen = ImageIO.read(new File("img/nivel4vidas0.png"));
+                        g.drawImage(this.imagen, 0, 20, width, height, null);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -134,6 +148,7 @@ public class Nivel4 {
 
     public void FondoVidas(Graphics g) throws IOException {
         switch (vidas) {
+            case 0 -> this.imagen = ImageIO.read(new File("img/nivel4vidas0.png"));
             case 1 -> this.imagen = ImageIO.read(new File("img/nivel4vidas1.png"));
             case 2 -> this.imagen = ImageIO.read(new File("img/nivel4vidas2.png"));
             case 3 -> this.imagen = ImageIO.read(new File("img/nivel4vidas3.png"));

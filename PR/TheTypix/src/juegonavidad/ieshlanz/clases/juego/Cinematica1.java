@@ -41,7 +41,7 @@ public class Cinematica1 {
             g.drawChars(texto4, 0, i, 200, 200);
             Thread.sleep(50);
         }
-        Thread.sleep(1000);
+        Thread.sleep(3000);
     }
 
     public static void segundaPantalla(Graphics g, String jugador, CapaSprites sprites) throws Exception {

@@ -18,5 +18,5 @@ La temática del juego está basada en la película "The Matrix", con una histor
 
 El juego está hecho integramente con Java, la librería Swing y una consola personalizada hecha por el IES Hlanz. Para guardar y seleccionar los niveles, usa la librería "gson" de Google, leyendo y escribiendo sobre un archivo JSON el cual admite hasta 9 partidas guardadas a la vez. 
 
-"The Typix" ha sido realizado como proyecto académico y presenta carencias de 'QoL' en su jugabilidad, ya que no está diseñado para ser jugado con asiduedad.
+"The Typix" ha sido realizado como proyecto académico y presenta carencias de 'QoL' en su jugabilidad, como por ejemplo en su resolución, que está diseñada para ser 1920x1080, y cualquier otro parámetro nos generará errores de posición de elementos.  
 

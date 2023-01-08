@@ -23,7 +23,7 @@ public class NivelBase {
         vidas = 3;
     }
 
-    public void actuar(CapaSprites sprites, Teclado t) throws Exception {
+    public void actuar(CapaSprites sprites, Teclado t, Graphics g) throws IOException, InterruptedException {
         if (t.teclaPulsada(KeyEvent.VK_ESCAPE)) {
             NivelBase.pausa = true;
             Thread.sleep(7000);
@@ -34,6 +34,20 @@ public class NivelBase {
             if (v.getY() > height) {
                 v.setPosicion(this.ejeXAleatorio(), this.ejeYAleatorio());
                 vidas--;
+                try {
+                    if (vidas == 2) {
+                        this.imagen = ImageIO.read(new File("img/nivel1vidas2.png"));
+                        g.drawImage(this.imagen, 0, 20, width, height, null);
+                    } else if (vidas == 1) {
+                        this.imagen = ImageIO.read(new File("img/nivel1vidas1.png"));
+                        g.drawImage(this.imagen, 0, 20, width, height, null);
+                    } else if (vidas == 0) {
+                        this.imagen = ImageIO.read(new File("img/nivel1vidas0.png"));
+                        g.drawImage(this.imagen, 0, 20, width, height, null);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -65,7 +79,7 @@ public class NivelBase {
         hilo.start();
     }
 
-    public void añadirSpritesMapa(CapaSprites sprites) throws IOException {
+    public void añadirSpritesMapa(CapaSprites sprites, Graphics g) throws IOException {
 
         int y = -500;
         this.imagen = ImageIO.read(new File("img/letrasGreen.png"));
@@ -78,15 +92,12 @@ public class NivelBase {
         this.spritesMap.put('j', SpritesLetras.generarLetra_j(sprites, imagen, y));
         this.spritesMap.put('k', SpritesLetras.generarLetra_k(sprites, imagen, y));
         this.spritesMap.put('l', SpritesLetras.generarLetra_l(sprites, imagen, y));
+        this.imagen = ImageIO.read(new File("img/nivel1vidas3.png"));
+        g.drawImage(this.imagen, 0, 20, width, height, null);
     }
 
     public void FondoVidas(Graphics g) throws IOException {
-        switch (vidas) {
-            case 1 -> this.imagen = ImageIO.read(new File("img/nivel1vidas1.png"));
-            case 2 -> this.imagen = ImageIO.read(new File("img/nivel1vidas2.png"));
-            case 3 -> this.imagen = ImageIO.read(new File("img/nivel1vidas3.png"));
-        }
-        ;
+        this.imagen = ImageIO.read(new File("img/nivel1vidas3.png"));
         g.drawImage(imagen, 0, 20, width, height, null);
     }
 
