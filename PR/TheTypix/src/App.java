@@ -19,7 +19,6 @@ public class App {
         CapaCanvas canvas = c.getCapaCanvas();
         CapaSprites sprites = c.getCapaSprites();
         Graphics g = canvas.getGraphics();
-        Rain r = new Rain();
         Title the = null;
         Title matrix = null;
         PressAnyButton pab = null;
@@ -40,8 +39,8 @@ public class App {
             Thread hilo = new Thread() {
                 public void run() {
                     try {
-                        r.dibujar(g);
-                    } catch (InterruptedException e) {
+                        EfectoMatrix.matrix(g);
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
@@ -50,6 +49,7 @@ public class App {
 
             // TITULOS
             try {
+                Thread.sleep(5000);
                 Image foto = ImageIO.read(new File("img/title.png"));
                 the = new Title(sprites, foto, 0, ct);
                 matrix = new Title(sprites, foto, 1, ct);
@@ -64,7 +64,7 @@ public class App {
 
                 boolean seguir = false;
                 if (t.leerCaracter() == (KeyEvent.VK_ENTER)) {
-                    Thread.sleep(150);
+                    Thread.sleep(250);
                     c.esperarSiguienteFrame();
                     seguir = true;
                     pab.borrar(sprites);
@@ -109,7 +109,6 @@ public class App {
                         l.borrarTodasLasLetras(sprites);
                     }
                     Guardar.guardar(l.getNombre(), 1);
-                    g.setColor(Color.green);
                     jugador = l.getNombre();
                     dificultad = 1;
                     // hilo.stop();
@@ -118,9 +117,10 @@ public class App {
                     // Cargar Partida
                     Guardar.leer();
                     hilo.stop();
+                    g.setFont(new Font("mono", Font.BOLD, 44));
+                    g.setColor(Color.green);
                     g.clearRect(0, 0, (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(),
                             (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight());
-                    g.setColor(Color.green);
                     Selector s3 = new Selector(sprites, foto4);
                     Image foto8 = ImageIO.read(new File("img/loadScreen.png"));
                     MenuCargar mc = new MenuCargar(sprites, foto8);
@@ -159,6 +159,8 @@ public class App {
 
                 }
                 hilo.stop();
+                g.setFont(new Font("mono", Font.BOLD, 44));
+                g.setColor(Color.green);
                 g.clearRect(0, 0, (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(),
                         (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight());
             } catch (Exception e) {
@@ -329,8 +331,6 @@ public class App {
                     }
                     Thread.sleep(200);
                     nb.clearScreen(g, sprites);
-
-                    CinematicaFinal.primeraPantalla(g, jugador, sprites);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -341,6 +341,8 @@ public class App {
                 FadeIn.efectoFadein(g, ImageIO.read(new File("img/gameOver.png")), 0, 0, 30);
                 Thread.sleep(5000);
                 g.clearRect(0, 0, 1920, 1080);
+                Guardar.nombre.clear();
+                Guardar.dificultad.clear();
             } catch (Exception e) {
                 e.printStackTrace();
             }

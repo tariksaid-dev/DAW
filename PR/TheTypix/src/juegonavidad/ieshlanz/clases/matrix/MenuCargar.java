@@ -29,13 +29,14 @@ public class MenuCargar {
         this.image = imagen;
     }
 
-    public void actuar(Teclado t, Selector s, CapaSprites sprites) throws IOException {
+    public void actuar(Teclado t, Selector s, CapaSprites sprites) throws Exception {
         // aqui crearemos el loop con el selector y la opción que cargará al dar a enter
         if (this.numPartidasGuardadas == 0) {
             this.volver(t);
         } else {
             this.movimientoSelector(t, s);
             if (t.teclaPulsada(KeyEvent.VK_ENTER)) {
+                Thread.sleep(100);
                 jugador = Guardar.nombre.get(option);
                 dificultad = Guardar.dificultad.get(option);
                 this.done = true;
@@ -71,7 +72,10 @@ public class MenuCargar {
             int contador2 = 1;
             for (int i = 0; i < 3 && contador < this.numPartidasGuardadas; i++) {
                 for (int j = 0; j < 3 && contador < this.numPartidasGuardadas; j++) {
-                    g.drawString(contador2 + ". " + Guardar.nombre.get(contador), this.ejeX.get(j), this.ejeY.get(i));
+                    g.drawString(contador2 + ". " + Guardar.nombre.get(contador), this.ejeX.get(j) - 50,
+                            this.ejeY.get(i));
+                    g.drawString("Nivel: " + Guardar.dificultad.get(contador).intValue(), this.ejeX.get(j) - 50,
+                            this.ejeY.get(i) + 50);
                     contador++;
                     contador2++;
                 }

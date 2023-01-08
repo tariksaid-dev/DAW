@@ -157,16 +157,13 @@ public class Letras {
             this.antiSolapamiento();
 
             if (this.posicionPuntero > 0) {
-                System.out.println("traza delete");
                 this.borrarLetra(sprite);
                 this.posicionPuntero--;
                 this.nombre = this.nombre.substring(0, this.nombre.length() - 1);
             } else if (this.posicionPuntero == 0) {
-                System.out.println("traza delete pos 0");
                 this.borrarLetra(sprite);
                 this.nombre = "";
             } else if (this.posicionPuntero >= 7) {
-                System.out.println("traza delete pos 7");
                 this.borrarLetra(sprite);
                 this.posicionPuntero = 6;
             }
@@ -573,10 +570,6 @@ public class Letras {
                 this.nombre += "0";
             }
         }
-
-        System.out.println(this.caracteres.size());
-        System.out.println(this.getNombre());
-        System.out.println(this.getPosicionPuntero());
     }
 
     private void nuevaLetra(CapaSprites sprite) throws Exception {

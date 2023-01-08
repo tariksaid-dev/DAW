@@ -43,7 +43,7 @@ public class MainMenu {
         }
         if (t.teclaPulsada(KeyEvent.VK_ENTER)) {
             this.enter();
-            Thread.sleep(5);
+            Thread.sleep(50);
         }
     }
 
