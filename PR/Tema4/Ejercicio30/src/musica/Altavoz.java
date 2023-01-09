@@ -6,7 +6,7 @@ public class Altavoz {
     private int volumen;
 
     public Altavoz() {
-        this.volumen = 0;
+        this.volumen = VOL_MIN;
     }
 
     public void ponerVolumenMaximo() {
@@ -14,7 +14,13 @@ public class Altavoz {
     }
 
     public void setVolumen(int v) {
-        this.volumen = v;
+        if (v < VOL_MIN) {
+            this.volumen = VOL_MIN;
+        } else if (v > VOL_MAX) {
+            this.volumen = VOL_MAX;
+        } else {
+            this.volumen = v;
+        }
     }
 
     public int getVolumen() {
@@ -31,5 +37,11 @@ public class Altavoz {
             barra += "-";
         }
         return "[" + this.volumen + "] " + barra;
+    }
+
+    public static void main(String[] args) {
+        Altavoz a = new Altavoz();
+        a.setVolumen(253);
+        System.out.println(a.toString());
     }
 }
