@@ -23,11 +23,11 @@ public class App {
 
             // probabilidad de que se reinicia y con ello la cantidad de carácteres en la
             // parte superior de la pantalla, menos fiel al original
-            if (posicion_y[i] * 20 > 100 && Math.random() < 0.05) { // aumenta la
+            // if (posicion_y[i] * 20 > 100 && Math.random() < 0.05) { // aumenta la
 
-                // apenas se reinicia y fomenta las columnas largas y
-                // estilizadas
-                // if (posicion_y[i] > 100 + Math.random() * 5000) {
+            // apenas se reinicia y fomenta las columnas largas y
+            // estilizadas
+            if (posicion_y[i] > 100 + Math.random() * 5000) {
                 posicion_y[i] = 0;
             } else {
                 posicion_y[i] = posicion_y[i] + 1;
