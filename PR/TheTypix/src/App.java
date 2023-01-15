@@ -98,6 +98,8 @@ public class App {
 
                     Image foto6 = ImageIO.read(new File("img/letrasGreen.png"));
                     Letras l = new Letras(sprites, foto6);
+                    g.setFont(new Font("mono", Font.BOLD, 44));
+                    g.setColor(Color.green);
 
                     while (l.isDone() == false) {
                         c.esperarSiguienteFrame();
@@ -115,12 +117,12 @@ public class App {
 
                 } else if (mm.getOption() == 1) {
                     // Cargar Partida
-                    Guardar.leer();
                     hilo.stop();
                     g.setFont(new Font("mono", Font.BOLD, 44));
                     g.setColor(Color.green);
                     g.clearRect(0, 0, (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(),
                             (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+                    Guardar.leer();
                     Selector s3 = new Selector(sprites, foto4);
                     Image foto8 = ImageIO.read(new File("img/loadScreen.png"));
                     MenuCargar mc = new MenuCargar(sprites, foto8);

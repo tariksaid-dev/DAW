@@ -10,7 +10,7 @@ public record Empleado(String nombre, List<Empleado> subordinados) {
         mostrarSubordinados(1);
     }
 
-    public void mostrarSubordinados(int tabs) {
+    private void mostrarSubordinados(int tabs) {
         for (Empleado e : subordinados) {
             for (int i = 0; i < tabs; i++) {
                 System.out.print("-");

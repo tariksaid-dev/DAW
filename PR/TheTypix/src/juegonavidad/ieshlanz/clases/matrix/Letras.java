@@ -153,6 +153,8 @@ public class Letras {
     }
 
     public void actuar(Teclado t, Image imagen, CapaSprites sprite) throws Exception {
+        System.out.println("posicion puntero: " + posicionPuntero);
+        System.out.println(caracteres);
         if (t.teclaPulsada(KeyEvent.VK_BACK_SPACE)) {
             this.antiSolapamiento();
 
@@ -584,7 +586,7 @@ public class Letras {
         }
         this.posicionPuntero++;
         if (this.posicionPuntero >= 7) {
-            this.posicionPuntero = 6;
+            this.posicionPuntero = 7;
         }
     }
 
@@ -606,8 +608,8 @@ public class Letras {
 
     private void borrarLetra(CapaSprites sprites) {
         if (this.caracteres.size() > 0) {
-            sprites.eliminarSprite(this.caracteres.get(this.posicionPuntero));
-            caracteres.remove(this.posicionPuntero);
+            sprites.eliminarSprite(this.caracteres.get(this.posicionPuntero - 1));
+            caracteres.remove(this.posicionPuntero - 1);
         }
     }
 
