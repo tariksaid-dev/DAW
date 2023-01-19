@@ -22,7 +22,6 @@ public class CatalagoTitulosArchivos implements CatalogoTitulos {
     private Titulo extraerTitulo(String linea) {
         String[] campos = linea.split(";");
         return new TituloArchivo(campos[0], campos[1], campos[2], Estado.values()[Integer.parseInt(campos[3])]);
-
     }
 
     @Override
