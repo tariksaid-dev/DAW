@@ -1,16 +1,17 @@
 package com.ieshlanz.titulos.clases;
 
-import java.io.*;
 import java.util.*;
+import java.io.*;
+import com.google.gson.Gson;
 
-public class CatalagoTitulosArchivos implements CatalogoTitulos {
+public class CatalogoTitulosArchivosJSON implements CatalogoTitulos {
     private String ruta;
     private List<Titulo> titulos;
 
-    public CatalagoTitulosArchivos(String ruta) throws IOException {
+    public CatalogoTitulosArchivosJSON(String ruta) throws IOException {
         this.ruta = ruta;
         try (BufferedReader br = new BufferedReader(new FileReader(ruta))) {
-            titulos = new ArrayList<Titulo>();
+            titulos = new ArrayList<>();
             String linea;
             while ((linea = br.readLine()) != null) {
                 Titulo titulo = extraerTitulo(linea);
@@ -20,21 +21,21 @@ public class CatalagoTitulosArchivos implements CatalogoTitulos {
     }
 
     private Titulo extraerTitulo(String linea) {
-        String[] campos = linea.split(";");
-        return new TituloArchivo(campos[0], campos[1], campos[2], Estado.values()[Integer.parseInt(campos[3])]);
-
+        Gson gson = new Gson();
+        return gson.fromJson(linea, TituloArchivo.class);
     }
 
     @Override
     public List<Titulo> getTitulos() {
-        return new ArrayList<Titulo>(titulos);
+        return new ArrayList<>(titulos);
     }
 
     @Override
     public boolean guardar() {
+        Gson gson = new Gson();
         try (PrintWriter pw = new PrintWriter(ruta)) {
             for (Titulo t : titulos) {
-                pw.println(t);
+                pw.println(gson.toJson(t));
             }
             return true;
         } catch (IOException e) {
@@ -49,13 +50,8 @@ public class CatalagoTitulosArchivos implements CatalogoTitulos {
         return guardar();
     }
 
-    @Override
-    public Titulo getTitulo(String dni) {
-        for (Titulo t : titulos) {
-            if (t.getDNI().equals(dni)) {
-                return t;
-            }
-        }
-        throw new NoSuchElementException("No se ha encontrado el título con DNI " + dni);
+    public String toJSON() {
+        Gson gson = new Gson();
+        return gson.toJson(titulos);
     }
 }

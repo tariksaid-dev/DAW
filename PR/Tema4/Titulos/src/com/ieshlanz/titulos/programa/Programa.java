@@ -2,7 +2,6 @@ package com.ieshlanz.titulos.programa;
 
 import com.ieshlanz.titulos.clases.*;
 import java.util.*;
-
 import com.ieshlanz.titulos.clases.CatalagoTitulosArchivos;
 
 public class Programa {
@@ -45,6 +44,18 @@ public class Programa {
             case 4:
                 cta.guardar();
                 System.out.println("Hasta luego");
+                break;
+            case 5:
+                CatalogoTitulosArchivosJSON ctaJSON = new CatalogoTitulosArchivosJSON("titulos.json");
+                System.out.println("Introduce el DNI del alumno");
+                dni = new Scanner(System.in).nextLine();
+                System.out.println("Introduce el nombre del alumno");
+                nombre = new Scanner(System.in).nextLine();
+                System.out.println("Introduce el nombre del estudio");
+                estudio = new Scanner(System.in).nextLine();
+                System.out.println("Introduce el estado del título");
+                estado = Estado.valueOf(new Scanner(System.in).nextLine());
+                ctaJSON.añadirTitulo(dni, nombre, estudio, estado);
                 break;
             default:
                 System.out.println("Opción incorrecta");
