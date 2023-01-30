@@ -1,5 +1,6 @@
 import bpc.daw.consola.*;
 import java.util.*;
+import java.time.*;
 
 public class Ejercicios {
 
@@ -8,13 +9,14 @@ public class Ejercicios {
     }
 
     public class TecladoJava implements Teclado {
+
+        @Override
         public void escribirTexto(String mensaje) {
             System.out.println(mensaje);
         }
     }
 
     public class TecladoConsolaDAW implements Teclado {
-
         private CapaTexto ct;
 
         public TecladoConsolaDAW(CapaTexto ct) {
@@ -29,7 +31,7 @@ public class Ejercicios {
     public class Trabajador {
         private String dni;
         private String nombre;
-        int sueldo;
+        protected int sueldo;
 
         public Trabajador(String nombre, int sueldo, int numDNI, char letraDNI) {
             this.nombre = nombre;
@@ -52,11 +54,12 @@ public class Ejercicios {
 
     public class TrabajadorTecleante extends Trabajador {
         private int pulsacionesMinuto;
-        Teclado teclado;
+        protected Teclado teclado;
 
         public TrabajadorTecleante(String n, int s, int ndni, char ldni, int ppm) {
             super(n, s, ndni, ldni);
             this.pulsacionesMinuto = ppm;
+            this.teclado = null;
         }
 
         public void setTeclado(Teclado t) {
@@ -100,8 +103,8 @@ public class Ejercicios {
         }
 
         public void escribirInforme(String t) {
-            teclado.escribirTexto(t);
+            LocalDateTime l = LocalDateTime.now();
+            teclado.escribirTexto(t + " " + l.toString());
         }
     }
-
 }
