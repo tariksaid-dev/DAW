@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Torre &#8211; Tarik-Shop</title>
-	<atom:link href="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/categoria-producto/hardware/torre-hardware/feed/" rel="self" type="application/rss+xml" />
-	<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/</link>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../../../../index.html</link>
 	<description></description>
 	<lastBuildDate>Thu, 02 Feb 2023 13:25:11 +0000</lastBuildDate>
 	<language>es</language>
@@ -21,18 +21,18 @@
 	<generator>https://wordpress.org/?v=6.1.1</generator>
 	<item>
 		<title>Ordenador 1</title>
-		<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/ordenador-1/</link>
-					<comments>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/ordenador-1/#respond</comments>
+		<link>./../../../../producto/ordenador-1/index.html</link>
+					<comments>./../../../../producto/ordenador-1/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[tariksaid-dev]]></dc:creator>
 		<pubDate>Thu, 02 Feb 2023 13:22:22 +0000</pubDate>
-				<guid isPermaLink="false">http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/?post_type=product#038;p=21</guid>
+				<guid isPermaLink="false">./../../../../index.html?post_type=product#038;p=21</guid>
 
 					<description><![CDATA[Torre con todo incluido.]]></description>
-										<content:encoded><![CDATA[<p><img decoding="async" class="alignnone size-medium wp-image-22" src="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-300x300.jpg" alt="" width="300" height="300" srcset="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-300x300.jpg 300w, http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-150x150.jpg 150w, http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-768x768.jpg 768w, http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-324x324.jpg 324w, http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-416x416.jpg 416w, http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-100x100.jpg 100w, http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+										<content:encoded><![CDATA[<p><img decoding="async" class="alignnone size-medium wp-image-22" src="./../../../../wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-300x300.jpg" alt="" width="300" height="300" srcset="./../../../../wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-300x300.jpg 300w, ./../../../../wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-150x150.jpg 150w, ./../../../../wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-768x768.jpg 768w, ./../../../../wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-324x324.jpg 324w, ./../../../../wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-416x416.jpg 416w, ./../../../../wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-100x100.jpg 100w, ./../../../../wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/ordenador-1/feed/</wfw:commentRss>
+					<wfw:commentRss>./../../../../producto/ordenador-1/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

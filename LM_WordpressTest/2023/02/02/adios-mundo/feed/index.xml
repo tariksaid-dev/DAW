@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comentarios en: Nueva torre disponible, lista para usar	</title>
-	<atom:link href="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2023/02/02/adios-mundo/feed/" rel="self" type="application/rss+xml" />
-	<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2023/02/02/adios-mundo/</link>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
 	<description></description>
 	<lastBuildDate>Fri, 03 Feb 2023 11:08:59 +0000</lastBuildDate>
 	<sy:updatePeriod>

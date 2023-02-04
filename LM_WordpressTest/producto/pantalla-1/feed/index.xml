@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comentarios en: Pantalla 1	</title>
-	<atom:link href="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/pantalla-1/feed/" rel="self" type="application/rss+xml" />
-	<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/pantalla-1/</link>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
 	<description></description>
 	<lastBuildDate>Thu, 02 Feb 2023 13:25:04 +0000</lastBuildDate>
 	<sy:updatePeriod>

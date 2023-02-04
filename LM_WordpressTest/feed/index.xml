@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Tarik-Shop</title>
-	<atom:link href="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/feed/" rel="self" type="application/rss+xml" />
-	<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/</link>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../index.html</link>
 	<description></description>
 	<lastBuildDate>Fri, 03 Feb 2023 11:09:20 +0000</lastBuildDate>
 	<language>es</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.1.1</generator>
 	<item>
 		<title>Nueva torre disponible, lista para usar</title>
-		<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2023/02/02/adios-mundo/</link>
-					<comments>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2023/02/02/adios-mundo/#respond</comments>
+		<link>./../2023/02/02/adios-mundo/index.html</link>
+					<comments>./../2023/02/02/adios-mundo/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[tariksaid-dev]]></dc:creator>
 		<pubDate>Thu, 02 Feb 2023 13:30:16 +0000</pubDate>
@@ -30,22 +30,22 @@
 		<category><![CDATA[ordenador-completo]]></category>
 		<category><![CDATA[nuevo]]></category>
 		<category><![CDATA[torre]]></category>
-		<guid isPermaLink="false">http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/?p=23</guid>
+		<guid isPermaLink="false">./../index.html?p=23</guid>
 
 					<description><![CDATA[¡Tenemos grandes noticias para los amantes de la tecnología! Acabamos de recibir una nueva torre de alta gama que es perfecta para aquellos que buscan un rendimiento sin igual. Con su diseño elegante y sus componentes de última generación, esta torre es una opción perfecta para juegos, edición de video y cualquier otra tarea exigente. [&#8230;]]]></description>
 										<content:encoded><![CDATA[
 <p>¡Tenemos grandes noticias para los amantes de la tecnología! Acabamos de recibir una nueva torre de alta gama que es perfecta para aquellos que buscan un rendimiento sin igual. Con su diseño elegante y sus componentes de última generación, esta torre es una opción perfecta para juegos, edición de video y cualquier otra tarea exigente. Estamos emocionados de poder ofrecerle esta nueva adición a nuestra amplia selección de hardware. ¡No pierdas la oportunidad de tener la máquina de tus sueños hoy mismo!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2023/02/02/adios-mundo/feed/</wfw:commentRss>
+					<wfw:commentRss>./../2023/02/02/adios-mundo/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Nuevas unidades de periféricos disponibles</title>
-		<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2022/12/22/hola-mundo/</link>
-					<comments>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2022/12/22/hola-mundo/#comments</comments>
+		<link>./../2022/12/22/hola-mundo/index.html</link>
+					<comments>./../2022/12/22/hola-mundo/index.html#comments</comments>
 		
 		<dc:creator><![CDATA[tariksaid-dev]]></dc:creator>
 		<pubDate>Thu, 22 Dec 2022 13:40:39 +0000</pubDate>
@@ -55,14 +55,14 @@
 		<category><![CDATA[perifericos]]></category>
 		<category><![CDATA[raton]]></category>
 		<category><![CDATA[teclado]]></category>
-		<guid isPermaLink="false">http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/?p=1</guid>
+		<guid isPermaLink="false">./../index.html?p=1</guid>
 
 					<description><![CDATA[¡Mejora tu experiencia de juego y trabajo con nuestros nuevos periféricos disponibles ahora en la tienda! Hemos añadido un ratón de alta precisión con programación personalizable, un teclado retroiluminado con teclas mecánicas y una pantalla curva ultrapanorámica para una inmersión total en el juego. Estos periféricos no solo son esenciales para tener una experiencia óptima, [&#8230;]]]></description>
 										<content:encoded><![CDATA[
 <p>¡Mejora tu experiencia de juego y trabajo con nuestros nuevos periféricos disponibles ahora en la tienda! Hemos añadido un ratón de alta precisión con programación personalizable, un teclado retroiluminado con teclas mecánicas y una pantalla curva ultrapanorámica para una inmersión total en el juego. Estos periféricos no solo son esenciales para tener una experiencia óptima, sino que también añadirán un toque de estilo a tu escritorio. ¡Actualiza tus herramientas y mejora tu rendimiento hoy mismo con nuestros periféricos de alta calidad!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2022/12/22/hola-mundo/feed/</wfw:commentRss>
+					<wfw:commentRss>./../2022/12/22/hola-mundo/feed/index.html</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

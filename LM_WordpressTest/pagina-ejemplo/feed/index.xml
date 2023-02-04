@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comentarios en: Página de ejemplo	</title>
-	<atom:link href="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/pagina-ejemplo/feed/" rel="self" type="application/rss+xml" />
-	<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/</link>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../../index.html</link>
 	<description></description>
 	<lastBuildDate>Thu, 22 Dec 2022 13:40:39 +0000</lastBuildDate>
 	<sy:updatePeriod>
