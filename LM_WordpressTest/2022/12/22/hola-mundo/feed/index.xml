@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comentarios en: Nuevas unidades de periféricos disponibles	</title>
-	<atom:link href="/2022/12/22/hola-mundo/feed/" rel="self" type="application/rss+xml" />
-	<link>/2022/12/22/hola-mundo/</link>
+	<atom:link href="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2022/12/22/hola-mundo/feed/" rel="self" type="application/rss+xml" />
+	<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2022/12/22/hola-mundo/</link>
 	<description></description>
 	<lastBuildDate>Fri, 03 Feb 2023 11:09:20 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,11 +20,11 @@
 	<item>
 		<title>
 		Por: Un comentarista de WordPress		</title>
-		<link>/2022/12/22/hola-mundo/#comment-1</link>
+		<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/2022/12/22/hola-mundo/#comment-1</link>
 
 		<dc:creator><![CDATA[Un comentarista de WordPress]]></dc:creator>
 		<pubDate>Thu, 22 Dec 2022 13:40:39 +0000</pubDate>
-		<guid isPermaLink="false">/?p=1#comment-1</guid>
+		<guid isPermaLink="false">http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/?p=1#comment-1</guid>
 
 					<description><![CDATA[Hola, esto es un comentario.
 Para empezar a moderar, editar y borrar comentarios, por favor, visita en el escritorio la pantalla de comentarios.

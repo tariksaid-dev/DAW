@@ -10,10 +10,10 @@
 	<channel>
 
 		<title>Tarik-Shop &#187; Todas las publicaciones</title>
-		<atom:link href="/forums/feed/" rel="self" type="application/rss+xml" />
-		<link>/forums/feed/</link>
+		<atom:link href="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/forums/feed/" rel="self" type="application/rss+xml" />
+		<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/forums/feed/</link>
 		<description></description>
-		<lastBuildDate>Sat, 04 Feb 2023 09:50:05 +0000</lastBuildDate>
+		<lastBuildDate>Sat, 04 Feb 2023 10:22:12 +0000</lastBuildDate>
 		<generator>https://bbpress.org/?v=2.6.9</generator>
 		<language>es</language>
 

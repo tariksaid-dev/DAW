@@ -9,8 +9,8 @@
 
 <channel>
 	<title>teclado &#8211; Tarik-Shop</title>
-	<atom:link href="/etiqueta-producto/teclado/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/etiqueta-producto/teclado/feed/" rel="self" type="application/rss+xml" />
+	<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/</link>
 	<description></description>
 	<lastBuildDate>Thu, 02 Feb 2023 13:13:13 +0000</lastBuildDate>
 	<language>es</language>
@@ -21,18 +21,18 @@
 	<generator>https://wordpress.org/?v=6.1.1</generator>
 	<item>
 		<title>Teclado 1</title>
-		<link>/producto/hoodie-with-logo/</link>
-					<comments>/producto/hoodie-with-logo/#respond</comments>
+		<link>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/hoodie-with-logo/</link>
+					<comments>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/hoodie-with-logo/#respond</comments>
 		
 		<dc:creator><![CDATA[tariksaid-dev]]></dc:creator>
 		<pubDate>Thu, 02 Feb 2023 13:09:45 +0000</pubDate>
-				<guid isPermaLink="false">/producto/hoodie-with-logo/</guid>
+				<guid isPermaLink="false">http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/hoodie-with-logo/</guid>
 
 					<description><![CDATA[Producto simple.]]></description>
 										<content:encoded><![CDATA[<p>Teclado 1, una opción genial.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/producto/hoodie-with-logo/feed/</wfw:commentRss>
+					<wfw:commentRss>http://https://tariksaid-dev.github.io/DAW1/LM_WordpressTest/producto/hoodie-with-logo/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
