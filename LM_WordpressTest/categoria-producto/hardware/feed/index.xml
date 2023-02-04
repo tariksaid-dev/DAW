@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Hardware &#8211; Tarik-Shop</title>
+	<atom:link href="/categoria-producto/hardware/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description></description>
+	<lastBuildDate>Thu, 02 Feb 2023 13:28:32 +0000</lastBuildDate>
+	<language>es</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Ordenador 1</title>
+		<link>/producto/ordenador-1/</link>
+					<comments>/producto/ordenador-1/#respond</comments>
+		
+		<dc:creator><![CDATA[tariksaid-dev]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2023 13:22:22 +0000</pubDate>
+				<guid isPermaLink="false">/?post_type=product#038;p=21</guid>
+
+					<description><![CDATA[Torre con todo incluido.]]></description>
+										<content:encoded><![CDATA[<p><img decoding="async" class="alignnone size-medium wp-image-22" src="/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-300x300.jpg" alt="" width="300" height="300" srcset="/wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-300x300.jpg 300w, /wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-150x150.jpg 150w, /wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-768x768.jpg 768w, /wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-324x324.jpg 324w, /wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-416x416.jpg 416w, /wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000-100x100.jpg 100w, /wp-content/uploads/2023/02/75480001-01-ryzen-7-4750g-torre-gaming-pc-ssd-hdd_1000x1000.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/producto/ordenador-1/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Pantalla 1</title>
+		<link>/producto/pantalla-1/</link>
+					<comments>/producto/pantalla-1/#respond</comments>
+		
+		<dc:creator><![CDATA[tariksaid-dev]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2023 13:20:32 +0000</pubDate>
+				<guid isPermaLink="false">/?post_type=product#038;p=19</guid>
+
+					<description><![CDATA[Buena pantalla]]></description>
+										<content:encoded><![CDATA[<p>Pantalla 1<img decoding="async" class="alignnone size-medium wp-image-20" src="/wp-content/uploads/2023/02/rqw-windowscolor-300x200.webp" alt="" width="300" height="200" srcset="/wp-content/uploads/2023/02/rqw-windowscolor-300x200.webp 300w, /wp-content/uploads/2023/02/rqw-windowscolor-768x512.webp 768w, /wp-content/uploads/2023/02/rqw-windowscolor-416x278.webp 416w, /wp-content/uploads/2023/02/rqw-windowscolor.webp 829w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/producto/pantalla-1/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Ratón 1</title>
+		<link>/producto/raton-1/</link>
+					<comments>/producto/raton-1/#respond</comments>
+		
+		<dc:creator><![CDATA[tariksaid-dev]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2023 13:18:56 +0000</pubDate>
+				<guid isPermaLink="false">/?post_type=product#038;p=16</guid>
+
+					<description><![CDATA[Ratón 1 genial para clicar.]]></description>
+										<content:encoded><![CDATA[<p>Ratón 1 genial para clicar.<img decoding="async" class="alignnone size-medium wp-image-17" src="/wp-content/uploads/2023/02/GY50X79385-mouse-300x300.webp" alt="" width="300" height="300" srcset="/wp-content/uploads/2023/02/GY50X79385-mouse-300x300.webp 300w, /wp-content/uploads/2023/02/GY50X79385-mouse-150x150.webp 150w, /wp-content/uploads/2023/02/GY50X79385-mouse-324x324.webp 324w, /wp-content/uploads/2023/02/GY50X79385-mouse-416x416.webp 416w, /wp-content/uploads/2023/02/GY50X79385-mouse-100x100.webp 100w, /wp-content/uploads/2023/02/GY50X79385-mouse.webp 450w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/producto/raton-1/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Teclado 1</title>
+		<link>/producto/hoodie-with-logo/</link>
+					<comments>/producto/hoodie-with-logo/#respond</comments>
+		
+		<dc:creator><![CDATA[tariksaid-dev]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2023 13:09:45 +0000</pubDate>
+				<guid isPermaLink="false">/producto/hoodie-with-logo/</guid>
+
+					<description><![CDATA[Producto simple.]]></description>
+										<content:encoded><![CDATA[<p>Teclado 1, una opción genial.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/producto/hoodie-with-logo/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
