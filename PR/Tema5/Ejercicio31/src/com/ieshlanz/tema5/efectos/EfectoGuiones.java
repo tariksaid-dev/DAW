@@ -1,6 +1,6 @@
 package com.ieshlanz.tema5.efectos;
 
-public class EfectoGuiones implements EfectoEspecial, Simetrico {
+public class EfectoGuiones implements EfectoEspecial {
     protected EfectoGuiones() {
         System.out.println("Creado el efecto especial " + this.getNombre() + ".");
     }
