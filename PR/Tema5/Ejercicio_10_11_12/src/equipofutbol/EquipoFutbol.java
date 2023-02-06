@@ -31,10 +31,9 @@ public class EquipoFutbol implements Nombrable {
             for (Empleado i : this.empleados) {
                 if (i instanceof Entrenador a) {
                     throw new IllegalArgumentException();
-                } else {
-                    this.empleados.add(e);
                 }
             }
+            this.empleados.add(e);
         } else {
             throw new IllegalArgumentException();
         }

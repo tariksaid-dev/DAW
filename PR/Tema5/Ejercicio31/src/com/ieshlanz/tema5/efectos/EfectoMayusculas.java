@@ -2,6 +2,7 @@ package com.ieshlanz.tema5.efectos;
 
 public class EfectoMayusculas implements EfectoEspecial {
     protected EfectoMayusculas() {
+        System.out.println("Creado el efecto especial " + this.getNombre() + ".");
     }
 
     @Override
