@@ -1,7 +1,7 @@
 package com.ieshlanz.tema5.efectos;
 
 public class EfectoCorchetes implements Simetrico, EfectoEspecial {
-    protected EfectoCorchetes() {
+    EfectoCorchetes() {
         System.out.println("Creado el efecto especial " + this.getNombre() + ".");
     }
 
