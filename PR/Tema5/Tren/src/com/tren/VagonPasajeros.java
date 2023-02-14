@@ -25,7 +25,7 @@ public class VagonPasajeros extends VagonPesoLimitado {
                         v.añadir(p.getMaleta());
                         // No queda claro si en las instrucciones hay que quitarle la maleta al
                         // pasajero.
-                        // p.setMaleta(null);
+                        p.setMaleta(null);
                         noAñadida = false;
                     } else {
                         ultimoVagon = ultimoVagon.getVagonAnterior();
@@ -53,30 +53,35 @@ public class VagonPasajeros extends VagonPesoLimitado {
                 existe = true;
             } else {
                 // Si no existe no hacemos nada?
+                // throw new IllegalArgumentException("La persona que buscas no se encuentra en
+                // este tren");
             }
         }
 
         if (existe) {
+            // No podemos eliminar un objeto del bucle que estamos iterando durante el
+            // mismo; tira error.
             this.personas.remove(p);
         }
-        if (p.getMaleta() != null) {
-            if (this.getVagonSiguiente() != null) {
 
-                boolean noEliminada = true;
-                Vagon ultimoVagon = this;
-                while (ultimoVagon.getVagonSiguiente() != null) {
-                    ultimoVagon = ultimoVagon.getVagonSiguiente();
-                }
+        if (this.getVagonSiguiente() != null) {
 
-                while (noEliminada) {
-                    if (ultimoVagon instanceof VagonEquipaje v) {
-                        v.retirar(p.getMaleta());
+            boolean noEliminada = true;
+            Vagon ultimoVagon = this;
+            while (ultimoVagon.getVagonSiguiente() != null) {
+                ultimoVagon = ultimoVagon.getVagonSiguiente();
+            }
+            while (noEliminada) {
+                if (ultimoVagon instanceof VagonEquipaje v) {
+                    if (v.getMaleta(p) != null) {
+                        p.setMaleta(v.getMaleta(p));
+                        v.retirar(v.getMaleta(p));
                         noEliminada = false;
-                    } else {
-                        ultimoVagon = ultimoVagon.getVagonAnterior();
-                        // Aquí no hacen falta protecciones, si ha subido con maleta tiene que haber en
-                        // algún punto un vagón de equipajes
                     }
+                } else {
+                    ultimoVagon = ultimoVagon.getVagonAnterior();
+                    // Aquí no hacen falta protecciones, si ha subido con maleta tiene que haber en
+                    // algún punto un vagón de equipajes
                 }
             }
         }
