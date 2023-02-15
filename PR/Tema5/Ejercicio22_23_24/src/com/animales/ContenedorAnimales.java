@@ -10,14 +10,16 @@ public abstract class ContenedorAnimales {
     }
 
     public boolean añadir(Animal a) {
-        return this.comprobarDisponibilidadPlaza(a);
+        boolean puedeAñadir = this.comprobarDisponibilidadPlaza(a);
+        if (animales.contains(a)) {
+            animales.add(a);
+            a.setEncerrado(true);
+        }
+        return puedeAñadir;
     }
 
     public boolean retirar(Animal a) {
-        if (this.animales.contains(a)) {
-            this.animales.remove(a);
-        }
-        return this.animales.contains(a) ? false : true;
+        return this.animales.remove(a);
     }
 
     public int getPesoActual() {

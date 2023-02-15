@@ -14,7 +14,6 @@ public class Persona implements Pesado {
         } else if (this.equipaje.peso() < 0) {
             throw new IllegalArgumentException("El peso de la maleta no puede ser negativo");
         }
-
     }
 
     public Persona(String n, int p) {
