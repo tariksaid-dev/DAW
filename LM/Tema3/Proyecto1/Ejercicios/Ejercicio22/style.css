@@ -1,0 +1,36 @@
+.recuadro {
+  width: 400px;
+  height: 150px;
+  background-color: rgba(151, 152, 155, 0.89);
+  margin-left: 10vw;
+  margin-top: 240px;
+  color: blue;
+  font-size: 30px;
+  text-align: center;
+}
+
+.recuadro:hover {
+  width: 400px;
+  height: 150px;
+  background-color: rgba(151, 152, 155, 0.89);
+  margin-left: 10vw;
+  margin-top: 240px;
+  color: blue;
+  font-size: 30px;
+  text-align: center;
+  animation-name: mov-Y;
+  animation-duration: 3s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+}
+
+@keyframes mov-Y {
+  from {
+    margin-left: 10vw;
+    color: blue;
+  }
+  to {
+    margin-left: calc(90vw - 400px);
+    color: red;
+  }
+}

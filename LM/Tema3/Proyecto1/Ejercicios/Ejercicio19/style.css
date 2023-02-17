@@ -1,0 +1,22 @@
+.recuadro {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(151, 152, 155, 0.89);
+    margin: auto;
+    margin-top: 240px;
+    color: blue;
+    font-size: 50px;
+    animation-name: mov-Y;
+    animation-duration: 10s;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+}
+
+@keyframes mov-Y { from {
+    margin-top: 240px;
+    color:blue;
+} to {
+    margin-top: 40px;
+    color:red;
+}
+}

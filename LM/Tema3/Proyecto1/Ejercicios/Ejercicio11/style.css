@@ -1,0 +1,17 @@
+.recuadro1 {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(113, 23, 55, 0.5);
+    margin: auto;
+    margin-top: 50px;
+    transform: translate(50px);
+}
+
+.recuadro2 {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(201, 231, 31, 0.87);
+    margin: auto;
+    margin-top: 50px;
+    transform: translate(-50px);
+}

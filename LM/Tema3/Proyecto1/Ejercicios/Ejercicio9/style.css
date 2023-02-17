@@ -1,0 +1,8 @@
+.recuadro {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(1183, 23, 55, 0.5);
+    margin: 0 auto;
+    margin-top: 100px;
+    transform: rotate(-60deg);
+}

@@ -1,0 +1,95 @@
+.recuadro {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(151, 152, 155, 0.89);
+  margin: auto;
+  display: grid;
+  text-align: center;
+}
+
+.recuadro li {
+  color: blue;
+  font-size: 30px;
+  margin-top: 20px;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.recuadro li:nth-child(1) {
+  animation-name: animation1;
+}
+
+.recuadro li:nth-child(2) {
+  animation-name: animation2;
+}
+
+.recuadro li:nth-child(3) {
+  animation-name: animation3;
+}
+
+.recuadro li:nth-child(4) {
+  animation-name: animation4;
+}
+
+.recuadro li:nth-child(5) {
+  animation-name: animation5;
+}
+
+.recuadro li:nth-child(6) {
+  animation-name: animation6;
+}
+
+@keyframes animation1 {
+  from {
+    color: blue;
+  }
+  to {
+    color: red;
+  }
+}
+
+@keyframes animation2 {
+  from {
+    color: blue;
+  }
+  to {
+    color: green;
+  }
+}
+
+@keyframes animation3 {
+  from {
+    color: blue;
+  }
+  to {
+    color: coral;
+  }
+}
+
+@keyframes animation4 {
+  from {
+    color: blue;
+  }
+  to {
+    color: darkslateblue;
+  }
+}
+
+@keyframes animation5 {
+  from {
+    color: blue;
+  }
+  to {
+    color: brown;
+  }
+}
+
+@keyframes animation6 {
+  from {
+    color: blue;
+  }
+  to {
+    color: cornflowerblue;
+  }
+}

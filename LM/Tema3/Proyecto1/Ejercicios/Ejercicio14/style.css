@@ -1,0 +1,14 @@
+.rectangulo {
+    width: 800px;
+    height: 400px;
+    background-color: rgba(194, 183, 21, 0.5);
+    margin: auto;
+    margin-top: 200px;
+    background-image: url(img/css.png),
+        url(img/css.png), 
+        url(img/css.png), 
+        url(img/2.jpeg);
+    background-repeat: no-repeat;
+    background-position: 100% 50%, 50% 50%, 0 50%;
+    background-size: 30px 30px, 70px 70px, 100px 100px, 100% 100%;
+}

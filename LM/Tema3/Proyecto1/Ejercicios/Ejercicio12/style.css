@@ -1,0 +1,8 @@
+.rectangulo {
+  width: 800px;
+  height: 400px;
+  background-color: rgba(194, 183, 21, 0.5);
+  margin: auto;
+  margin-top: 180px;
+  transform: rotate(45deg) scaleY(50%);
+}

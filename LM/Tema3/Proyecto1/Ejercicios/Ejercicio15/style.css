@@ -1,0 +1,10 @@
+.cuadrado {
+  width: 800px;
+  height: 800px;
+  background-color: rgba(24, 231, 16, 0.5);
+  margin: auto;
+  margin-top: 70px;
+  background-image: url(img/css.png);
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+}

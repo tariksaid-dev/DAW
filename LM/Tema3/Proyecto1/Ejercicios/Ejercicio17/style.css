@@ -1,0 +1,14 @@
+.recuadro {
+    width: 400px;
+    height: 400px;
+    background-color: rgba(20, 59, 168, 0.5);
+    margin: auto;
+    margin-top: 40px;
+    color: blue;
+    transition: height 1s linear 3s, width 1s linear;
+}
+
+.recuadro:hover {
+    height: 200px;
+    width: 200px;
+}

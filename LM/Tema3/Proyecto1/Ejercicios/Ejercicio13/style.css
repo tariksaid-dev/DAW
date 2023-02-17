@@ -1,0 +1,12 @@
+.rectangulo {
+    width: 600px;
+    height: 300px;
+    background-color: rgba(194, 183, 21, 0.5);
+    margin: auto;
+    margin-top: 200px;
+    transform: rotate(50deg);
+    background-image: url(img/css.png), url(img/2.jpeg);
+    background-repeat: no-repeat;
+    color: aliceblue;
+    font-size: 20px;
+}
