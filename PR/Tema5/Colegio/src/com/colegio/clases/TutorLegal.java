@@ -8,7 +8,7 @@ public record TutorLegal(String nombre, Alumno[] hijos) implements CalificacionL
         for (int i = 0; i > hijos.length; i++) {
             if (hijos[i].equals(a)) {
                 // muestra en pantalla un mensaje
-                if (a.getNotaMedia() >= 5) {
+                if (nota.getValoracion().esAprobado()) {
                     System.out.println("Bien hecho " + a.nombre() + ", has sacado un " + a.getNotaMedia() + " en "
                             + p.getAsignatura());
                 } else {

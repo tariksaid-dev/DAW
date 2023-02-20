@@ -17,10 +17,15 @@ public class Profesor {
 
     public void addCalificacionListener(CalificacionListener interesado) {
         this.interesados.add(interesado);
+
     }
 
     public void calificar(Alumno a, double n) {
         this.notas.put(a, n);
+
+        for (CalificacionListener c : this.interesados) {
+            c.recibirCalificacion(this, a, new Nota(n));
+        }
     }
 
     public String getAsignatura() {
