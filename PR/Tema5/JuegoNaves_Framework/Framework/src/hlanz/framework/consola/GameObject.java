@@ -1,4 +1,4 @@
-package bpc.framework.consola;
+package hlanz.framework.consola;
 
 import bpc.daw.consola.*;
 

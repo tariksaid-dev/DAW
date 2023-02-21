@@ -1,4 +1,4 @@
-package bpc.framework.consola;
+package hlanz.framework.consola;
 
 import java.util.*;
 import bpc.daw.consola.*;
@@ -7,9 +7,6 @@ public abstract class Escena implements ElementoJuego {
     protected Juego juego;
     protected Consola consola;
     private List<GameObject> objetos;
-
-    public Escena() {
-    }
 
     protected abstract void añadirObjetosIniciales();
 
@@ -38,6 +35,7 @@ public abstract class Escena implements ElementoJuego {
     public void finalizar() {
         for (int i = 0; i < this.objetos.size(); i++) {
             this.objetos.remove(i);
+            // this.retirar(this.objetos.get(i));
         }
     }
 

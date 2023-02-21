@@ -1,4 +1,4 @@
-package bpc.framework.consola;
+package hlanz.framework.consola;
 
 public interface ElementoJuego {
     public void inicializar();

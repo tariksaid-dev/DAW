@@ -1,4 +1,4 @@
-package bpc.framework.consola;
+package hlanz.framework.consola;
 
 import java.awt.*;
 import java.awt.Toolkit;

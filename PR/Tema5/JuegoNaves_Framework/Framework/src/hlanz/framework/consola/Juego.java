@@ -1,8 +1,6 @@
-package bpc.framework.consola;
+package hlanz.framework.consola;
 
-import java.awt.*;
 import java.awt.event.KeyEvent;
-
 import bpc.daw.consola.*;
 
 public class Juego {
@@ -12,7 +10,7 @@ public class Juego {
     private Resolucion resolucion;
 
     public void iniciar(Escena e, Resolucion r) {
-        this.consola = new Consola();
+        this.consola = new Consola("", (int) r.getResolucion().getWidth(), (int) r.getResolucion().getHeight());
         Teclado t = this.consola.getTeclado();
         this.resolucion = r;
         setEscena(e);
@@ -21,12 +19,15 @@ public class Juego {
             this.consola.esperarSiguienteFrame();
             if (t.teclaPulsada(KeyEvent.VK_ESCAPE)) {
                 detener = true;
+                // detener();
             }
         }
     }
 
     public void setEscena(Escena e) {
         this.escena = e;
+        this.escena.juego = this;
+        this.escena.consola = this.consola;
         this.escena.inicializar();
     }
 
