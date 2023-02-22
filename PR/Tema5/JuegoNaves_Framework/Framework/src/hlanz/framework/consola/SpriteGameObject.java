@@ -11,13 +11,19 @@ public abstract class SpriteGameObject extends GameObject {
     public SpriteGameObject(Image img, int x, int y) {
         this.imagen = img;
         this.sprite = null;
+        this.puntoInicial = new Point(x, y);
     }
 
     @Override
     public void inicializar() {
-        this.sprite = new Consola().getCapaSprites().crearSprite(this.imagen,
+        this.sprite = this.consola.getCapaSprites().crearSprite(this.imagen,
                 new Rectangle(0, 0, getAnchura(), getAltura()),
                 puntoInicial.x, puntoInicial.y);
+    }
+
+    @Override
+    public void finalizar() {
+        this.consola.getCapaSprites().eliminarSprite(this.sprite);
     }
 
     public int getX() {
