@@ -1,0 +1,38 @@
+.rectangulo {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.rectangulo > div {
+    width: 80vw;
+    height: 20vh;
+}
+
+.superior {
+    background-color: rgb(231, 51, 60);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.inferior {
+    display: flex;
+    align-items: stretch;
+
+}
+
+.izquierdo {
+    background-color: deeppink;
+    flex: 1;
+}
+
+.centro {
+    background-color: aqua;
+    flex: 2;
+}
+
+.derecha {
+    background-color: blueviolet;
+    flex: 1;
+}
+

@@ -1,0 +1,42 @@
+.main {
+    width: 85vw;
+    height: 90vh;
+    margin: auto;
+    display: flex;
+    align-content: flex-start;
+    align-items: center;
+
+}
+
+.recuadro {
+    border: 3px solid green;
+    height: fit-content;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recuadro > header > img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.recuadro > section {
+    font-size: 30px;
+    padding-left: 20px;
+    
+}
+
+.recuadro > section > h2 {
+    margin: 10px auto;
+}
+
+
+.recuadro > footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left: 20px;
+    padding-right: 20px;
+}
