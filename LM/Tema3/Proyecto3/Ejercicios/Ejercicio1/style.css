@@ -1,0 +1,10 @@
+.container {
+    margin: 100px auto;
+    border: 1px solid black;
+    width: 60vw;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px 50px;
+    grid-template-rows: auto
+}
+
