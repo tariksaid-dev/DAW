@@ -1,0 +1,28 @@
+.container {
+    margin: 0 auto;
+    display: grid;
+    width: 90vw;
+    height: 50vh;
+    gap: 10px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: grey;
+    grid-template-areas:
+        "uno uno tres tres tres cuatro cuatro"
+        "uno uno tres tres tres cuatro cuatro"
+        "uno uno tres tres tres cinco cinco"
+        "dos dos tres tres tres cinco cinco"
+}
+
+.container > img {
+    height: 100%;
+    
+}
+
+.container > :nth-child(1) {
+    grid-area: uno;
+}
+
+.container > :nth-child(2) {
+    grid-area: dos;
+}
