@@ -1,28 +1,60 @@
-.container {
+.grid-container {
     margin: 0 auto;
     display: grid;
     width: 90vw;
     height: 50vh;
     gap: 10px;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    background-color: grey;
     grid-template-areas:
-        "uno uno tres tres tres cuatro cuatro"
-        "uno uno tres tres tres cuatro cuatro"
         "uno uno tres tres tres cinco cinco"
-        "dos dos tres tres tres cinco cinco"
+        "uno uno tres tres tres cinco cinco"
+        "uno uno cuatro cuatro cuatro seis siete"
+        "uno uno cuatro cuatro cuatro seis siete"
+        "dos dos cuatro cuatro cuatro ocho ocho"
+        "dos dos cuatro cuatro cuatro ocho ocho";
 }
-
-.container > img {
-    height: 100%;
     
+.grid-container > div {
+    border-radius: 10px;
 }
 
-.container > :nth-child(1) {
+.grid-container > :nth-child(1) {
     grid-area: uno;
+    background-image: url(../../img/img1.jpg);
+
 }
 
-.container > :nth-child(2) {
+.grid-container > :nth-child(2) {
     grid-area: dos;
+    background-image: url(../../img/img2.jpg);
+}
+
+.grid-container > :nth-child(3) {
+    grid-area: tres;
+    background-image: url(../../img/img3.jpg);
+}
+
+.grid-container > :nth-child(4) {
+    grid-area: cuatro;
+    background-image: url(../../img/img4.jpg);
+}
+
+.grid-container > :nth-child(5) {
+    grid-area: cinco;
+    background-image: url(../../img/img5.jpg);
+}
+
+.grid-container > :nth-child(6) {
+    grid-area: seis;
+    background-image: url(../../img/img6.jpg);
+}
+
+.grid-container > :nth-child(7) {
+    grid-area: siete;
+    background-image: url(../../img/img7.jpg);
+}
+
+.grid-container > :nth-child(8) {
+    grid-area: ocho;
+    background-image: url(../../img/img8.jpg);
+    
 }

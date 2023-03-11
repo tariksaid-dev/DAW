@@ -1,0 +1,21 @@
+body {
+    background-color: bisque;
+}
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    width: 25vw;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 45px;
+    border: 2px solid black;
+    box-shadow: 20px 10px 10px;
+}
+
+.container > li:hover {
+    font-size: 55px;
+}
