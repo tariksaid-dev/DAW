@@ -21,6 +21,7 @@ public class Juego {
                 detener = true;
                 // detener();
             }
+            this.escena.ejecutarFrame();
         }
     }
 
