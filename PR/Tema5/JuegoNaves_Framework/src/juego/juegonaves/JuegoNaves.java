@@ -30,11 +30,9 @@ public class JuegoNaves extends Escena {
 
     @Override
     protected void añadirObjetosIniciales() {
-        this.añadir(new ControladorFinJuego());
-        this.añadir(new Fondo(3));
+
         this.añadir(new Nave1(KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_SPACE));
-        this.añadir(new Nave2(0, 0, 0));
-        this.añadir(new Marcador());
+        this.añadir(new Fondo(5));
         // Faltaría añadir enemigos.
     }
 

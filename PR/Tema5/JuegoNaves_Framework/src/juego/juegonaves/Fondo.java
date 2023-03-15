@@ -15,11 +15,14 @@ public class Fondo extends GameObject {
 
     @Override
     public void inicializar() {
+        System.out.println("Traza inicializar Fondo");
         this.camara = new Rectangle(0, 0, this.juego.getAnchuraPantalla(), this.juego.getAlturaPantalla());
+
     }
 
     @Override
     public void ejecutarFrame() {
+        System.out.println("Traza ejecutar Frame fondo");
         this.consola.getCapaCanvas().getGraphics2D().drawImage(this.imagen, 0, 0, this.juego.getAnchuraPantalla(),
                 this.juego.getAlturaPantalla(),
                 0, 0, 0 + this.juego.getAnchuraPantalla(), this.juego.getAlturaPantalla(), null);
