@@ -209,3 +209,7 @@ section div:hover {
   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ADCAC1, 0 0 70px #ADCAC1, 0 0 80px #ADCAC1, 0 0 100px #ADCAC1, 0 0 150px #ADCAC1; 
 
 }
+.paragraph-styles:hover {
+  cursor: pointer;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ADCAC1, 0 0 70px #ADCAC1, 0 0 80px #ADCAC1, 0 0 100px #ADCAC1, 0 0 150px #ADCAC1; 
+}

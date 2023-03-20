@@ -104,7 +104,7 @@ Respuestas falsas:
 
 - El empresario puede hacer la extinción del contrato por voluntad del empresario de forma verbal. 
 - El empresario solo necesita entregar una carta de despido al trabajador. 
-- El empresario no necesita seguir ningún
+- El empresario no necesita seguir ningún procedimiento legal.
 
 ___
 
