@@ -31,7 +31,12 @@ function setTransform(el, width, height) {
     // Click + modal
 
     el.addEventListener('click', () => {
-        const modal = document.getElementById('modal');
+        const modal = 
+            (el.id === 'tarjeta1') ? document.getElementById('modal1') :
+            (el.id === 'tarjeta2') ? document.getElementById('modal2') :
+            (el.id === 'tarjeta3') ? document.getElementById('modal3') :
+            (el.id === 'tarjeta4') ? document.getElementById('modal4') : null;
+
         modal.style.display='flex';
 
         const top = (window.innerHeight - modal.offsetHeight) / 2;

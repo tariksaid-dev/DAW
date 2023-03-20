@@ -1,6 +1,6 @@
 https://www.boe.es/buscar/pdf/2015/BOE-A-2015-11430-consolidado.pdf
 
-# Azul - Extinción por voluntad del trabajador (art 50)
+# 1 Azul - Extinción por voluntad del trabajador (art 50)
 
 1. Pregunta: ¿Puede un trabajador extinguir su contrato de trabajo sin necesidad de alegar ningún tipo de causa?
 
@@ -50,7 +50,7 @@ Respuestas falsas:
 
 ___
 
-# Rosa - Extinción por voluntad del empresario
+# 2 Rosa - Extinción por voluntad del empresario
 
 1. Pregunta: ¿Qué motivos pueden justificar la extinción del contrato por voluntad del empresario?
 
@@ -108,7 +108,7 @@ Respuestas falsas:
 
 ___
 
-# Amarillo - Extinción por causa objetiva (art 52)
+# 3 Amarillo - Extinción por causa objetiva (art 52)
 
 1. Pregunta: ¿Qué son las causas objetivas de extinción del contrato de trabajo?
 
@@ -158,7 +158,7 @@ Respuestas falsas:
 
 ___
 
-# Marrón - Extinción por causas disciplinarias (art 54)
+# 4 Marrón - Extinción por causas disciplinarias (art 54)
 
 1. Pregunta: ¿Qué es el despido disciplinario?
 
@@ -208,7 +208,7 @@ Respuestas falsas:
 
 ___
 
-# Verde - Calificación judicial del despido
+# 5 Verde - Calificación judicial del despido
 
 1. Pregunta: ¿Qué se entiende por "despido nulo"?
 
@@ -266,7 +266,7 @@ Respuestas falsas:
 
 ___
 
-# Naranja - Finiquito
+# 6 Naranja - Finiquito
 
 1. Pregunta: ¿Qué es el finiquito?
 
