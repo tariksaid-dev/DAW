@@ -1,6 +1,6 @@
 https://www.boe.es/buscar/pdf/2015/BOE-A-2015-11430-consolidado.pdf
 
-# 1 Azul - Extinción por voluntad del trabajador (art 50)
+# 1 Azul - Extinción por voluntad del trabajador (Referencia: art 50)
 
 1. Pregunta: ¿Puede un trabajador extinguir su contrato de trabajo sin necesidad de alegar ningún tipo de causa?
 
@@ -66,21 +66,7 @@ Respuestas falsas:
 
 ___
 
-2. Pregunta: ¿Cuál es el plazo de preaviso que debe cumplirse en la extinción del contrato por voluntad del empresario por causas económicas, técnicas, organizativas o de producción?
-
-Respuesta verdadera: El plazo de preaviso en la extinción del contrato por voluntad del empresario por causas económicas, técnicas, organizativas o de producción es de 15 días.
-
-Referencia: Artículo 53.1.a) del Estatuto de los Trabajadores.
-
-Respuestas falsas: 
-
-- El plazo de preaviso en la extinción del contrato por voluntad del empresario por causas económicas, técnicas, organizativas o de producción es de 1 día. 
-- El plazo de preaviso en la extinción del contrato por voluntad del empresario por causas económicas, técnicas, organizativas o de producción es de 30 días. 
-- No es necesario cumplir ningún plazo de preaviso en la extinción del contrato por voluntad del empresario.
-
-___
-
-3. Pregunta: ¿Qué derechos tiene el trabajador en caso de extinción del contrato por voluntad del empresario?
+2. Pregunta: ¿Qué derechos tiene el trabajador en caso de extinción del contrato por voluntad del empresario?
 
 Respuesta verdadera: El trabajador tiene derecho a una indemnización, cuyo importe depende de la causa que motiva la extinción del contrato y de la antigüedad del trabajador en la empresa.
 
@@ -94,7 +80,7 @@ Respuestas falsas:
 
 ___
 
-4. Pregunta: ¿Qué procedimiento debe seguir el empresario para llevar a cabo la extinción del contrato por voluntad del empresario?
+3. Pregunta: ¿Qué procedimiento debe seguir el empresario para llevar a cabo la extinción del contrato por voluntad del empresario?
 
 Respuesta verdadera: El empresario debe seguir un procedimiento legal que incluye la comunicación por escrito al trabajador, la entrega de una carta de despido y el respeto de los plazos de preaviso establecidos por la ley.
 
@@ -108,7 +94,19 @@ Respuestas falsas:
 
 ___
 
-# 3 Amarillo - Extinción por causa objetiva (art 52)
+4. Pregunta: ¿Cuál es el plazo de preaviso que debe cumplirse en la extinción del contrato por voluntad del empresario por causas económicas, técnicas, organizativas o de producción?
+
+Respuesta verdadera: El plazo de preaviso en la extinción del contrato por voluntad del empresario por causas económicas, técnicas, organizativas o de producción es de 15 días.
+
+Referencia: Artículo 53.1.a) del Estatuto de los Trabajadores.
+
+Respuestas falsas: 
+
+- El plazo de preaviso en la extinción del contrato por voluntad del empresario por causas económicas, técnicas, organizativas o de producción es de 1 día. 
+- El plazo de preaviso en la extinción del contrato por voluntad del empresario por causas económicas, técnicas, organizativas o de producción es de 30 días. 
+- No es necesario cumplir ningún plazo de preaviso en la extinción del contrato por voluntad del empresario.
+
+# 3 Amarillo - Extinción por causa objetiva (Referencia: art 52)
 
 1. Pregunta: ¿Qué son las causas objetivas de extinción del contrato de trabajo?
 
@@ -158,7 +156,7 @@ Respuestas falsas:
 
 ___
 
-# 4 Marrón - Extinción por causas disciplinarias (art 54)
+# 4 Marrón - Extinción por causas disciplinarias (Referencia: art 54)
 
 1. Pregunta: ¿Qué es el despido disciplinario?
 
