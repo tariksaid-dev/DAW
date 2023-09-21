@@ -15,8 +15,7 @@ public class App2 {
 
         // p.getHijo().ifPresentOrElse(
         // hijo -> System.out.println(hijo.getNombre()),
-        // () -> System.out.println("No tiene hijos")
-        // );
+        // () -> System.out.println("No tiene hijos"));
 
         // Optional<Persona> optHijo = p.getHijo();
         // if (optHijo.isEmpty()) {
