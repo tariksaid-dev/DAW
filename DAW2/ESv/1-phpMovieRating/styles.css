@@ -3,8 +3,6 @@ body {
   background-color: #111827;
   color: #e5e7eb;
   min-height: 100vh;
-  /* line-height: 1.5;
-  font-size: 1.6rem; */
 }
 
 main {
@@ -12,16 +10,6 @@ main {
   overflow: auto;
   background-color: #111827;
 }
-
-/* header {
-  background-color: #18212f;
-  padding: 1.2rem 4.8rem;
-  border-bottom: 1px solid #1f2937;
-  display: flex;
-  gap: 2.4rem;
-  align-items: center;
-  justify-content: flex-end;
-} */
 
 aside {
   padding: 3.2rem 2.4rem;

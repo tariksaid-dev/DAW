@@ -31,7 +31,7 @@
     {
       $q = "UPDATE users SET deleted = CASE WHEN deleted = 0 THEN 1 WHEN deleted = 1 THEN 0 END WHERE id = '" . $_GET["ban_id"] . "'";
       $bd->query($q);
-      header("Location: /users.php");
+      header("Location: /1-phpMovieRating/users.php");
       return true;
     }
 
@@ -73,7 +73,7 @@
         $q = "UPDATE follows SET following = CASE WHEN following = 0 THEN 1 WHEN following = 1 THEN 0 END WHERE user_id = $user_id AND followed_user_id = $followed_user_id";
         $bd->query($q);
       }
-      header("Location: /users.php");
+      header("Location: /1-phpMovieRating/users.php");
       return true;
     }
 
@@ -87,8 +87,6 @@
       if ($_SESSION) {
         if ($users["deleted"] != 1 && $_SESSION["rol"] != 2) {
           echo "<li>Username: <b>" . $users["name"] . "</b><br>";
-          // falta condicional para brokenHearth si estoy siguiendo y voy a dejar de seguir
-    
           echo "<a href='users.php/follow?follow_id=" . $users['id'] . "'>❤️</a>";
           if ($_SESSION["rol"] == 2) {
             if ($users["deleted"] == 1) {
@@ -124,7 +122,7 @@
           echo "</li>";
         }
       } else {
-        header("Location: /login.php");
+        header("Location: /1-phpMovieRating/login.php");
       }
     }
     echo "</ul>";

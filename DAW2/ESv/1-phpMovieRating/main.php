@@ -15,10 +15,6 @@
     ini_set('display_errors', 1);
     require_once("db.php");
     $bd = Conectar::conexion();
-    // var_dump($_SESSION);
-    // var_dump($_POST);
-    var_dump($_GET);
-
 
     function fetchFilms($bd)
     {
@@ -44,17 +40,35 @@
     function deleteFilm($bd)
     {
       $q = "DELETE FROM pelis WHERE id =" . $_GET["deleted_id"];
-      var_dump($q);
+      // var_dump($q);
       $result = $bd->query($q);
-      header("Location: /main.php");
+      header("Location: /1-phpMovieRating/main.php");
       return $result;
+    }
+
+    function hasVoted($bd, $pelicula_id)
+    {
+      $user_id = $_SESSION["user_id"];
+
+      $q = "SELECT * FROM votos WHERE user_id = $user_id AND pelicula_id = $pelicula_id";
+      $result = $bd->query($q);
+      return $result->num_rows;
     }
 
     function insertVote($bd)
     {
-      $q = "INSERT INTO votos (user_id, pelicula_id) VALUES (" . $_SESSION["id"] . ", " . $_POST["votar_id"] . ")";
-      $result = $bd->query($q);
-      return $result;
+      $user_id = $_SESSION["user_id"];
+      $film_id = $_GET["votar_id"];
+
+      if (!hasVoted($bd, $film_id)) {
+        $q = "INSERT INTO votos (user_id, pelicula_id) VALUES ($user_id, $film_id)";
+        $result = $bd->query($q);
+        header("Location: /1-phpMovieRating/main.php");
+        return $result;
+      } else {
+        header("Location: /1-phpMovieRating/main.php");
+        return false;
+      }
     }
 
     function isLoged()
@@ -79,7 +93,7 @@
       <?php
       if (isLoged()) {
         echo "<h1>Bienvenido de nuevo " . $_SESSION["username"] . " 🎉</h1>";
-        echo "<h2>Si quieres salir, pulsa <a href='/login.php'>AQUÍ</a> </h2>";
+        echo "<h2>Si quieres salir, pulsa <a href='/1-phpMovieRating/login.php'>AQUÍ</a> </h2>";
         echo "<form action='main.php' class='flex-box sm-gap' method='POST'>
         <input type='text' id='fname' name='fname' placeholder='Título'><br>
         <input type='text' id='año' name='año' placeholder='Año'><br>
@@ -87,7 +101,7 @@
         <input type='submit' class='btn' value='Añadir película'>
         </form>";
       } else {
-        echo "<h1>Si quieres añadir películas y votar por tus favoritas, regístrate <a href='/login.php'>AQUÍ</a></h1>";
+        echo "<h1>Si quieres añadir películas y votar por tus favoritas, regístrate <a href='/1-phpMovieRating/login.php'>AQUÍ</a></h1>";
       }
       ?>
     </aside>
@@ -99,7 +113,7 @@
       if (isLoged()) {
         foreach (fetchFilms($bd) as $data) {
           echo "<li><span><b>" . $data["titulo"] . "</b><a href='main.php/delete?deleted_id=" . $data['id'] . "'> ❌</a><br>" . $data["año"] . "<br>
-          " . $data["likes"] . "<a href='votar?votar_id=" . $data['id'] . "'> ❤️</a></span><br>
+          " . $data["likes"] . "<a href='/1-phpMovieRating/main.php/votar?votar_id=" . $data['id'] . "'> ❤️</a></span><br>
           <img src='" . $data["poster"] . "'/> </li>";
         }
       } else {

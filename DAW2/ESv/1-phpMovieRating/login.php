@@ -32,7 +32,7 @@
         $_SESSION["username"] = $datos["name"];
         $_SESSION["rol"] = $datos["rol"];
         $_SESSION["deleted"] = $datos["deleted"];
-        header("Location: main.php");
+        header("Location: /1-phpMovieRating/main.php");
       } else {
         $info = "La contraseña es incorrecta";
       }
