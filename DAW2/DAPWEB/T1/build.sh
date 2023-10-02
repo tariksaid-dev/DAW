@@ -1,1 +1,0 @@
-pandoc Act1234.md -o T1T1_TSM.pdf --from markdown --template eisvogel --filter ~/.local/lib/python3.10/site-packages/pandoc_latex_environment.py --listings
