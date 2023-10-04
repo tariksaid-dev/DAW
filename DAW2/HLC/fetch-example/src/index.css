@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #111827;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+main {
+  padding: 4rem 4.8rem 6.4rem;
+  overflow: auto;
+  background-color: #111827;
+}
+
+aside {
+  padding: 3.2rem 2.4rem;
+  border-right: 1px solid #18212f;
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+  text-align: center;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 26rem 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.film-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 4rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30% 0;
+  gap: 1.4rem;
+  padding: 0 10rem 0 10rem;
+
+  &.sm-gap {
+    gap: 0.4rem;
+  }
+}
