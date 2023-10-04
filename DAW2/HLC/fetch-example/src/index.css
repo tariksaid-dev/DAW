@@ -14,7 +14,7 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #111827;
   color: #e5e7eb;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 main {
@@ -50,33 +50,4 @@ h6 {
   overflow-wrap: break-word;
   hyphens: auto;
   text-align: center;
-}
-
-.app-layout {
-  display: grid;
-  grid-template-columns: 26rem 1fr;
-  grid-template-rows: auto 1fr;
-  height: 100vh;
-}
-
-.film-layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 4rem;
-  max-width: 120rem;
-  margin: 0 auto;
-}
-
-.flex-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 30% 0;
-  gap: 1.4rem;
-  padding: 0 10rem 0 10rem;
-
-  &.sm-gap {
-    gap: 0.4rem;
-  }
 }

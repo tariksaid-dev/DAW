@@ -33,7 +33,7 @@ function App() {
   }, []);
 
   return (
-    <div className="p-4 mt-4 ">
+    <div className="p-4 mt-4 overflow-hidden">
       <h1 className="text-4xl py-12">Precios de la luz de hoy</h1>
       <Products prices={prices} />
       <div className="flex justify-center pt-20 mb-0">
