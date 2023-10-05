@@ -70,7 +70,7 @@ function rangoNumeros() {
   return Array.from(
     { length: fin - inicio + 1 },
     (num, index) => index + inicio
-  );<
+  );
 }
 
 // 15.
