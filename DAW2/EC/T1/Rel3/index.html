@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Vite App</title>
+  </head>
+  <body class="overflow-hidden">
+    <header class="text-6xl text-center font-extrabold p-6">
+      Tarea LocalStorage
+    </header>
+    <div class="grid grid-cols-2 h-screen bg-slate-800 w-screen pb-40">
+      <form class="flex flex-col justify-center mb-12 p-14 gap-4" id="form">
+        <h1 class="text-5xl text-center font-bold">Login</h1>
+        <input
+          class="border border-solid border-slate-700 bg-slate-950 rounded-md p-4"
+          placeholder="Username"
+          required
+          id="username"
+        />
+        <input
+          class="border border-solid border-slate-700 bg-slate-950 rounded-md p-4"
+          placeholder="Password"
+          required
+          id="password"
+        />
+
+        <button
+          class="text-2xl p-6 font-medium text-gray-200 bg-sky-700 rounded-lg shadow-lg hover:bg-sky-800"
+        >
+          Save
+        </button>
+      </form>
+      <div class="flex flex-col justify-center mb-12 p-14 gap-4">
+        <h1 class="text-5xl text-center font-bold">Username & password</h1>
+        <textarea
+          class="border border-solid border-slate-700 bg-slate-950 rounded-md p-4 h-56"
+          id="text-area"
+          readonly
+        ></textarea>
+        <button
+          class="text-2xl p-6 font-medium text-gray-200 bg-sky-700 rounded-lg shadow-lg hover:bg-sky-800"
+          id="load"
+        >
+          Load
+        </button>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
