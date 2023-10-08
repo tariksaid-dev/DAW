@@ -22,7 +22,7 @@ pandoc-latex-environment:
 
 7. **Instalar el servidor de aplicaciones Tomcat y comprobar que funciona (tanto en Ubuntu como en Windows). Indicar los pasos y comandos implicados (documentar el proceso de instalación).**
 
-- Usaremos los comandos de instalación e instalaremos los paquetes de tomcat9 y tomcat9-admin:
+- Instalaremos los paquetes de tomcat9 y tomcat9-admin:
 
 ```bash
 sudo apt install tomcat9 tomcat9-admin -y
