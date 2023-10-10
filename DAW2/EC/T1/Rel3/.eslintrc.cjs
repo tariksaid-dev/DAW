@@ -10,5 +10,7 @@ module.exports = {
     "react/prop-types": "off",
     "no-const-assign": "off",
     // "no-undef": "off",
+    "no-prototype-builtins": "off",
+
   },
 };
