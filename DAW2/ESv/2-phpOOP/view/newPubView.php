@@ -24,14 +24,12 @@
     </div>
   </header>
   <?php
-  // if ($_SESSION["user"]->checkRole()) {
   echo "<form action='index.php' method='POST' enctype='multipart/form-data' class='insert-pub-form-layout'>";
   echo "<input type='text' placeholder='Título' name='title'>";
   echo "<textarea name='text' placeholder='Escribe tu artículo'></textarea>";
   echo "<input type='file' name='img'>";
   echo "<input class='btn' type='submit' name='newPub' value='Enviar'>";
   echo "</form>";
-  // }
   ?>
 </body>
 

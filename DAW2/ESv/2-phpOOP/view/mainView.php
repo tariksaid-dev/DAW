@@ -7,7 +7,7 @@
   <style>
     <?php include "styles.css" ?>
   </style>
-  <title>PUB VIEW</title>
+  <title>TSM - PUB VIEW</title>
 </head>
 
 <body>
@@ -31,7 +31,10 @@
     <?php
     foreach ($pubs as $pub) {
       echo "<article class='pub-element'>";
-      echo "<img src='public/img/" . $pub->getImage() . "' />";
+      echo "<div class='pub-button-container'>";
+      echo "<a href='index.php?editPub=" . $pub->getId() . "' class='btn'>Editar</a>";
+      echo "<a href='index.php?deletePub=" . $pub->getId() . "' class='btn'>Borrar</a></div>";
+      echo "<img src='public/img/" . $pub->getImage() . "' ></img>";
       echo "<h1>" . $pub->getTitle() . "</h1>";
       echo "<span>" . $pub->getText() . "</span>";
       echo "</article>";

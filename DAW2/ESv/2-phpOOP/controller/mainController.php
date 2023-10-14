@@ -1,14 +1,15 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // gestiona variables entrada
-require_once("model/Publication.php");
-require_once("model/PublicationRepository.php");
+require_once("model/Publications.php");
+require_once("model/PublicationsRepository.php");
 require_once("model/User.php");
 require_once("model/UserRepository.php");
 
 session_start();
-
-// global declaration, esta bien??
-$pubs = PublicationRepository::getPublications();
+$pubs = PublicationsRepository::getPublications();
 
 // LOGIN
 if (isset($_GET["salir"])) {
@@ -29,6 +30,7 @@ if (isset($_POST["user"])) {
   die;
 }
 
+
 // DUDA -> No se puede hacer lo de arriba y esto?
 // if (isset($_SESSION["user"])) {
 //   include("view/mainView.php");
@@ -42,7 +44,24 @@ if (isset($_GET["newUser"])) {
 }
 
 if (isset($_POST["newPub"])) {
-  PublicationRepository::newPub($_POST, $_FILES);
+  PublicationsRepository::newPub($_POST, $_FILES);
+  include("view/mainView.php");
+  die;
+}
+
+if (isset($_GET["deletePub"])) {
+  PublicationsRepository::deletePub($_GET["deletePub"]);
+  include("view/mainView.php");
+  die;
+}
+
+if (isset($_GET["editPub"])) {
+  include("view/editView.php");
+  die;
+}
+
+if(isset($_POST["submitEditPub"])) {
+  PublicationsRepository::updatePubById($_POST["id"], $_POST["title"], $_POST["text"], $_POST["img"]??=null);
   include("view/mainView.php");
   die;
 }
@@ -57,5 +76,5 @@ if (isset($_GET["returnToMainView"])) {
   die;
 }
 
-
+include("view/login.php");
 ?>
