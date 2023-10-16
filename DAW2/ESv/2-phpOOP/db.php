@@ -1,5 +1,5 @@
 <?php
-class Conect
+class Connect
 {
   public static function setConection()
   {

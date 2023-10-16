@@ -22,11 +22,11 @@
     </div>
   </header>
     <?php
-      $pub = PublicationsRepository::getPublicationById($_GET["editPub"]);
+      $pub = PublicationsRepository::getPublicationById($_GET["comentar"]);
     ?>
   <div class="edit-view-layout">
     <aside class="col-1">
-      <h1 style="margin-bottom: 2rem;">Noticia original 👇</h1>
+      <h1 style="margin-bottom: 2rem;">Noticia a comentar 👇</h1>
       <?php
         echo "<article class='pub-element'>";
         echo "<img src='public/img/" . $pub->getImage() . "' ></img>";
@@ -37,19 +37,10 @@
     </aside>
     <main class="col-2">
       <?php
-      // DEVUELVO OBJETO O ARRAY?
-
-        echo "<form class='edit-form' action='index.php' method='POST' enctype='multipart/form-data' class='insert-pub-form-layout'>";
-        echo "<div class='inline-flex'>";
-        echo "<input type='text' placeholder='Edita el título' name='title' value='".$pub->getTitle()."'>";
-        echo "<div class='inline-flex'>";
-        echo "<label>ID:</label>";
-        echo "<input type='text' name='id' value='".$pub->getId()."' readonly>";
-        echo "</div>";
-        echo "</div>";
-        echo "<textarea name='text' placeholder='Edita el artículo'>".$pub->getText()."</textarea>";
-        echo "<input type='file' name='img'>";
-        echo "<input class='btn' type='submit' name='submitEditPub' value='Editar'>";
+        var_dump($_SESSION);
+        echo "<form class='edit-form' action='index.php' method='POST'>";
+        echo "<textarea class='com-text' name='text' placeholder='Escribe tu comentario'></textarea>";
+        echo "<input class='btn' type='submit' name='submitComment' value='Enviar'>";
         echo "</form>";
       ?>
     </main>

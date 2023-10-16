@@ -3,7 +3,7 @@ class PublicationsRepository
 {
   public static function getPublications()
   {
-    $bd = Conect::setConection();
+    $bd = Connect::setConection();
     $q = "SELECT * FROM publications";
     $result = $bd->query($q);
     while ($data = $result->fetch_assoc()) {
@@ -13,7 +13,7 @@ class PublicationsRepository
   }
 
   public static function getPublicationById($id) {
-    $bd = Conect::setConection();
+    $bd = Connect::setConection();
     $q = "SELECT * FROM publications WHERE id = $id";
     $result = $bd->query($q);
     $data = $result->fetch_assoc();
@@ -28,21 +28,21 @@ class PublicationsRepository
 
     move_uploaded_file($image["img"]["tmp_name"], "public/img/" . $imgName);
 
-    $bd = Conect::setConection();
+    $bd = Connect::setConection();
     $q = "INSERT INTO publications (title, text, pubdate, img) VALUES('$title', '$text', NOW(), '$imgName')";
     $bd->query($q);
     return $bd->insert_id;
   }
 
   public static function deletePub($id) {
-    $bd = Conect::setConection();
+    $bd = Connect::setConection();
     $q = "DELETE FROM publications WHERE id = $id";
     $bd->query($q);
     return true;
   }
 
   public static function updatePubById($id, $title = null, $text = null, $image = null) {
-    $bd = Conect::setConection();
+    $bd = Connect::setConection();
 
     $title ??= self::getPublicationById($id)->getTitle();
     $text ??= self::getPublicationById($id)->getText();

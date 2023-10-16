@@ -2,11 +2,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// gestiona variables entrada
 require_once("model/Publications.php");
 require_once("model/PublicationsRepository.php");
 require_once("model/User.php");
 require_once("model/UserRepository.php");
+require_once("model/Comments.php");
+require_once("model/CommentsRepository.php");
 
 session_start();
 $pubs = PublicationsRepository::getPublications();
@@ -19,8 +20,7 @@ if (isset($_GET["salir"])) {
 }
 
 // LOGIN ACT
-// ugly
-// si cargamos las publicaciones aquí, tenemos el problema de que solo podremos volver a este bloque o petará. Para ello, chequear post y gets y actuar en consecuencia ( mejorar diseño)
+// ( mejorar diseño)
 if (isset($_POST["user"])) {
   if (isset($_POST["register"])) {
     UserRepository::createUser($_POST);
@@ -30,14 +30,6 @@ if (isset($_POST["user"])) {
   die;
 }
 
-
-// DUDA -> No se puede hacer lo de arriba y esto?
-// if (isset($_SESSION["user"])) {
-//   include("view/mainView.php");
-//   die;
-// }
-
-// REGISTER - cambiar formularios
 if (isset($_GET["newUser"])) {
   include("view/newUser.php");
   die;
@@ -73,6 +65,29 @@ if (isset($_GET["createPublication"])) {
 
 if (isset($_GET["returnToMainView"])) {
   include("view/mainView.php");
+  die;
+}
+
+if (isset($_GET["watchId"])) {
+  $_SESSION["pub_id_watching"] = $_GET["watchId"];
+  include("view/dinamicView.php");
+  die;
+}
+
+if (isset($_GET["comentar"])) {
+  include("view/createCommentView.php");
+  die;
+}
+
+if (isset($_POST["submitComment"])) {
+  CommentsRepository::createComment($_POST);
+  header("Location: index.php?watchId=" . $_SESSION['pub_id_watching']);
+  die;
+}
+
+if (isset($_GET["deleteCommentById"])) {
+  CommentsRepository::deleteCommentById($_GET["deleteCommentById"]);
+  header("Location: index.php?watchId=" . $_SESSION['pub_id_watching']);
   die;
 }
 

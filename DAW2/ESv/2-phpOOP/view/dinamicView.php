@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-      <?php include "styles.css" ?>
+    <?php include "styles.css" ?>
   </style>
   <title>TSM - EDIT PUB</title>
 </head>
@@ -17,43 +17,63 @@
       <?php
       echo "<span>" . $_SESSION["user"]->getName() . "</span>";
       echo "<img src='public/img/default-user.jpg' class='user-img'/>";
-      echo "<a class='btn secondary' href='index.php?salir' >SALIR</a>";
+      echo "<a class='btn' href='index.php?salir' >SALIR</a>";
       ?>
     </div>
   </header>
     <?php
-      $pub = PublicationsRepository::getPublicationById($_GET["editPub"]);
+      $pub = PublicationsRepository::getPublicationById($_GET["watchId"]);
+      $comments = CommentsRepository::getCommentsByPubId($_GET["watchId"]);
     ?>
-  <div class="edit-view-layout">
-    <aside class="col-1">
-      <h1 style="margin-bottom: 2rem;">Noticia original 👇</h1>
-      <?php
-        echo "<article class='pub-element'>";
-        echo "<img src='public/img/" . $pub->getImage() . "' ></img>";
-        echo "<h1>" . $pub->getTitle() . "</h1>";
-        echo "<span>" . $pub->getText() . "</span>";
-        echo "</article>";
-      // ?>
-    </aside>
-    <main class="col-2">
-      <?php
-      // DEVUELVO OBJETO O ARRAY?
+  <article class="single-view-layout">
+    <?php 
+     echo "<h1>" . $pub->getTitle(). "</h1>";
+     echo "<img src='public/img/" . $pub->getImage() . "'>";
+     echo "<p>". $pub->getText() . "</p>";
+    ?>
+  </article>
+  <hr>
 
-        echo "<form class='edit-form' action='index.php' method='POST' enctype='multipart/form-data' class='insert-pub-form-layout'>";
-        echo "<div class='inline-flex'>";
-        echo "<input type='text' placeholder='Edita el título' name='title' value='".$pub->getTitle()."'>";
-        echo "<div class='inline-flex'>";
-        echo "<label>ID:</label>";
-        echo "<input type='text' name='id' value='".$pub->getId()."' readonly>";
+  <!-- comentarios -->
+  <section class="comment-layout">
+    <header class="comment-section-header">
+        <span>Comentarios 👇</span>
+          <?php 
+          if (!empty($_SESSION)) {
+            echo "<a class='btn' href='index.php?comentar=".$_GET["watchId"]."'>Comenta</a>";
+          } else {
+            echo "<span><a href='index.php?salir'>Inicia sesión para comentar</a></span>";
+          }
+          ?>
+    </header>
+    <div>
+      <?php 
+      foreach ($comments as $com) {
+        // main div
+        echo "<div class='comment'>";
+        //header div
+          echo "<div class='comment-header'>";
+        // inline group div
+            echo "<div class='user-header-settings'>";
+              echo "<img src='public/img/" . $com->getAuthor()->getImg() . "' class='user-img'>";
+              echo "<span>" . $com->getAuthor()->getName() . "</span>";
+            echo "</div>";
+            echo "<div class='user-headre-settings'>";
+            echo "<span>" . $com->getDate() . "</span>";
+            echo "</div>";
+          echo "</div>";
+        // body
+        echo "<div class='comment-body'>";
+        echo "<p>" . $com->getText() . "</p>";
         echo "</div>";
+        if ($_SESSION["user"]->isAdmin()) {
+          echo "<div><a class='btn' href='index.php?deleteCommentById=" .$com->getId() . "'>Eliminar</a></div>";
+        }
         echo "</div>";
-        echo "<textarea name='text' placeholder='Edita el artículo'>".$pub->getText()."</textarea>";
-        echo "<input type='file' name='img'>";
-        echo "<input class='btn' type='submit' name='submitEditPub' value='Editar'>";
-        echo "</form>";
+
+      }
       ?>
-    </main>
-  </div>
-
+    </div>
+  </section>
 </body>
 </html>

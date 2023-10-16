@@ -19,7 +19,7 @@
       <?php
       echo "<span>" . $_SESSION["user"]->getName() . "</span>";
       echo "<img src='public/img/default-user.jpg' class='user-img'/>";
-      echo "<a class='btn secondary' href='index.php?salir' >SALIR</a>";
+      echo "<a class='btn' href='index.php?salir' >SALIR</a>";
       ?>
     </div>
   </header>

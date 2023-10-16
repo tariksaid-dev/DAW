@@ -14,7 +14,7 @@
   <header>
     <div class="user-header-settings">
       <?php
-      if ($_SESSION["user"]->checkRole()) {
+      if ($_SESSION["user"]->isAdmin()) {
         echo "<a class='btn' href='index.php?createPublication' >Nueva publicación</a>";
       }
       ?>
@@ -23,7 +23,7 @@
       <?php
       echo "<span>" . $_SESSION["user"]->getName() . "</span>";
       echo "<img src='public/img/default-user.jpg' class='user-img'/>";
-      echo "<a class='btn secondary' href='index.php?salir' >SALIR</a>";
+      echo "<a class='btn' href='index.php?salir' >SALIR</a>";
       ?>
     </div>
   </header>
@@ -34,9 +34,11 @@
       echo "<div class='pub-button-container'>";
       echo "<a href='index.php?editPub=" . $pub->getId() . "' class='btn'>Editar</a>";
       echo "<a href='index.php?deletePub=" . $pub->getId() . "' class='btn'>Borrar</a></div>";
+      echo "<a href='index.php?watchId=" . $pub->getId() . "'>";
       echo "<img src='public/img/" . $pub->getImage() . "' ></img>";
       echo "<h1>" . $pub->getTitle() . "</h1>";
       echo "<span>" . $pub->getText() . "</span>";
+      echo "</a>";
       echo "</article>";
     }
     ?>
