@@ -103,3 +103,9 @@ Para esta actividad he elegido la web de la [Universidad de granada](https://www
 |                             |                                    | que sea mínimamente extensa hará que no    |
 |                             |                                    | podamos ver lo que hemos escrito.          |
 +-----------------------------+------------------------------------+--------------------------------------------+
+
+3. **Imagina que te has quedado sin ratón. Analiza la navegación en uno de los sitios web de la lista utilizando tan solo el teclado. Indica si es posible llegar a todos los puntos del sistema de navegación sin usar el ratón.**
+
+He elegido la web que se propone de la [Junta de Andalucía](https://www.juntadeandalucia.es/educacion/portals/web/formacion-profesional-andaluza), la cual es prácticamente innavegable sin ratón, ya que no marca de ninguna manera que elemento estamos seleccionando con el tabulador (ni bordes ni sombras). Solo en los enlaces de la sección "Novedades" podemos ver donde estamos gracias a que el texto es subrayado cuando lo tenemos seleccionado. 
+
+Sin embargo, si podemos hacer el esfuerzo mayúsculo de mirar en la esquina inferior izquierda qué enlace estamos seleccionando y deducir donde nos llevará gracias a la URL, aunque evidentemente no es lo ideal.
