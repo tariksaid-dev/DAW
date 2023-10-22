@@ -1,0 +1,56 @@
+version: "3.8"
+services:
+  # PHP Service
+  php:
+    build: "./php_docker/"
+    volumes:
+      - ./www/:/var/www/html/
+    networks:
+      - my_network
+
+  # Apache Service
+  apache:
+    build: "./apache_docker/"
+    depends_on:
+      - php
+    ports:
+      - "81:80"
+    volumes:
+      - ./www/:/var/www/html/
+    networks:
+      my_network:
+        ipv4_address: 192.168.70.211
+
+  # MariaDB Service
+  mariadb:
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - my_network
+
+  # phpMyAdmin Service
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mariadb
+    depends_on:
+      - mariadb
+    networks:
+      - my_network
+
+# Definir la red personalizada
+networks:
+  my_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.70.211/24
+
+# Volumes
+volumes:
+  mysqldata:
