@@ -31,6 +31,14 @@ aside {
   display: flex;
   flex-direction: column;
 }
+select {
+  border: 1px solid #4b5563;
+  background-color: #18212f;
+  border-radius: 5px;
+  box-shadow: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
+  padding: 0.4rem 0.6rem;
+  color: #e5e7eb;
+}
 
 input,
 textarea {
@@ -161,7 +169,7 @@ hr {
 
 .user-img {
   display: block;
-  width: 2.5rem;
+  width: 2.5rem !important;
   aspect-ratio: 1;
   object-fit: cover;
   object-position: center;
@@ -263,5 +271,40 @@ hr {
   flex-direction: column;
   margin: 2.4rem;
   gap: 1.2rem;
-  /* border: 1px solid white; */
+}
+
+.admin-panel-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2.4rem;
+  padding: 2.4rem;
+}
+
+.admin-panel-user {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  box-shadow: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
+  padding: 0.8rem 1.4rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.admin-panel-user div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: bolder;
+}
+
+.admin-panel-user a {
+  padding: 0.4rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }

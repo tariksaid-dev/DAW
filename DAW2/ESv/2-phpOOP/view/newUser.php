@@ -12,13 +12,13 @@
 
 <body>
   <div class="login-layout">
-    <form action='index.php' method='POST'>
+    <form action='index.php?main=auth' method='POST'>
       <h1>New user</h1>
       <input type='text' id='user' name='user' placeholder='Username'>
       <input type='password' id='password' name='password' placeholder='Password'>
       <input type='submit' name='register' class="btn">
     </form>
-    <span>Ya estás <a href="index.php?salir">registrado?</a></span>
+    <span>Ya estás <a href="index.php?main=auth&salir">registrado?</a></span>
   </div>
 </body>
 

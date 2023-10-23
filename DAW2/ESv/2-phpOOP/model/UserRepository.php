@@ -5,7 +5,8 @@ require_once("User.php");
 class UserRepository
 {
 
-  public static function getAllUsers() {
+  public static function getAllUsers()
+  {
     $q = "SELECT * FROM users";
     $bd = Connect::setConection();
     $result = $bd->query($q);
@@ -14,8 +15,9 @@ class UserRepository
     }
     return $users;
   }
-  
-  public static function getUserById($id) {
+
+  public static function getUserById($id)
+  {
     $bd = Connect::setConection();
     $q = "SELECT * FROM users WHERE id = $id";
     $result = $bd->query($q);
@@ -48,5 +50,12 @@ class UserRepository
     }
     return null;
   }
+
+  public static function deleteUserById($id)
+  {
+
+    $q = "DELETE FROM users WHERE id = $id";
+    $db = Connect::setConection();
+    return $db->query($q);
+  }
 }
-?>

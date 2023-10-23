@@ -1,4 +1,7 @@
 <?php
+require_once("db.php");
+require_once("User.php");
+
 class PublicationsRepository
 {
   public static function getPublications()
@@ -12,7 +15,8 @@ class PublicationsRepository
     return $pubs;
   }
 
-  public static function getPublicationById($id) {
+  public static function getPublicationById($id)
+  {
     $bd = Connect::setConection();
     $q = "SELECT * FROM publications WHERE id = $id";
     $result = $bd->query($q);
@@ -34,25 +38,30 @@ class PublicationsRepository
     return $bd->insert_id;
   }
 
-  public static function deletePub($id) {
+  public static function deletePub($id)
+  {
     $bd = Connect::setConection();
     $q = "DELETE FROM publications WHERE id = $id";
     $bd->query($q);
     return true;
   }
 
-  public static function updatePubById($id, $title = null, $text = null, $image = null) {
+  public static function updatePubById($id, $title = null, $text = null, $image = null)
+  {
     $bd = Connect::setConection();
 
     $title ??= self::getPublicationById($id)->getTitle();
     $text ??= self::getPublicationById($id)->getText();
     $image ??= self::getPublicationById($id)->getImage();
-    
+
     // CAMPO DATE?
     $q = "UPDATE publications SET title = '$title', text = '$text', img = '$image' WHERE id = $id";
     $bd->query($q);
 
     return true;
   }
+
+  public static function findPublicationByQuery()
+  {
+  }
 }
-?>
