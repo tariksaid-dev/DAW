@@ -53,8 +53,14 @@ class UserRepository
 
   public static function deleteUserById($id)
   {
-
     $q = "DELETE FROM users WHERE id = $id";
+    $db = Connect::setConection();
+    return $db->query($q);
+  }
+
+  public static function changeRoleById($id, $rol)
+  {
+    $q = "UPDATE users SET rol = $rol WHERE id = $id";
     $db = Connect::setConection();
     return $db->query($q);
   }

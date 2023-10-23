@@ -9,16 +9,11 @@ if (isset($_POST["user"])) {
   die;
 }
 
-if (isset($_GET["salir"])) {
-  session_destroy();
-  include("view/login.php");
-  die;
-}
-
 if (isset($_GET["newUser"])) {
   include("view/newUser.php");
   die;
 }
+
 if (isset($_GET["adminPanel"])) {
   include("view/adminPanelView.php");
   die;

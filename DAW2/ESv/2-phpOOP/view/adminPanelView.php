@@ -11,7 +11,7 @@
 </head>
 <header>
   <div class="user-header-settings">
-    <a class='btn' href='index.php?returnToMainView'>Volver a publicaciones</a>
+    <a class='btn' href='index.php'>Volver a publicaciones</a>
   </div>
   <div class="user-header-settings">
     <?php
@@ -29,34 +29,48 @@ $users = UserRepository::getAllUsers();
   <div class="admin-panel-layout">
     <?php
     foreach ($users as $user) {
-      echo "<article class='admin-panel-user'>";
-      echo "<div>";
-      echo "<img src='public/img/" . $user->getImg() . "' class='user-img'>";
-      echo "<span>" . $user->getName() . "</span>";
-      echo "<span>#" . $user->getId() . "</span>";
-      echo "</div>";
-      echo "<div>";
-      echo "<select>";
+      if ($user->getId() != $_SESSION["user"]->getId()) {
+        echo "<article class='admin-panel-user'>";
+        echo "<div>";
+        echo "<img src='public/img/" . $user->getImg() . "' class='user-img'>";
+        echo "<span>" . $user->getName() . "</span>";
+        echo "<span>#" . $user->getId() . "</span>";
+        echo "</div>";
+        echo "<div>";
+        echo "<select id='rolSelect' dataId='" . $user->getId() . "'>";
 
-      $state[0] = "User";
-      $state[1] = "Admin";
-
-
-      foreach ($state as $key => $value) {
-        echo "<option value='" . $key . "'";
-        if ($user->isAdmin()) {
-          echo "selected";
+        foreach ($user->userRoleState() as $key => $value) {
+          echo "<option value='" . $key . "'";
+          if ($user->isAdmin() && $key === 1) {
+            echo " selected";
+          }
+          echo " >$value</option>";
         }
-        echo " > $value";
-        echo "</option>";
+        echo "</select>";
+        echo "<a class='btn commit-btn' dataId='" . $user->getId() . "'>Commit</a>";
+        echo "<a class='btn' href='index.php?main=user&deleteUser=" . $user->getId() . "'>Delete</a>";
+        echo "</div>";
+        echo "</article>";
       }
-      echo "</select>";
-      echo "<a class='btn' href='index.php?main=user&deleteUser=" . $user->getId() . "'>Delete</a>";
-      echo "</div>";
-      echo "</article>";
     }
     ?>
   </div>
+
+  <script type="text/javascript">
+    const commitBtn = document.querySelectorAll('.commit-btn');
+
+    commitBtn.forEach(button => {
+      button.addEventListener('click', () => {
+        const userId = button.getAttribute('dataId');
+        const selectedElement = button.previousElementSibling;
+        const selectedValue = selectedElement.value;
+
+        const href = 'index.php?main=user&updateRol=' + userId + '&rol=' + selectedValue;
+
+        window.location.href = href;
+      });
+    });
+  </script>
 </body>
 
 </html>

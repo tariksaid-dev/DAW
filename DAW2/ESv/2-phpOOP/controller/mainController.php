@@ -9,10 +9,7 @@ require_once("model/UserRepository.php");
 require_once("model/Comments.php");
 require_once("model/CommentsRepository.php");
 
-require_once("db.php");
-
 session_start();
-
 
 if (isset($_GET["main"])) {
   $_GET["main"] == "user" && require_once("controller/userController.php");
