@@ -13,7 +13,7 @@
 <body>
   <header>
     <div class="user-header-settings">
-      <a class='btn' href='index.php?returnToMainView'>Volver a publicaciones</a>
+      <a class='btn' href='index.php?main=pub&returnToMainView'>Volver a publicaciones</a>
     </div>
     <div class="user-header-settings">
       <?php

@@ -42,7 +42,7 @@
       <span>Comentarios 👇</span>
       <?php
       if (!empty($_SESSION)) {
-        echo "<a class='btn' href='index.php?comentar=" . $_GET["watchId"] . "'>Comenta</a>";
+        echo "<a class='btn' href='index.php?main=comment&comentar=" . $_GET["watchId"] . "'>Comenta</a>";
       } else {
         echo "<span><a href='index.php?salir'>Inicia sesión para comentar</a></span>";
       }
@@ -69,7 +69,7 @@
         echo "<p>" . $com->getText() . "</p>";
         echo "</div>";
         if ($_SESSION["user"]->isAdmin()) {
-          echo "<div><a class='btn' href='index.php?deleteCommentById=" . $com->getId() . "'>Eliminar</a></div>";
+          echo "<div><a class='btn' href='index.php?main=comment&deleteCommentById=" . $com->getId() . "'>Eliminar</a></div>";
         }
         echo "</div>";
       }

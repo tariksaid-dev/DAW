@@ -40,7 +40,7 @@
     </aside>
     <main class="col-2">
       <?php
-      echo "<form class='edit-form' action='index.php' method='POST'>";
+      echo "<form class='edit-form' action='index.php?main=comment' method='POST'>";
       echo "<textarea class='com-text' name='text' placeholder='Escribe tu comentario'></textarea>";
       echo "<input class='btn' type='submit' name='submitComment' value='Enviar'>";
       echo "</form>";

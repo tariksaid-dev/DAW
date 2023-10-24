@@ -113,6 +113,11 @@ form {
   &.edit-form {
     margin: 0.2rem 0.2rem;
   }
+
+  &.search-form {
+    margin: 0;
+    flex-direction: row;
+  }
 }
 
 p,
@@ -130,6 +135,11 @@ h6 {
 hr {
   width: 70%;
   margin: 0 auto;
+}
+
+footer {
+  display: flex;
+  gap: 2.4rem;
 }
 
 .login-layout {
@@ -159,12 +169,17 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid white;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
   padding: 0.8rem 1.4rem;
+  color: #e5e7eb;
+  background-color: #18212f;
+  box-shadow: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
 }
 
 .pub-element img {
   width: 100%;
+  max-height: 18rem;
 }
 
 .user-img {
@@ -248,7 +263,9 @@ hr {
   align-items: center;
   margin: 2.5rem 17.5rem;
   padding: 1.4rem 1.4rem;
-  border: 1px solid white;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  background-color: #18212f;
 }
 
 .comment-header {

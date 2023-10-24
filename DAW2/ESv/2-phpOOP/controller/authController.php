@@ -18,3 +18,5 @@ if (isset($_GET["adminPanel"])) {
   include("view/adminPanelView.php");
   die;
 }
+
+include("view/login.php");

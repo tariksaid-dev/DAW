@@ -54,14 +54,44 @@ class PublicationsRepository
     $text ??= self::getPublicationById($id)->getText();
     $image ??= self::getPublicationById($id)->getImage();
 
-    // CAMPO DATE?
     $q = "UPDATE publications SET title = '$title', text = '$text', img = '$image' WHERE id = $id";
     $bd->query($q);
 
     return true;
   }
 
-  public static function findPublicationByQuery()
+  public static function findPublicationByQuery($query, $order, $page)
   {
+
+    $bd = Connect::setConection();
+    $q = "SELECT * FROM publications WHERE text LIKE '%$query%' ORDER BY '$order' LIMIT $page, 2";
+    $result = $bd->query($q);
+    while ($data = $result->fetch_assoc()) {
+      $pubs[] = new Publications($data);
+    }
+
+    if (!$pubs) {
+      $pubs = self::getPublications();
+      $_SESSION["fetch_error"] = "No se encuentra tu búsqueda. Mostrando todos los resultados";
+      return $pubs;
+    } else {
+      if ($_SESSION["fetch_error"]) {
+        unset($_SESSION["fetch_error"]);
+      }
+      return $pubs;
+    }
+  }
+
+  public static function findPublicationByQueryCount($query)
+  {
+    $bd = Connect::setConection();
+    $q = "SELECT COUNT(*) AS total FROM publications WHERE text LIKE '%$query%'";
+    $result = $bd->query($q);
+    $row = $result->fetch_assoc();
+
+    if ($row && isset($row["total"])) {
+      return (int)$row["total"];
+    }
+    return 0;
   }
 }
