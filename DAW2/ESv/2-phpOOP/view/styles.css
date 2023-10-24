@@ -139,7 +139,23 @@ hr {
 
 footer {
   display: flex;
+}
+
+footer div {
+  display: flex;
+  flex: 1;
+  justify-content: center;
   gap: 2.4rem;
+}
+
+footer div > * {
+  border-radius: 5px;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  padding: 0.8rem 1.4rem;
+  color: #e5e7eb;
+  background-color: #18212f;
+  box-shadow: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.3);
 }
 
 .login-layout {
@@ -179,7 +195,7 @@ footer {
 
 .pub-element img {
   width: 100%;
-  max-height: 18rem;
+  max-height: 26rem;
 }
 
 .user-img {

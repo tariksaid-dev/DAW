@@ -1,6 +1,6 @@
 <?php
 
-$pubs = PublicationsRepository::findPublicationByQuery($_GET["searchQuery"] ??= "", $_GET["order"] ??= "ASC", $_GET["page"] ??= 1);
+$pubs = PublicationsRepository::findPublicationByQuery($_GET["searchQuery"] ??= "", $_GET["order"] ??= "ASC", $_GET["page"] ??= 0);
 
 $totalPubsFinded = PublicationsRepository::findPublicationByQueryCount($_GET["searchQuery"] ??= "");
 

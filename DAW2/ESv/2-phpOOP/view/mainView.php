@@ -65,29 +65,25 @@
     ?>
   </div>
   <footer>
-    <?php
+    <div>
 
+      <?php
+      $totalPages = ceil($totalPubsFinded / 2);
+      $currentPage = $_GET["page"];
 
-    $totalPages = ceil($totalPubsFinded / 2);
-    var_dump($totalPubsFinded);
-    var_dump($totalPages);
+      $order = $_GET["order"] ??= "ASC";
+      $searchQuery = $_GET["searchQuery"] ??= "";
 
-    if (isset($_GET['page'])) {
-      $currentPage = max(1, min((int)$_GET['page'], $totalPages));
-    } else {
-      $currentPage = 1;
-    }
-
-    $start = ($currentPage - 1) * 2;
-
-    for ($i = 1; $i <= $totalPages; $i++) {
-      if ($i == $currentPage) {
-        echo "<strong>$i</strong> "; // Página actual
-      } else {
-        echo "<a href='index.php?order=ASC&searchQuery=a&page=$i'>$i</a> ";
+      for ($i = 0; $i < $totalPages; $i++) {
+        if ($i == $currentPage) {
+          echo "<span style='border: 1px solid white;'><strong>" . $i + 1 . "</strong></span> ";
+        } else {
+          echo "<a href='index.php?order=" . $order . "&searchQuery=" . $searchQuery . "&page=$i'>" . $i + 1 . "</a> ";
+        }
       }
-    }
-    ?>
+      ?>
+    </div>
+
   </footer>
 </body>
 

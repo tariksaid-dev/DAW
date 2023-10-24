@@ -63,8 +63,10 @@ class PublicationsRepository
   public static function findPublicationByQuery($query, $order, $page)
   {
 
+    if ($page != 0) $page = $page * 2;
+
     $bd = Connect::setConection();
-    $q = "SELECT * FROM publications WHERE text LIKE '%$query%' ORDER BY '$order' LIMIT $page, 2";
+    $q = "SELECT * FROM publications WHERE text LIKE '%$query%' ORDER BY title $order LIMIT $page, 2";
     $result = $bd->query($q);
     while ($data = $result->fetch_assoc()) {
       $pubs[] = new Publications($data);
