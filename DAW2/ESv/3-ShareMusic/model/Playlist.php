@@ -2,6 +2,7 @@
 class Playlist
 {
   private $id, $title, $songs, $date;
+  // duration
 
   public function __construct($data)
   {

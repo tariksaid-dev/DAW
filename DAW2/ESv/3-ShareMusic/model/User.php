@@ -11,7 +11,8 @@ class User
     $this->img = $data["img"];
   }
 
-  public function getId() {
+  public function getId()
+  {
     return $this->id;
   }
 
@@ -25,10 +26,11 @@ class User
     return $this->rol;
   }
 
-  public function getImg() {
+  public function getImg()
+  {
     return $this->img;
   }
-  
+
   public function isAdmin()
   {
     return $this->getRol() > 0;
