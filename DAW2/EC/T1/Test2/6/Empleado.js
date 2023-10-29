@@ -1,5 +1,5 @@
 export class Empleado {
-  _dinero = 0;
+  _dinero = 1;
 
   constructor(nombre, apellido, salario) {
     this._nombre = nombre;
@@ -24,6 +24,6 @@ export class Empleado {
   }
 
   set dinero(newDinero) {
-    this._dinero = this._dinero + newDinero;
+    this._dinero = newDinero;
   }
 }

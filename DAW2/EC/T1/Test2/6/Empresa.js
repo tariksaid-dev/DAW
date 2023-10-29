@@ -22,7 +22,9 @@ export class Empresa {
     this._empleados.map((el) => {
       console.log(el);
       console.log(el.salario);
-      el.dinero(el.salario);
+      console.log(el.dinero);
+
+      el.dinero += el.salario;
     });
   }
 }

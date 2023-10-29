@@ -2,6 +2,7 @@ import { Desarrollador } from "./Desarrollador";
 import { Empleado } from "./Empleado";
 import { Empresa } from "./Empresa";
 import { Gerente } from "./Gerente";
+import { backup } from "./utils";
 
 const empleado1 = new Empleado("Pepe", "Pepito", 1000);
 const empleado2 = new Empleado("Patrick", "Pepito", 1000);
@@ -19,6 +20,16 @@ const empresa = new Empresa("Helados Tarek", [
   dev,
 ]);
 
+console.log(empresa);
+
 empresa.pagarSalarios();
 
-console.log(gerente.dinero());
+console.log(empresa);
+
+empresa.pagarSalarios();
+
+console.log(empresa);
+
+console.log(gerente.dinero);
+
+backup("empresa", empresa);
