@@ -51,7 +51,7 @@ export class RedSocial {
       });
       if (userLikes > maxLikes) {
         maxLikes = userLikes;
-        res = user.username;
+        res = user.nombreCompleto;
       } else {
         userLikes = 0;
       }
