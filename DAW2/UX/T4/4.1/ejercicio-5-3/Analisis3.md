@@ -1,0 +1,1 @@
+En este caso, el autor de dicho formulario ha decidido usar imágenes de font-awesome, y en este caso no se renderizan al no haber añadido el paquete o la api key en mi html. Es un buen ejemplo de que, si nuestra intención es componetizar, lo ideal es o usar svg de forma nativa o usar un framework de css como TailWind.

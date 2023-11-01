@@ -1,0 +1,60 @@
+table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+tr.cabecera {
+  background-image: url("public/fondo_gris.gif");
+}
+
+th.euro {
+  background-image: url("public/euro.png");
+  background-repeat: no-repeat;
+  background-size: 20% auto;
+  background-position: left;
+  padding-left: 20px;
+  background-color: #e6f3ff;
+}
+
+th.yen {
+  background-image: url("public/yen.png");
+  background-repeat: no-repeat;
+  background-size: 20% auto;
+  background-position: left;
+  padding-left: 20px;
+  background-color: #e6f3ff;
+}
+
+th.dolar {
+  background-image: url("public/dolar.png");
+  background-repeat: no-repeat;
+  background-size: 20% auto;
+  background-position: left;
+  padding-left: 20px;
+  background-color: #e6f3ff;
+}
+
+th.libra {
+  background-image: url("public/libra.png");
+  background-repeat: no-repeat;
+  background-size: 20% auto;
+  background-position: left;
+  padding-left: 20px;
+  background-color: #e6f3ff;
+}
+
+tr.par {
+  background-color: #ffffcc;
+}

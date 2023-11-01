@@ -1,0 +1,1 @@
+Otro formulario bastante estándar, este aún más si cabe que el primero. No importa nada de la web ni tiene mediaqueries ni animaciones, pero el resultado es elegante y sencillo. Fácil también de importar.

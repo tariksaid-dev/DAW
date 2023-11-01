@@ -1,0 +1,22 @@
+#font1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: blue;
+}
+
+#font2 {
+  font-variant: small-caps;
+}
+
+#font3 {
+  font: bold italic large serif;
+}
+
+#font4 {
+  font-family: "Roboto-Black", sans-serif;
+  color: chocolate;
+}
+
+@font-face {
+  font-family: "Roboto-Black";
+  src: url("fonts/Roboto-BlackItalic.ttf") format("truetype");
+}
