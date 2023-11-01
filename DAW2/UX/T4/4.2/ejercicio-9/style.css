@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div:nth-child(1) {
+  width: 300px;
+  height: 150px;
+  background: red;
+}
+
+div:nth-child(2) {
+  width: 30rem;
+  height: 10rem;
+  background: blue;
+}
+
+div:nth-child(3) {
+  width: 30vw;
+  height: 10vh;
+  background: yellow;
+}
+
+div:nth-child(4) {
+  width: 10cm;
+  height: 3cm;
+  background: violet;
+}

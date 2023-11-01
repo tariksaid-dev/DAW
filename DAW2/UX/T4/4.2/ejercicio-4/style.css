@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+div {
+  margin: 50px;
+  width: 400px;
+  height: 200px;
+  background: linear-gradient(to top right, blue, white, red);
+}
