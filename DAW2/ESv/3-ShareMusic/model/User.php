@@ -33,6 +33,6 @@ class User
 
   public function isAdmin()
   {
-    return $this->getRol() > 0;
+    return $this->getRol() == 2;
   }
 }

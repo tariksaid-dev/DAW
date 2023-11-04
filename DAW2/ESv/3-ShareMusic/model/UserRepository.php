@@ -1,38 +1,70 @@
 <?php
-class User
+require_once("db.php");
+require_once("User.php");
+
+class UserRepository
 {
-  private $id, $name, $rol, $img;
 
-  public function __construct($data)
+  public static function getAllUsers()
   {
-    $this->id = $data["id"];
-    $this->name = $data["name"];
-    $this->rol = $data["rol"];
-    $this->img = $data["img"];
+    $q = "SELECT * FROM user";
+    $bd = Connect::setConection();
+    $result = $bd->query($q);
+    while ($data = $result->fetch_assoc()) {
+      $user[] = new User($data);
+    }
+    return $user;
   }
 
-  public function getId()
+  public static function getUserById($id)
   {
-    return $this->id;
+    $bd = Connect::setConection();
+    $q = "SELECT * FROM user WHERE id = $id";
+    $result = $bd->query($q);
+    $data = $result->fetch_assoc();
+    return new User($data);
   }
 
-  public function getName()
+  // check later
+  public static function createNewUser($data)
   {
-    return $this->name;
+    $username = $data["user"];
+    $password = $data["password"];
+
+    $q = "INSERT INTO user(name, password, rol) values ('$username', '$password', 0)";
+    $db = Connect::setConection();
+
+    if ($db->query($q)) {
+      return self::userLogin($username, $password);
+    }
+    return null;
   }
 
-  public function getRol()
+  public static function deleteUserById($id)
   {
-    return $this->rol;
+    $q = "DELETE FROM user WHERE id = $id";
+    $db = Connect::setConection();
+    return $db->query($q);
   }
 
-  public function getImg()
+  public static function changeRoleById($id, $rol)
   {
-    return $this->img;
+    $q = "UPDATE user SET rol = $rol WHERE id = $id";
+    $db = Connect::setConection();
+    return $db->query($q);
   }
 
-  public function isAdmin()
+
+  // LOGIN
+  public static function userLogin($user, $password)
   {
-    return $this->getRol() > 0;
+    $q = "SELECT * FROM user WHERE name ='$user'";
+    $db = Connect::setConection();
+    $result = $db->query($q);
+    if ($data = $result->fetch_assoc()) {
+      if ($data['password'] == $password)
+        return new User($data);
+    } else
+      return null;
   }
 }

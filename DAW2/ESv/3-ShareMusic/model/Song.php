@@ -1,7 +1,7 @@
 <?php
 class Song
 {
-  private $id, $uploader_id, $title, $author, $img, $file, $date;
+  private $id, $uploader_id, $title, $author, $img, $file, $duration;
 
   public function __construct($data)
   {
@@ -11,7 +11,7 @@ class Song
     $this->author = $data["author"];
     $this->img = $data["img"];
     $this->file = $data["file"];
-    $this->date = $data["created_at"];
+    $this->duration = $data["duration"];
   }
 
   public function getId()
@@ -44,8 +44,8 @@ class Song
     return $this->img;
   }
 
-  public function getDate()
+  public function getDuration()
   {
-    return $this->date;
+    return $this->duration;
   }
 }
