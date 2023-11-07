@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#" class="mostrar-grafico-link">Mostrar gráficos</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="task-list-selection">
+        <div class="img-titulo">
+          <img
+            src="assets/images/lista-tareas.png"
+            alt="img"
+            class="img-lista"
+          />
+          <h1 class="titulo">Lista de tareas</h1>
+        </div>
+
+        <!-- FORM CONTAINER -->
+        <div class="form-container">
+          <input
+            type="text"
+            id="new-task-input"
+            placeholder="Introduzca la tarea"
+          />
+
+          <button class="add-task-btn">Añadir</button>
+        </div>
+        <ul class="tasks-list-ul"></ul>
+
+        <!-- GRAPHS SECTION -->
+        <section class="grafico-container"></section>
+      </section>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
