@@ -27,10 +27,34 @@ class LineRepository
     return null;
   }
 
+  public static function getLinesByOrderId($orderId)
+  {
+    $bd = Connect::setConection();
+    $q = "SELECT * FROM line WHERE order_id=$orderId";
+    $result = $bd->query($q);
+    $lines = [];
+    while ($data = $result->fetch_assoc()) {
+      $lines[] = new Line($data);
+    }
+    return $lines;
+  }
+
   public static function getLinesByUserId($userId)
   {
     $bd = Connect::setConection();
     $q = "SELECT * FROM line WHERE user_id = $userId";
+    $result = $bd->query($q);
+    $lines = [];
+    while ($data = $result->fetch_assoc()) {
+      $lines[] = new Line($data);
+    }
+    return $lines;
+  }
+
+  public static function getCurrentLinesByUserId($userId)
+  {
+    $bd = Connect::setConection();
+    $q = "SELECT * FROM line WHERE order_id IN (SELECT id FROM order WHERE id_user = $userId AND state=0)";
     $result = $bd->query($q);
     $lines = [];
     while ($data = $result->fetch_assoc()) {

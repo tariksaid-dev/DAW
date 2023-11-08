@@ -7,9 +7,10 @@ class Order
   {
     $this->id = $data["id"];
     $this->userId = $_SESSION["user"]->getId();
+
     // check
     $this->date = $data["time"];
-    $this->lines = LineRepository::getLinesByUserId($this->userId);
+    $this->lines = LineRepository::getLinesByOrderId($this->id);
     $this->state = 0;
   }
 
@@ -23,7 +24,7 @@ class Order
     return $this->lines;
   }
 
-  public function userId()
+  public function getUserId()
   {
     return $this->userId;
   }

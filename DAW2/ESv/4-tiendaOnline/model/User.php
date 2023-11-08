@@ -1,7 +1,7 @@
 <?php
 class User
 {
-  private $id, $name, $rol, $img, $carrito, $order;
+  private $id, $name, $rol, $img, $carrito, $orders;
 
   public function __construct($data)
   {
@@ -10,8 +10,8 @@ class User
     $this->rol = $data["rol"];
     $this->img = $data["img"];
     //extras TODO
-    $this->carrito = LineRepository::getLinesByUserId($this->id);
-    $this->order = OrderRepository::getOrdersByUserId($this->id);
+    $this->carrito = LineRepository::getCurrentLinesByUserId($this->id);
+    $this->orders = OrderRepository::getOrdersByUserId($this->id);
   }
 
   public function getId()
@@ -41,7 +41,7 @@ class User
 
   public function getOrder()
   {
-    return $this->order;
+    return $this->orders;
   }
 
   public function isAdmin()

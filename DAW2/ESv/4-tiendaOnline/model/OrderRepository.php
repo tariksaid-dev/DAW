@@ -38,6 +38,19 @@ class OrderRepository
     return $orders;
   }
 
+  public static function getCurrentOrderByUserId($userId)
+  {
+    $bd = Connect::setConection();
+    $q = "SELECT * FROM order WHERE user_id = $userId AND state = 0";
+    $result = $bd->query($q);
+
+    if ($result->num_rows > 0) {
+      $data = $result->fetch_assoc();
+      return new Order($data);
+    }
+    return null;
+  }
+
   public static function createNewOrder()
   {
     $userId = $_SESSION["user"]->getId();
