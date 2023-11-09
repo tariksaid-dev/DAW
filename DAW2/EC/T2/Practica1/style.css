@@ -163,6 +163,7 @@ h1 {
   margin: 10px 0;
   padding: 10px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -178,4 +179,12 @@ h1 {
   &:hover {
     background-color: #852020;
   }
+}
+
+.grafico-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 750px;
+  height: 500px;
 }

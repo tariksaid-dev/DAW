@@ -1,11 +1,13 @@
 import { v4 } from "uuid";
 import autoAnimate from "@formkit/auto-animate";
 import { loadFromLocalStorage, saveTasksToLocalStorage } from "./utils/utils";
+import crearGrafico from "./components/grafico";
 
 const newTaskInput = document.querySelector("#new-task-input");
 const tasksListUl = document.querySelector(".tasks-list-ul");
 const addTaskBtn = document.querySelector(".add-task-btn");
 const mostrarGraficoBtn = document.querySelector(".mostrar-grafico-link");
+const container = document.querySelector(".grafico-container");
 
 autoAnimate(tasksListUl);
 
@@ -45,6 +47,7 @@ function createTaskElement(task) {
 
   const taskTitleElement = document.createElement("span");
   taskTitleElement.textContent = task.title;
+  taskTitleElement.style.width = "70%";
 
   taskTitleElement.classList.toggle("completed", task.isCompleted);
   const taskDeleteBtn = document.createElement("button");
@@ -89,4 +92,10 @@ newTaskInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     addTask();
   }
+});
+
+mostrarGraficoBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  crearGrafico(app, container);
 });

@@ -1,0 +1,1 @@
+Crear un módulo llamado errores.js al que le pase como primer parámetro el texto que quiero mostrar y como segundo parámetro el elemnto del dom donde lo quiero colocar de tal forma que cuando inserte una tarea cuyo nombre/title ya exista, automáticamente me mostrará un error de color rojo debajo indicando el texto que queremos con una duración de 3s
