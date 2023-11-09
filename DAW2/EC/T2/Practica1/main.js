@@ -19,9 +19,8 @@ const app = {
 
 if (loadFromLocalStorage("tasks")) {
   loadFromLocalStorage("tasks").forEach((e) => {
-    const newTask = createNewTask(e.title, e.isCompleted);
-    app.tasks.push(newTask);
-    addTaskToList(newTask, app.tasksListUl);
+    app.tasks.push(e);
+    addTaskToList(e, app.tasksListUl);
   });
 }
 
@@ -57,15 +56,14 @@ function createTaskElement(task) {
     if (taskIndex > -1) {
       app.tasks.splice(taskIndex, 1);
       taskElement.remove();
-      saveTasksToLocalStorage("task", app.tasks);
+      saveTasksToLocalStorage("tasks", app.tasks);
     }
   });
 
   taskCheckBox.addEventListener("change", () => {
-    taskElement.style.color == "red"
-      ? (taskElement.style.color = "black")
-      : (taskElement.style.color = "red");
-    saveTasksToLocalStorage("task", app.tasks);
+    task.isCompleted ? (task.isCompleted = false) : (task.isCompleted = true);
+    taskTitleElement.classList.toggle("completed", task.isCompleted);
+    saveTasksToLocalStorage("tasks", app.tasks);
   });
 
   taskElement.appendChild(taskCheckBox);
