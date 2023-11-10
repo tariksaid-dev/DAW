@@ -1,0 +1,3 @@
+<?php
+
+$products = ProductRepository::getAllProducts();

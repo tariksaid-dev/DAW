@@ -54,7 +54,7 @@ class LineRepository
   public static function getCurrentLinesByUserId($userId)
   {
     $bd = Connect::setConection();
-    $q = "SELECT * FROM line WHERE order_id IN (SELECT id FROM order WHERE id_user = $userId AND state=0)";
+    $q = "SELECT * FROM line WHERE order_id IN (SELECT id FROM orders WHERE user_id = $userId AND state = 0)";
     $result = $bd->query($q);
     $lines = [];
     while ($data = $result->fetch_assoc()) {

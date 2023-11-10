@@ -3,8 +3,8 @@ class Connect
 {
   public static function setConection()
   {
-    $conexion = new mysqli("localhost", "root", "root", "tienda");
-    $conexion->query("SET NAMES 'utf8'");
-    return $conexion;
+    $conection = new mysqli("localhost", "root", "root", "tienda");
+    $conection->query("SET NAMES 'utf8'");
+    return $conection;
   }
 }
