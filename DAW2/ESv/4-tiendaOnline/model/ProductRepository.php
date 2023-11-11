@@ -6,7 +6,11 @@ class ProductRepository
   public static function getAllProducts()
   {
     $q = "SELECT * FROM product";
-    $bd = Connect::setConection();
+    try {
+      $bd = Connect::setConection();
+    } catch (Exception $e) {
+      throw new Error("Error al conectar con la base de datos. Error: " . $e);
+    }
     $result = $bd->query($q);
     while ($data = $result->fetch_assoc()) {
       $products[] = new Product($data);
@@ -16,7 +20,11 @@ class ProductRepository
 
   public static function getProductById($id)
   {
-    $bd = Connect::setConection();
+    try {
+      $bd = Connect::setConection();
+    } catch (Exception $e) {
+      throw new Error("Error al conectar con la base de datos. Error: " . $e);
+    }
     $q = "SELECT * FROM product WHERE id = $id";
     $result = $bd->query($q);
     $data = $result->fetch_assoc();
@@ -40,7 +48,7 @@ class ProductRepository
 
     try {
       $db = Connect::setConection();
-      $q = "INSERT INTO product(name, description, price, img, stock) values ('$name', '$description', $price, $imgName, $stock)";
+      $q = "INSERT INTO product(name, description, price, img, stock) values ('$name', '$description', $price, '$imgName', $stock)";
       $db->query($q);
     } catch (Exception $e) {
       throw new Error("Error al insertar en la base de datos. Error: $e");
@@ -52,7 +60,6 @@ class ProductRepository
   public static function deleteProductById($id)
   {
     try {
-
       $q = "DELETE FROM product WHERE id = $id";
       $db = Connect::setConection();
     } catch (Exception $e) {
@@ -62,4 +69,15 @@ class ProductRepository
   }
 
   // UPDATE
+  public static function updateStockByProductId($id, $stock)
+  {
+    try {
+      $bd = Connect::setConection();
+      $q = "UPDATE product SET stock = $stock WHERE id=$id";
+      $bd->query($q);
+    } catch (Exception $e) {
+      throw new Error("Error al modificar el stock. Error: $e");
+    }
+    return true;
+  }
 }

@@ -118,6 +118,12 @@ form {
     margin: 0;
     flex-direction: row;
   }
+
+  &.button-form {
+    flex-direction: row;
+    justify-content: center;
+    margin: 0.2rem;
+  }
 }
 
 p,
@@ -357,4 +363,12 @@ footer div > * {
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
+}
+
+.warning {
+  background-color: rgba(217, 46, 46, 0.732);
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 2.4rem 6rem 1rem 6rem;
+  padding: 0.8rem 0;
 }

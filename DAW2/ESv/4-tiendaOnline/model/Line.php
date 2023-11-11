@@ -1,16 +1,15 @@
 <?php
 class Line
 {
-  private $id, $productId, $userId, $orderId,  $cantidad, $precioProducto;
+  private $id, $product, $orderId, $cantidad, $precioLinea;
 
   public function __construct($data)
   {
     $this->id = $data["id"];
-    $this->productId = $data["productId"];
-    $this->userId = $_SESSION["user"]->getId();
-    $this->orderId = OrderRepository::getCurrentOrderByUserId($_SESSION["user"]->getId())->getId();
+    $this->product = ProductRepository::getProductById($data["product_id"]);
+    $this->orderId = $data["order_id"];
     $this->cantidad = $data["cantidad"];
-    $this->precioProducto = ProductRepository::getProductById($this->productId)->getPrice();
+    $this->precioLinea = $this->product->getPrice() * $this->cantidad;
   }
 
   public function getId()
@@ -18,28 +17,30 @@ class Line
     return $this->id;
   }
 
-  public function getProductId()
+  public function getProduct()
   {
-    return $this->productId;
+    return $this->product;
   }
-
-  public function userId()
-  {
-    return $this->userId;
-  }
-
   public function getCantidad()
   {
     return $this->cantidad;
   }
 
-  public function getPrecioProducto()
+  public function getprecioLinea()
   {
-    return $this->precioProducto;
+    return $this->precioLinea;
   }
 
   public function getOrderId()
   {
     return $this->orderId;
+  }
+
+  public function isEnoughStock()
+  {
+    if ($this->cantidad <= $this->product->getStock()) {
+      return true;
+    }
+    return false;
   }
 }

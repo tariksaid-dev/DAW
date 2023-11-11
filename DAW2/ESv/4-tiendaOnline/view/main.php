@@ -20,17 +20,25 @@
     foreach ($products as $product) {
       echo "<article class='pub-element'>";
       echo "<div class='pub-button-container'>";
-      echo "<a href='index.php?main=playlist&añadirCancionToPlaylist=" . $product->getId() . "' class='btn'>Añadir canción</a>";
-
-      if ($_SESSION["user"]->isAdmin()) {
-        echo "<a href='index.php?main=playlist&deletePlaylist=" . $product->getId() . "' class='btn'>Borrar</a>";
+      if ($product->getStock() == 0) {
+        echo "<h1>En estos momentos no hay stock de este producto</h1>";
+      } else {
+        echo "<form action='index.php?main=line' method='POST' class='button-form'>";
+        echo "<input class='btn' type='submit' name='addNewLine' value='Añadir al carrito'>";
+        echo "<input hidden name='productId' value='{$product->getId()}' >";
+        echo "<select name='cantidad'>";
+        for ($i = 1; $i < $product->getStock() + 1; $i++) {
+          echo "<option>$i</option>";
+        }
+        echo "</select>";
+        echo "</form>";
       }
-
       echo "</div>";
-      echo "<a href='index.php?main=song&watchId=" . $product->getId() . "'>";
-      echo "<img src='public/img/" . $product->getImg() . "'></img>";
-      echo "<h1>" . $product->getName() . "</h1>";
-      echo "</a>";
+      echo "<img src='public/img/{$product->getImg()}'></img>";
+      echo "<h1>{$product->getName()}</h1>";
+      echo "<p>Descripción del producto: {$product->getDescription()}</p>";
+      echo "<p>Stock disponible: <strong>{$product->getStock()}</strong></p>";
+      echo "<p>Precio por unidad: <strong>{$product->getPrice()} €</strong></p>";
       echo "</article>";
     }
     ?>

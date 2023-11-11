@@ -9,9 +9,9 @@ class User
     $this->name = $data["name"];
     $this->rol = $data["rol"];
     $this->img = $data["img"];
+
     //extras TODO
-    $this->carrito = LineRepository::getCurrentLinesByUserId($this->id);
-    $this->orders = OrderRepository::getOrdersByUserId($this->id);
+    $this->carrito = OrderRepository::getCurrentOrderByUserId($data["id"]);
   }
 
   public function getId()
@@ -39,13 +39,26 @@ class User
     return $this->carrito;
   }
 
-  public function getOrder()
+  public function getAllOrders()
   {
-    return $this->orders;
+    return  OrderRepository::getOrdersByUserId($this->id);
   }
 
   public function isAdmin()
   {
-    return $this->getRol() == 2;
+    return $this->getRol() == 1;
+  }
+
+  public function updateCarrito()
+  {
+    $this->carrito = OrderRepository::getCurrentOrderByUserId($this->id);
+  }
+
+  public function userRoleState()
+  {
+    return [
+      0 => "User",
+      1 => "Admin",
+    ];
   }
 }

@@ -22,7 +22,6 @@ class UserRepository
     return new User($data);
   }
 
-  // check later
   public static function createNewUser($data)
   {
     $username = $data["user"];
@@ -32,7 +31,11 @@ class UserRepository
     $db = Connect::setConection();
 
     if ($db->query($q)) {
-      return self::userLogin($username, $password);
+      $userId = $db->insert_id;
+      $q2 = "INSERT INTO orders(user_id, date, state) values ($userId, NOW(), 0)";
+      $db->query($q2);
+
+      return self::userLogin($data);
     }
     return null;
   }
@@ -53,8 +56,12 @@ class UserRepository
 
 
   // LOGIN
-  public static function userLogin($user, $password)
+  public static function userLogin($data)
   {
+
+    $user = $data["user"];
+    $password = $data["password"];
+
     $q = "SELECT * FROM user WHERE name ='$user'";
     $db = Connect::setConection();
     $result = $db->query($q);

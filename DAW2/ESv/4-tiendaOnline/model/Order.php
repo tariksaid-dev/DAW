@@ -6,10 +6,8 @@ class Order
   public function __construct($data)
   {
     $this->id = $data["id"];
-    $this->userId = $_SESSION["user"]->getId();
-
-    // check
-    $this->date = $data["time"];
+    $this->userId = $data["user_id"];
+    $this->date = $data["date"];
     $this->lines = LineRepository::getLinesByOrderId($this->id);
     $this->state = 0;
   }
@@ -28,7 +26,7 @@ class Order
   {
     return $this->userId;
   }
-  public function getTime()
+  public function getDate()
   {
     return $this->date;
   }
@@ -36,5 +34,33 @@ class Order
   public function getState()
   {
     return $this->state;
+  }
+
+  public function updateLines()
+  {
+    $newLines = LineRepository::getLinesByOrderId($this->id);
+    $this->lines = $newLines;
+  }
+
+  public function isEnoughStockForEveryLine()
+  {
+    $flag = true;
+
+    foreach ($this->lines as $line) {
+      if (!$line->isEnoughStock()) {
+        $flag = false;
+      } else {
+      }
+    }
+    return $flag;
+  }
+
+  public function getTotalPrice()
+  {
+    $total = 0;
+    foreach ($this->lines as $line) {
+      $total += $line->getprecioLinea();
+    }
+    return $total;
   }
 }

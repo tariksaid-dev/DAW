@@ -1,5 +1,4 @@
 <?php
-
 class LineRepository
 {
   public static function getAllLines()
@@ -54,26 +53,27 @@ class LineRepository
   public static function getCurrentLinesByUserId($userId)
   {
     $bd = Connect::setConection();
-    $q = "SELECT * FROM line WHERE order_id IN (SELECT id FROM orders WHERE user_id = $userId AND state = 0)";
+    $q = "SELECT * FROM line WHERE order_id IN (SELECT id FROM orders WHERE user_id = $userId AND state=0)";
     $result = $bd->query($q);
     $lines = [];
     while ($data = $result->fetch_assoc()) {
       $lines[] = new Line($data);
     }
+
     return $lines;
   }
 
   public static function createNewLine($data)
   {
-    $productId = $data["product_id"];
-    $userId = $_SESSION["user"]->getId();
+    $productId = $data["productId"];
     $cantidad = $data["cantidad"];
-    $precioProducto = ProductRepository::getProductById($productId)->getPrice();
-
-    $bd = Connect::setConection();
+    $precioProducto = ProductRepository::getProductById($productId)->getPrice() * $cantidad;
+    $orderId = $_SESSION["user"]->getCarrito()->getId();
 
     try {
-      $q = "INSERT INTO line (productId, userId, cantidad, precio_producto) VALUES($productId, $userId, $cantidad, $precioProducto)";
+      $bd = Connect::setConection();
+      $q = "INSERT INTO line (product_id, order_id, cantidad, line_price) VALUES($productId, $orderId, $cantidad, $precioProducto)";
+
       $bd->query($q);
     } catch (Error $e) {
       throw new Error("Error al crear una nueva línea. Error: $e");
@@ -89,6 +89,18 @@ class LineRepository
       $bd->query($q);
     } catch (Error $e) {
       throw new Error("Error al borrar una línea. Error: $e");
+    }
+    return true;
+  }
+
+  public static function updateProductQuantityFromLineById($id, $quantity)
+  {
+    try {
+      $bd = Connect::setConection();
+      $q = "UPDATE line SET cantidad = cantidad + $quantity WHERE id = $id";
+      $bd->query($q);
+    } catch (Error $e) {
+      throw new Error("Error al actualizar la línea. Error: $e");
     }
     return true;
   }
