@@ -2,12 +2,14 @@ import { v4 } from "uuid";
 import autoAnimate from "@formkit/auto-animate";
 import { loadFromLocalStorage, saveTasksToLocalStorage } from "./utils/utils";
 import crearGrafico from "./components/grafico";
+import { errors } from "./components/errors";
 
 const newTaskInput = document.querySelector("#new-task-input");
 const tasksListUl = document.querySelector(".tasks-list-ul");
 const addTaskBtn = document.querySelector(".add-task-btn");
 const mostrarGraficoBtn = document.querySelector(".mostrar-grafico-link");
 const container = document.querySelector(".grafico-container");
+const inputContainer = document.querySelector(".form-container");
 
 autoAnimate(tasksListUl);
 
@@ -25,6 +27,9 @@ if (loadFromLocalStorage("tasks")) {
     addTaskToList(e, app.tasksListUl);
   });
 }
+
+// Declared after localStorage load
+const taskTitlesSpans = document.querySelectorAll("ul.tasks-list-ul li span");
 
 function createNewTask(title, isCompleted = false) {
   return {
@@ -77,12 +82,14 @@ function createTaskElement(task) {
 
 function addTask() {
   const newTaskTitle = app.newTaskInput.value;
-  if (newTaskTitle) {
+  if (!app.tasks.some((task) => task.title === newTaskTitle)) {
     const newTask = createNewTask(newTaskTitle);
     app.tasks.push(newTask);
     addTaskToList(newTask, app.tasksListUl);
     app.newTaskInput.value = "";
     saveTasksToLocalStorage("tasks", app.tasks);
+  } else {
+    errors("Payico la tarea ya existe", inputContainer);
   }
 }
 
@@ -98,4 +105,17 @@ mostrarGraficoBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   crearGrafico(app, container);
+});
+
+// todo2
+taskTitlesSpans.forEach((span) => {
+  span.addEventListener("dblclick", (e) => {
+    const newValue = prompt("Cambia el nombre a la tarea:", span.textContent);
+
+    if (newValue.length) {
+      span.textContent = newValue;
+    } else {
+      errors("payico, no dejes el prompt vacío", inputContainer);
+    }
+  });
 });

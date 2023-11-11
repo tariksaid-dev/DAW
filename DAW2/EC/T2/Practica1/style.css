@@ -188,3 +188,14 @@ h1 {
   width: 750px;
   height: 500px;
 }
+
+/* PARA ERRORS.JS */
+.errors {
+  background-color: #ff4545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  margin-top: 0.4rem;
+}
