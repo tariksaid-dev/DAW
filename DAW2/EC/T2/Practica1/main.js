@@ -1,8 +1,14 @@
 import { v4 } from "uuid";
 import autoAnimate from "@formkit/auto-animate";
-import { loadFromLocalStorage, saveTasksToLocalStorage } from "./utils/utils";
+import {
+  loadFromLocalStorage,
+  saveTasksToLocalStorage,
+} from "./utils/useLocalStorage";
 import crearGrafico from "./components/grafico";
 import { errors } from "./components/errors";
+import { createPDF } from "./utils/useCreatePDF";
+import { taskFiltered } from "./utils/useTaskFiltered";
+import { generarEventoICS } from "./utils/useICS";
 
 const newTaskInput = document.querySelector("#new-task-input");
 const tasksListUl = document.querySelector(".tasks-list-ul");
@@ -10,6 +16,9 @@ const addTaskBtn = document.querySelector(".add-task-btn");
 const mostrarGraficoBtn = document.querySelector(".mostrar-grafico-link");
 const container = document.querySelector(".grafico-container");
 const inputContainer = document.querySelector(".form-container");
+const downloadPDFbutton = document.querySelector(".imprimir-btn");
+const searchInput = document.querySelector(".search-input");
+const icsButton = document.querySelector(".generar-evento-btn");
 
 autoAnimate(tasksListUl);
 
@@ -118,4 +127,21 @@ taskTitlesSpans.forEach((span) => {
       errors("payico, no dejes el prompt vacío", inputContainer);
     }
   });
+});
+
+// todo3
+downloadPDFbutton.addEventListener("click", (e) => {
+  createPDF(loadFromLocalStorage("tasks"));
+});
+
+// todo5
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    taskFiltered(e, tasksListUl);
+  }
+});
+
+// todo6
+icsButton.addEventListener("click", (e) => {
+  generarEventoICS(loadFromLocalStorage("tasks"));
 });
