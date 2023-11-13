@@ -205,6 +205,12 @@ Y como también configuramos el ssl, podemos entrar en nuestra página mediante 
 \includegraphics[width=0.7\columnwidth]{./img/26.png}
 \end{center}
 
+**Cabe destacar, que para que los estilos funcionen en el https, debemos modificar el archivo config.php dentro de la carpeta "moodle", y cambiar la línea que se muestra en la imagen, añadiendole una 's' para que la url sea 'https://...':**
+
+\begin{center}
+\includegraphics[width=0.7\columnwidth]{./img/extra.png}
+\end{center}
+
 ---
 
 7. **Desplegar Symfony tanto en Windows como en Ubuntu.**
