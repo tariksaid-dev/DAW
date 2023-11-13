@@ -16,7 +16,7 @@ function Main() {
     <main className="bg-gray-900 p-[4rem,4.8rem,6.4rem] overflow-y-auto">
       <div className="gap-[1.2rem] grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] p-16">
         {items?.map((el) => (
-          <div
+          <article
             className="flex flex-col gap-3 text-center hover:cursor-pointer border border-gray-700 p-2 text-gray-300 bg-slate-800 rounded-xl"
             key={el.id}
           >
@@ -27,7 +27,7 @@ function Main() {
             />
             <span className="text-sm">{el.title}</span>
             <span className="font-extrabold">{el.price}€</span>
-          </div>
+          </article>
         ))}
       </div>
     </main>
