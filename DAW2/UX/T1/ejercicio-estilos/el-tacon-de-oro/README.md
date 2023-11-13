@@ -13,3 +13,5 @@
 6. Respecto al estilo de la página, es la que diseñé en el tema 1 y apenas ha sufrido cambios. He intentado hacer una landing "similar" a la de Zara, donde el producto y las modelos sean el motivo principal, de modo que intento hacerlas resaltar con imágenes grandes y claras. Respecto a la parte de los productos, considero que el display de los productos es suficiente pero mejorable, pero poco más puedo hacer con una api de muestra. En mi opinión, no debería haber navbar (o que esta fuera desplegable y su estado natural fuera cerrado) ni header ni footer, ya que considero que los diseños minimalistas dan una sensación de lujo y exclusividad (como podemos ver en la ya nombrada Zara, o Nike, o Tesla, etc), mientras que una interfaz sobrecargada da la sensación contraria (como Amazon o AliExpress).
 
 7. Los colores fueron elegidos con la intención de hacer un modo oscuro/claro que finalmente no ha sido realizado. Por regla general, las webs de productos "de lujo" mantienen estilos claros.
+
+8. La web está desplagada en [https://el-tacon-de-oro-tsm.netlify.app/]
