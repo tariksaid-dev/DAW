@@ -6,7 +6,7 @@ import {
 } from "./utils/useLocalStorage";
 import crearGrafico from "./components/grafico";
 import { errors } from "./components/errors";
-import { createPDF } from "./utils/useCreatePDF";
+import { createPDFAllTask, createPDFSingleTask } from "./utils/useCreatePDF";
 import { taskFiltered } from "./utils/useTaskFiltered";
 import { generarEventoICS } from "./utils/useICS";
 
@@ -55,6 +55,9 @@ function addTaskToList(task, taskListUl) {
 
 function createTaskElement(task) {
   const taskElement = document.createElement("li");
+  taskElement.style.display = "flex";
+  taskElement.style.gap = "0.4rem";
+
   const taskCheckBox = document.createElement("input");
   taskCheckBox.type = "checkbox";
   taskCheckBox.checked = task.isCompleted;
@@ -62,11 +65,15 @@ function createTaskElement(task) {
   const taskTitleElement = document.createElement("span");
   taskTitleElement.textContent = task.title;
   taskTitleElement.style.width = "70%";
-
   taskTitleElement.classList.toggle("completed", task.isCompleted);
+
   const taskDeleteBtn = document.createElement("button");
   taskDeleteBtn.textContent = "Eliminar tarea";
   taskDeleteBtn.className = "delete-button";
+
+  const taskPrintBtn = document.createElement("button");
+  taskPrintBtn.innerHTML = 'Imprimir <i class="fa-solid fa-print"></i>';
+  taskPrintBtn.className = "imprimir-btn";
 
   taskDeleteBtn.addEventListener("click", () => {
     const taskIndex = app.tasks.indexOf(task);
@@ -83,9 +90,14 @@ function createTaskElement(task) {
     saveTasksToLocalStorage("tasks", app.tasks);
   });
 
+  taskPrintBtn.addEventListener("click", () => {
+    createPDFSingleTask(task);
+  });
+
   taskElement.appendChild(taskCheckBox);
   taskElement.appendChild(taskTitleElement);
   taskElement.appendChild(taskDeleteBtn);
+  taskElement.appendChild(taskPrintBtn);
   return taskElement;
 }
 
@@ -119,6 +131,7 @@ mostrarGraficoBtn.addEventListener("click", (e) => {
 // todo2
 taskTitlesSpans.forEach((span) => {
   span.addEventListener("dblclick", (e) => {
+    const oldValue = e.target.textContent;
     const newValue = prompt("Cambia el nombre a la tarea:", span.textContent);
 
     if (newValue.length) {
@@ -126,12 +139,19 @@ taskTitlesSpans.forEach((span) => {
     } else {
       errors("payico, no dejes el prompt vacío", inputContainer);
     }
+
+    app.tasks.forEach((task) => {
+      if ((task.title = oldValue)) {
+        task.title = newValue;
+      }
+    });
+    saveTasksToLocalStorage("tasks", app.tasks);
   });
 });
 
 // todo3
-downloadPDFbutton.addEventListener("click", (e) => {
-  createPDF(loadFromLocalStorage("tasks"));
+downloadPDFbutton.addEventListener("click", () => {
+  createPDFAllTask(loadFromLocalStorage("tasks"));
 });
 
 // todo5
@@ -142,6 +162,6 @@ searchInput.addEventListener("keydown", (e) => {
 });
 
 // todo6
-icsButton.addEventListener("click", (e) => {
+icsButton.addEventListener("click", () => {
   generarEventoICS(loadFromLocalStorage("tasks"));
 });
