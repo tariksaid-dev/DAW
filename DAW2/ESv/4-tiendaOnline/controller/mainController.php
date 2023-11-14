@@ -19,6 +19,7 @@ if (isset($_GET["main"])) {
   $_GET["main"] == "product" && require_once("controller/productController.php");
   $_GET["main"] == "line" && require_once("controller/lineController.php");
   $_GET["main"] == "order" && require_once("controller/orderController.php");
+  $_GET["main"] == "api" && require_once("controller/apiController.php");
 } else {
   if (empty($_SESSION) || empty($_SESSION["user"])) {
     include("view/login.php");

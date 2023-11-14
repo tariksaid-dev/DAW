@@ -7,7 +7,9 @@
     }
     echo "<a class='btn' href='index.php?main=order&verCarrito'>Ver carrito</a>";
     echo "<a class='btn' href='index.php?main=order&watchAllUserOrders'>Ver pedidos realizados</a>";
+    echo "<a class='btn' href='index.php?main=api&getAllOrders'>GET USER ORDER</a>";
     ?>
+
   </div>
   <div class="user-header-settings">
     <?php

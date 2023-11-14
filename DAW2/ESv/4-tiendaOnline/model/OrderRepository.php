@@ -1,30 +1,30 @@
 <?php
 class OrderRepository
 {
-  // public static function getAllOrders()
-  // {
-  //   $bd = Connect::setConection();
-  //   $q = "SELECT * FROM order";
-  //   $result = $bd->query($q);
-  //   $orders = [];
-  //   while ($data = $result->fetch_assoc()) {
-  //     $orders[] = new Order($data);
-  //   }
-  //   return $orders;
-  // }
+  public static function getAllOrders()
+  {
+    $bd = Connect::setConection();
+    $q = "SELECT * FROM orders";
+    $result = $bd->query($q);
+    $orders = [];
+    while ($data = $result->fetch_assoc()) {
+      $orders[] = new Order($data);
+    }
+    return $orders;
+  }
 
-  // public static function getOrderById($id)
-  // {
-  //   $bd = Connect::setConection();
-  //   $q = "SELECT * FROM orders WHERE id = $id";
-  //   $result = $bd->query($q);
+  public static function getOrderById($id)
+  {
+    $bd = Connect::setConection();
+    $q = "SELECT * FROM orders WHERE id = $id";
+    $result = $bd->query($q);
 
-  //   if ($result->num_rows > 0) {
-  //     $data = $result->fetch_assoc();
-  //     return new Order($data, $userId);
-  //   }
-  //   return null;
-  // }
+    if ($result->num_rows > 0) {
+      $data = $result->fetch_assoc();
+      return new Order($data);
+    }
+    return null;
+  }
 
   public static function getOrdersByUserId($userId)
   {
@@ -87,7 +87,7 @@ class OrderRepository
   {
     try {
       $bd = Connect::setConection();
-      $q = "DELETE FROM order WHERE id = $id";
+      $q = "DELETE FROM orders WHERE id = $id";
       $bd->query($q);
     } catch (Error $e) {
       throw new Error("Error al borrar una órden. Error: $e");

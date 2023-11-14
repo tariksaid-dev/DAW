@@ -1,5 +1,5 @@
 <?php
-class Order
+class Order implements JsonSerializable
 {
   private $id, $userId, $date, $lines, $state;
 
@@ -10,6 +10,12 @@ class Order
     $this->date = $data["date"];
     $this->lines = LineRepository::getLinesByOrderId($this->id);
     $this->state = 0;
+  }
+
+  #[\ReturnTypeWillChange]
+  public function jsonSerialize()
+  {
+    return get_object_vars($this);
   }
 
   public function getId()

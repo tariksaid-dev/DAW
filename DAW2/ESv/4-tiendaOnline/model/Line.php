@@ -1,5 +1,5 @@
 <?php
-class Line
+class Line implements JsonSerializable
 {
   private $id, $product, $orderId, $cantidad, $precioLinea;
 
@@ -10,6 +10,12 @@ class Line
     $this->orderId = $data["order_id"];
     $this->cantidad = $data["cantidad"];
     $this->precioLinea = $this->product->getPrice() * $this->cantidad;
+  }
+
+  #[\ReturnTypeWillChange]
+  public function jsonSerialize()
+  {
+    return  get_object_vars($this);
   }
 
   public function getId()

@@ -1,5 +1,5 @@
 <?php
-class Product
+class Product implements JsonSerializable
 {
   private $id, $name, $description, $img, $price, $stock;
 
@@ -11,6 +11,12 @@ class Product
     $this->img = $data["img"];
     $this->price = $data["price"];
     $this->stock = $data["stock"];
+  }
+
+  #[\ReturnTypeWillChange]
+  public function jsonSerialize()
+  {
+    return get_object_vars($this);
   }
 
   public function getId()
