@@ -3,6 +3,7 @@
 if (isset($_GET["getUserOrder"])) {
   $carrito = $_SESSION["user"]->getCarrito();
 
+  // echo serialize($carrito);
   echo json_encode($carrito->jsonSerialize(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 }
 
