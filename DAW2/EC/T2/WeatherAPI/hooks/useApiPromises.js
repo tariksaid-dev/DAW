@@ -21,12 +21,10 @@ export function useApiPromises() {
     useApiGeo(input.value)
       .then(({ lat, lon }) => useApiWeather(lat, lon))
       .then((data) => {
-        console.log(data);
         Object.entries(data.main).forEach(([k, v]) => {
           const span = document.createElement("span");
           span.innerText = `${k} : ${v}`;
           container.appendChild(span);
-          console.log(k, v);
         });
       })
       .catch((error) => {
