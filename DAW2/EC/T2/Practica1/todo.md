@@ -9,7 +9,7 @@
 - Si está completada o no✔️
 - Fecha actual en que se imprime la tarea✔️
 
-4. Utilizando Bob descargar el pdf a nuestro ordenador con el nombre que sea: Las cuatro primeras letras del texto de la tarea_día_mes_año.pdf✔️
+4. Utilizando Blob descargar el pdf a nuestro ordenador con el nombre que sea: Las cuatro primeras letras del texto de la tarea_día_mes_año.pdf✔️
 
 5. Pulsando el botón de la lupa, e introduciendo cualquier texto, al lanzar el evento del enter me filtrará todas aquellas tareas que contengan en su texto/title el texto introducido.✔️
 

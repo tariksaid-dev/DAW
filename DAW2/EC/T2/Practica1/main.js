@@ -134,17 +134,20 @@ taskTitlesSpans.forEach((span) => {
     const oldValue = e.target.textContent;
     const newValue = prompt("Cambia el nombre a la tarea:", span.textContent);
 
-    if (newValue.length) {
+    if (newValue.length && !app.tasks.some((task) => newValue === task.title)) {
       span.textContent = newValue;
+
+      app.tasks.forEach((task) => {
+        if ((task.title = oldValue)) {
+          task.title = newValue;
+        }
+      });
+    } else if (app.tasks.some((task) => newValue === task.title)) {
+      errors("payico, ya estás traqueando esa tarea", inputContainer);
     } else {
       errors("payico, no dejes el prompt vacío", inputContainer);
     }
 
-    app.tasks.forEach((task) => {
-      if ((task.title = oldValue)) {
-        task.title = newValue;
-      }
-    });
     saveTasksToLocalStorage("tasks", app.tasks);
   });
 });
