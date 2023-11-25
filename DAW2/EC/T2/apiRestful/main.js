@@ -1,4 +1,4 @@
-import { renderPost } from "./components/renderPost/renderPost";
+import { renderPost } from "./components/renderPost";
 import { createPostApi } from "./utils/createPost";
 import { deletePostApi } from "./utils/deletePostsApi";
 import { getPostApi } from "./utils/getPostApi";
