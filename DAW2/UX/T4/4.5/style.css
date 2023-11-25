@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 2.4rem;
+  border: 1px solid blueviolet;
+}
+
+.column {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* EJERCICIO 1 */
+.ul li:first-child {
+  color: green;
+}
+.ul li:last-child {
+  color: red;
+}
+
+/* EJERCICIO 2 */
+section:first-child {
+  border-top: 1px solid black;
+}
+
+section:last-child {
+  border-bottom: 1px solid black;
+}
+
+/* EJERCICIO 3 */
+tr:nth-child(3n + 3) {
+  color: red;
+}
+
+/* EJERCICIO 4 */
+.ejercicio4-1 li:nth-child(even) {
+  text-decoration: underline;
+}
+
+.ejercicio4-1 li:nth-child(odd) {
+  text-decoration: line-through;
+}
+
+.ejercicio4-2 li:nth-child(4n) {
+  color: green;
+}
+
+/* EJERCICIO 5 */
+.ej5 h1:nth-of-type(odd) {
+  text-decoration: underline;
+}
+
+/* EJERCICIO 6 */
+.ej6 strong:first-of-type {
+  color: red;
+}
+
+/* EJERCICIO 7 */
+.ej7 li::first-letter {
+  text-decoration: underline;
+}
+
+/* EJERCICIO 8 */
+.ej8 strong::before {
+  content: "¡";
+}
+
+.ej8 strong::after {
+  content: "!";
+}
+
+/* EJERCICIO 9 */
+.ej9 p::before {
+  content: "-";
+}
