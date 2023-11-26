@@ -1,5 +1,5 @@
 import { createCardElement } from "../components/Card";
-import { getPokemons } from "./useApi";
+import { getPokemons, getSinglePokemon } from "./useApi";
 import { backup, getLocalStorage } from "./useLocalStorage";
 
 export async function paintPokemons(htmlElement) {
@@ -39,4 +39,18 @@ export function paintLocalStoragePokemons(page, htmlElement) {
   pokeCards.forEach((card) => {
     htmlElement.appendChild(card);
   });
+}
+
+export async function paintSinglePokemon(htmlElement, query) {
+  const pokemon = await getSinglePokemon(query);
+  const { name, sprites, types } = pokemon;
+
+  const pokeTransformed = {
+    name,
+    sprite: sprites.front_default,
+    types: types.map((element) => element.type.name),
+  };
+
+  const card = createCardElement(pokeTransformed);
+  htmlElement.appendChild(card);
 }

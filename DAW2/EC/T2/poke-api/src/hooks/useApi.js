@@ -13,3 +13,10 @@ export async function getPokemons() {
   const res = await Promise.all(pokemons);
   return res;
 }
+
+export async function getSinglePokemon(query) {
+  const res = await fetch(POKE_API_URL + query);
+  const data = await res.json();
+
+  return data;
+}
