@@ -33,8 +33,8 @@ export function layoutGenerator() {
   btnNext.className = "btn";
   btnBefore.innerHTML = "&larr;";
   btnNext.innerHTML = "&rarr;";
-  btnBefore.style.fontSize = "24px";
-  btnNext.style.fontSize = "24px";
+  btnBefore.style.fontSize = "36px";
+  btnNext.style.fontSize = "36px";
   btnBefore.id = "btn-before";
   btnNext.id = "btn-next";
 }

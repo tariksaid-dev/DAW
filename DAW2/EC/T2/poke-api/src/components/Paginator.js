@@ -1,4 +1,3 @@
-import { getLocalStorage } from "../hooks/useLocalStorage";
 import { paintLocalStoragePokemons, paintPokemons } from "../hooks/usePokemons";
 
 // Página actual
