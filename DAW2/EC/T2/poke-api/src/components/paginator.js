@@ -1,53 +1,50 @@
 import { getLocalStorage } from "../hooks/useLocalStorage";
-import { paintPokemons } from "../hooks/usePokemons";
+import { paintLocalStoragePokemons, paintPokemons } from "../hooks/usePokemons";
 
-let page = 1;
+// Página actual
+let currentPage = 1;
 
-const pages = getLocalStorage("pokemons");
-let pagesSize = pages.length;
+// Total de páginas
+let totalPages = 1;
 
-function regenerateMain() {
-  const main = document.getElementsByTagName("main")[0];
-  const nav = document.getElementsByTagName("nav")[0];
-
-  main.remove();
-
-  const mainNew = document.createElement("main");
-  nav.insertAdjacentElement("afterend", mainNew);
-  mainNew.className = "main";
+function createNewPage(htmlElement) {
+  currentPage++;
+  const cardsToDelete = document.querySelectorAll("#main .card");
+  cardsToDelete.forEach((card) => card.remove());
+  paintPokemons(htmlElement);
 }
 
-function nextPage() {
-  if (pagesSize / 9 === page) {
-    regenerateMain();
-    paintPokemons();
-  } else {
-    const actualIndex = page * 9;
-    const endINdex = page * 9;
-  }
+function prevPage(htmlElement) {
+  currentPage--;
+  const cardsToDelete = document.querySelectorAll("#main .card");
+  cardsToDelete.forEach((card) => card.remove());
+  paintLocalStoragePokemons(currentPage, htmlElement);
 }
 
-function prevPage() {}
-
-console.log(pagesSize);
-console.log(pages);
+function nextPage(htmlElement) {
+  currentPage++;
+  const cardsToDelete = document.querySelectorAll("#main .card");
+  cardsToDelete.forEach((card) => card.remove());
+  paintLocalStoragePokemons(currentPage, htmlElement);
+}
 
 export function paginator() {
   const btnBefore = document.getElementById("btn-before");
   const btnNext = document.getElementById("btn-next");
+  const main = document.getElementById("main");
 
   btnBefore.addEventListener("click", () => {
-    page--;
-    regenerateMain();
+    if (currentPage !== 1) {
+      prevPage(main);
+    }
   });
 
   btnNext.addEventListener("click", () => {
-    page++;
-    if (pagesSize / 9 === page) {
-      getPokemonsFromLocalStorage();
+    if (currentPage === totalPages) {
+      totalPages++;
+      createNewPage(main);
     } else {
-      regenerateMain();
-      paintPokemons();
+      nextPage(main);
     }
   });
 }

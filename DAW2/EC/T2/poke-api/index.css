@@ -25,6 +25,9 @@
   border: 1px solid black;
   border-radius: 5px;
   background-color: aqua;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .input {
@@ -54,10 +57,11 @@ nav {
   flex-direction: column;
   gap: 1.2rem;
   text-align: center;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 1px solid #374c1b;
+  border-radius: 10px;
   align-items: center;
   justify-content: center;
+  background-color: #87b82a;
 }
 
 .card img {

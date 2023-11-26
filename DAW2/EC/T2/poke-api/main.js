@@ -9,12 +9,13 @@ localStorage.clear();
 layoutGenerator();
 
 const main = document.getElementById("main");
+const btnNext = document.getElementById("btn-next");
+const btnBefore = document.getElementById("btn-before");
 
 createSpinner(main);
 
-setTimeout(() => {
+setTimeout(async () => {
   document.querySelector(".spinner-container").remove();
-  paintPokemons(main);
+  await paintPokemons(main);
+  paginator();
 }, 3000);
-
-paginator();
