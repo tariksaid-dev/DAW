@@ -1,20 +1,24 @@
+import { createCardElement } from "../components/Card";
 import { getPokemons } from "./useApi";
 import { backup } from "./useLocalStorage";
 
-export async function paintPokemons() {
-  const poke = await getPokemons();
-  backup("pokemons", poke);
-  const main = document.getElementsByTagName("main")[0];
+export async function paintPokemons(htmlElement) {
+  const pokeObj = await pokeTransform();
+  const pokeCards = pokeObj.map((poke) => createCardElement(poke));
 
-  poke.forEach((element) => {
-    const { name, sprites, types } = element;
-    const div = document.createElement("div");
-    main.appendChild(div);
-    div.innerHTML = `
-    <img src='${sprites.front_default}'/>
-    <span>${name}</span><br>
-    <span>${types[0].type.name}</span>
-    `;
+  pokeCards.forEach((card) => {
+    htmlElement.appendChild(card);
   });
 }
-export async function paintSelectedPokemons() {}
+
+async function pokeTransform() {
+  const poke = await getPokemons();
+
+  const pokeTransformed = poke.map((el) => ({
+    name: el.name,
+    sprite: el.sprites.front_default,
+    types: el.types.map((element) => element.type.name),
+  }));
+
+  return pokeTransformed;
+}
