@@ -206,3 +206,32 @@ body {
   flex-direction: column;
   display: flex;
 }
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    max-height: max-content;
+  }
+
+  .header {
+    gap: 0.5rem;
+    padding: 0.25rem 1rem;
+  }
+
+  .user-container span {
+    display: none;
+  }
+}
