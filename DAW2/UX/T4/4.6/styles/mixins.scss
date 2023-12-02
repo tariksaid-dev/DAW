@@ -1,0 +1,14 @@
+@import "variables";
+///
+/// @param {*} {border [1pxsolid$border-color;}]
+
+@mixin border() {
+  border: 1px solid $border-color;
+}
+///
+/// @param {*} {display [flex;flex-direction:column;}]
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}

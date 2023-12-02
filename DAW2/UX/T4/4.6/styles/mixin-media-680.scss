@@ -1,0 +1,21 @@
+///
+/// @param {*} {@mediaonlyscreenand(max-width [680px]
+
+@mixin media680() {
+  @media only screen and (max-width: 680px) {
+    .layout {
+      display: flex;
+      flex-direction: column;
+      max-height: max-content;
+    }
+
+    .header {
+      gap: 0.5rem;
+      padding: 0.25rem 1rem;
+    }
+
+    .user-container span {
+      display: none;
+    }
+  }
+}

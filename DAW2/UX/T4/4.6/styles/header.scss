@@ -1,0 +1,53 @@
+.header {
+  background-color: $color-light;
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: 100vw;
+  padding: 1.25rem 5rem;
+}
+
+.shopping-cart {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1rem;
+  color: $icon-color;
+  text &:hover {
+    cursor: pointer;
+  }
+}
+
+.user-container {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: $font-color;
+}
+
+.user-image {
+  display: block;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: #d1d5db;
+}
+
+.header-menu {
+  gap: 0.5rem;
+  color: $user-icon-color;
+  display: flex;
+  list-style: none;
+}
+
+.header-element:hover {
+  cursor: pointer;
+}
