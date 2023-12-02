@@ -94,3 +94,36 @@ body {
     cursor: pointer;
   }
 }
+
+.user-container {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(203 213 225);
+}
+
+.user-image {
+  display: block;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: #d1d5db;
+}
+
+.header-menu {
+  gap: 0.5rem;
+  color: #4f46e5;
+  display: flex;
+  list-style: none;
+}
+
+.header-element:hover {
+  cursor: pointer;
+}
