@@ -17,7 +17,7 @@ body {
   display: grid;
   grid-template-columns: 17rem 1fr;
   grid-template-rows: 4rem 1fr 5rem;
-  min-height: 100vh;
+  max-height: 100vh;
   max-width: 100vw;
 }
 
@@ -118,7 +118,7 @@ body {
   font-size: 0.75rem;
   line-height: 1rem;
   text-align: center;
-  padding: 5rem 0.5rem;
+  padding: 0.5rem 5rem;
   background-color: rgb(31 41 55);
   border: 1px solid rgb(55 65 81);
   gap: 2.5rem;
