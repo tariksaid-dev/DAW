@@ -17,7 +17,7 @@ body {
   display: grid;
   grid-template-columns: 17rem 1fr;
   grid-template-rows: 4rem 1fr 5rem;
-  max-height: 100vh;
+  min-height: 100vh;
   max-width: 100vw;
 }
 
@@ -126,4 +126,24 @@ body {
 
 .header-element:hover {
   cursor: pointer;
+}
+
+.aside-img {
+  height: 9rem;
+  width: auto;
+}
+
+.aside-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.aside-li {
+  list-style: none;
+  &:hover {
+    cursor: pointer;
+    color: rgb(96 165 250);
+  }
 }
