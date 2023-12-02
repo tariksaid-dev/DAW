@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="layout">
+      <header class="header">
+        <div class="shopping-cart">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <g fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M3.742 20.555C4.942 22 7.174 22 11.64 22h.72c4.466 0 6.699 0 7.899-1.445m-16.517 0c-1.2-1.446-.788-3.64.035-8.03c.585-3.12.877-4.681 1.988-5.603M3.742 20.555Zm16.517 0c1.2-1.446.788-3.64-.035-8.03c-.585-3.12-.878-4.681-1.989-5.603m2.024 13.633ZM18.235 6.922C17.125 6 15.536 6 12.361 6h-.722c-3.175 0-4.763 0-5.874.922m12.47 0Zm-12.47 0Z"
+              />
+              <path stroke-linecap="round" d="M9 6V5a3 3 0 1 1 6 0v1" />
+            </g>
+          </svg>
+          <span>0</span>
+          <div class="user-container">
+            <img class="user-image" src="/img/default-user.jpg" />
+            <span>Username</span>
+          </div>
+          <ul class="header-menu">
+            <li class="header-element">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="M229.19 213c-15.81-27.32-40.63-46.49-69.47-54.62a70 70 0 1 0-63.44 0C67.44 166.5 42.62 185.67 26.81 213a6 6 0 1 0 10.38 6c19.21-33.19 53.15-53 90.81-53s71.6 19.81 90.81 53a6 6 0 1 0 10.38-6ZM70 96a58 58 0 1 1 58 58a58.07 58.07 0 0 1-58-58Z"
+                />
+              </svg>
+            </li>
+            <li class="header-element">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="M122 40V16a6 6 0 0 1 12 0v24a6 6 0 0 1-12 0Zm68 88a62 62 0 1 1-62-62a62.07 62.07 0 0 1 62 62Zm-12 0a50 50 0 1 0-50 50a50.06 50.06 0 0 0 50-50ZM59.76 68.24a6 6 0 1 0 8.48-8.48l-16-16a6 6 0 0 0-8.48 8.48Zm0 119.52l-16 16a6 6 0 1 0 8.48 8.48l16-16a6 6 0 1 0-8.48-8.48ZM192 70a6 6 0 0 0 4.24-1.76l16-16a6 6 0 0 0-8.48-8.48l-16 16A6 6 0 0 0 192 70Zm4.24 117.76a6 6 0 0 0-8.48 8.48l16 16a6 6 0 0 0 8.48-8.48ZM46 128a6 6 0 0 0-6-6H16a6 6 0 0 0 0 12h24a6 6 0 0 0 6-6Zm82 82a6 6 0 0 0-6 6v24a6 6 0 0 0 12 0v-24a6 6 0 0 0-6-6Zm112-88h-24a6 6 0 0 0 0 12h24a6 6 0 0 0 0-12Z"
+                />
+              </svg>
+            </li>
+            <li class="header-element">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <g fill="none">
+                  <path
+                    d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M12 3a1 1 0 0 1 .117 1.993L12 5H7a1 1 0 0 0-.993.883L6 6v12a1 1 0 0 0 .883.993L7 19h4.5a1 1 0 0 1 .117 1.993L11.5 21H7a3 3 0 0 1-2.995-2.824L4 18V6a3 3 0 0 1 2.824-2.995L7 3h5Zm5.707 5.464l2.828 2.829a1 1 0 0 1 0 1.414l-2.828 2.829a1 1 0 1 1-1.414-1.415L17.414 13H12a1 1 0 1 1 0-2h5.414l-1.121-1.121a1 1 0 0 1 1.414-1.415Z"
+                  />
+                </g>
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <aside class="aside">
+        <div>
+          <img class="aside-img" src="img/logo-dark.png" alt="logo" />
+          <nav>
+            <ul class="aside-ul">
+              <li class="aside-li">
+                <span>Tacones altos</span>
+              </li>
+              <li class="aside-li">
+                <span>Tacones bajos</span>
+              </li>
+              <li class="aside-li">
+                <span>Zapatos</span>
+              </li>
+              <li class="aside-li">
+                <span>Bolsos</span>
+              </li>
+              <li class="aside-li">
+                <span>Bolsos de fiesta</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <main class="main">
+        <div class="main-container">
+          <article class="main-card">
+            <img src="img/item1.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 1</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item2.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 2</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item3.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 3</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item4.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 4</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item5.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 5</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item6.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 6</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item7.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 7</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item8.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 8</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item9.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 9</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item10.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 10</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item11.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 11</span>
+            <span>Precio</span>
+          </article>
+          <article class="main-card">
+            <img src="img/item12.jpg" alt="article" class="main-article-img" />
+            <span>Artículo 12</span>
+            <span>Precio</span>
+          </article>
+        </div>
+      </main>
+      <footer class="footer">
+        <ul>
+          <li class="footer-li-title">Ayuda</li>
+          <li class="footer-li">Atención al cliente</li>
+          <li class="footer-li">Preguntas frecuentes</li>
+          <li class="footer-li">Nuestras tiendas</li>
+        </ul>
+        <ul>
+          <li class="footer-li-title">Redes</li>
+          <li class="footer-li">Instagram</li>
+          <li class="footer-li">Facebook</li>
+          <li class="footer-li">Twitter</li>
+        </ul>
+        <ul>
+          <li class="footer-li-title">Quienes somos</li>
+          <li class="footer-li">Sobre nosotros</li>
+          <li class="footer-li">Información de contacto</li>
+          <li class="footer-li">TSM asociados</li>
+        </ul>
+        <ul>
+          <li class="footer-li">Políticas</li>
+          <li class="footer-li">Aviso de cookies</li>
+          <li class="footer-li">Privacidad</li>
+        </ul>
+      </footer>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
