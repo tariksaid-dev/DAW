@@ -1,0 +1,20 @@
+{
+  "name": "pokeapi2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "fetch_and_save": "node src/helpers/fetchAndSave.js",
+    "json-server": "json-server --watch server/pokemons.json --port 4000",
+    "getPokInfo": "node src/helpers/getPokemonInfo.js",
+    "examen": "npm run getPokInfo && start /B npm run json-server && vite"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4",
+    "node-fetch": "^3.3.2",
+    "vite": "^4.4.5"
+  }
+}

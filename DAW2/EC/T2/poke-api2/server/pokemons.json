@@ -1,0 +1,184 @@
+{
+  "pokemons": [
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/1/",
+      "name": "bulbasaur",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
+      },
+      "abilities": ["overgrow", "chlorophyll"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/2/",
+      "name": "ivysaur",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png"
+      },
+      "abilities": ["overgrow", "chlorophyll"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/3/",
+      "name": "venusaur",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png"
+      },
+      "abilities": ["overgrow", "chlorophyll"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/4/",
+      "name": "charmander",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png"
+      },
+      "abilities": ["blaze", "solar-power"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/5/",
+      "name": "charmeleon",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/5.png"
+      },
+      "abilities": ["blaze", "solar-power"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/6/",
+      "name": "charizard",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"
+      },
+      "abilities": ["blaze", "solar-power"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/7/",
+      "name": "squirtle",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png"
+      },
+      "abilities": ["torrent", "rain-dish"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/8/",
+      "name": "wartortle",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/8.png"
+      },
+      "abilities": ["torrent", "rain-dish"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/9/",
+      "name": "blastoise",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/9.png"
+      },
+      "abilities": ["torrent", "rain-dish"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/10/",
+      "name": "caterpie",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10.png"
+      },
+      "abilities": ["shield-dust", "run-away"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/11/",
+      "name": "metapod",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png"
+      },
+      "abilities": ["shed-skin"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/12/",
+      "name": "butterfree",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/12.png"
+      },
+      "abilities": ["compound-eyes", "tinted-lens"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/13/",
+      "name": "weedle",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png"
+      },
+      "abilities": ["shield-dust", "run-away"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/14/",
+      "name": "kakuna",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png"
+      },
+      "abilities": ["shed-skin"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/15/",
+      "name": "beedrill",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/15.png"
+      },
+      "abilities": ["swarm", "sniper"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/16/",
+      "name": "pidgey",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/16.png"
+      },
+      "abilities": ["keen-eye", "tangled-feet", "big-pecks"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/17/",
+      "name": "pidgeotto",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/17.png"
+      },
+      "abilities": ["keen-eye", "tangled-feet", "big-pecks"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/18/",
+      "name": "pidgeot",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/18.png"
+      },
+      "abilities": ["keen-eye", "tangled-feet", "big-pecks"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/19/",
+      "name": "rattata",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/19.png"
+      },
+      "abilities": ["run-away", "guts", "hustle"]
+    },
+    {
+      "url": "https://pokeapi.co/api/v2/pokemon/20/",
+      "name": "raticate",
+      "images": {
+        "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
+        "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/20.png"
+      },
+      "abilities": ["run-away", "guts", "hustle"]
+    }
+  ]
+}
