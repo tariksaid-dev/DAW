@@ -9,8 +9,9 @@ const URL = `${import.meta.env.VITE_URL_API}/posts`;
 // DOM elements
 const postList = document.querySelector(".post-list");
 const addPostForm = document.querySelector(".add-post-form");
-const titlePost = document.getElementById("title-post");
-const contentPost = document.getElementById("content-post");
+const formInput = document.getElementById("title-post");
+const formTextarea = document.getElementById("content-post");
+const formButton = document.querySelector(".btn.btn-primary.mt-2.mb-3");
 
 getPostApi(URL, (data) => {
   renderPost(postList, data);
@@ -20,16 +21,31 @@ addPostForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const postData = {
-    title: titlePost.value,
-    post: contentPost.value,
+    title: formInput.value,
+    post: formTextarea.value,
   };
 
-  createPostApi(URL, postData, (data) => {
-    const arrayPost = [];
-    arrayPost.push(data);
+  if (formButton.classList.contains("btn-primary")) {
+    createPostApi(URL, postData, (data) => renderPost(postList, [data]));
+  }
 
-    renderPost(postList, arrayPost);
-  });
+  if (formButton.classList.contains("btn-secondary")) {
+    const postId = formButton.getAttribute("data-id");
+
+    const formInputValue = formInput.value;
+    const formTextareaValue = formTextarea.value;
+
+    updatePostApi(URL, postId, JSON.stringify(postData), () => {
+      const myCard = document.querySelector(`.card[data-id="${postId}"]`);
+
+      myCard.querySelector(".card-title").textContent = formInputValue;
+      myCard.querySelector(".card-text").textContent = formTextareaValue;
+    });
+
+    formButton.classList.replace("btn-secondary", "btn-primary");
+    formButton.textContent = "Añadir Post";
+    addPostForm.reset();
+  }
 });
 
 postList.addEventListener("click", (e) => {
@@ -43,27 +59,20 @@ postList.addEventListener("click", (e) => {
       cardContainer.remove();
     });
   }
-});
 
-postList.addEventListener("click", (e) => {
   if (e.target && e.target.id === "edit-post") {
     const cardBody = e.target.closest(".card-body");
     const titleElement = cardBody.querySelector(".card-title");
     const postElement = cardBody.querySelector(".card-text");
-
     const postId = cardBody.querySelector(".card-subtitle").textContent;
 
-    const title = prompt("Nuevo título:");
-    const post = prompt("Nuevo mensaje:");
+    cardBody.closest(".card").setAttribute("data-id", postId);
 
-    const data = {
-      title,
-      post,
-    };
+    formButton.classList.replace("btn-primary", "btn-secondary");
+    formButton.setAttribute("data-id", postId);
+    formButton.textContent = "Editar Post";
 
-    updatePostApi(URL, postId, JSON.stringify(data), () => {
-      titleElement.textContent = title;
-      postElement.textContent = post;
-    });
+    formInput.value = titleElement.textContent;
+    formTextarea.value = postElement.textContent;
   }
 });
