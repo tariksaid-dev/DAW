@@ -1,7 +1,8 @@
 import { createSpinner } from "./src/components/Spinner";
 import { layoutGenerator } from "./src/components/layoutGenerator";
 import { paginator } from "./src/components/Paginator";
-import { paintPokemons, paintSinglePokemon } from "./src/hooks/usePokemons";
+import { paintPokemons } from "./src/hooks/usePokemons";
+import { createDialogElement } from "./src/components/Dialog";
 
 export const POKE_API_URL = `${import.meta.env.VITE_URL_API}`;
 
@@ -19,12 +20,18 @@ setTimeout(async () => {
   paginator();
 }, 3000);
 
-input.addEventListener("keydown", (event) => {
+input.addEventListener("keydown", async (event) => {
   if (event.key === "Enter") {
+    const oldDialog = document.getElementsByTagName("dialog");
+    if (oldDialog[0]) oldDialog[0].remove();
+
     const query = input.value;
-    // const cardsToDelete = document.querySelectorAll("#main .card");
-    // cardsToDelete.forEach((card) => card.remove());
-    // podría hacer otro main como modal etc
-    paintSinglePokemon(main, query);
+
+    const dialog = createDialogElement(main, query);
+    dialog.showModal();
+
+    dialog.addEventListener("click", (e) => {
+      dialog.close();
+    });
   }
 });

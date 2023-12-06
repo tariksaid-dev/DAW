@@ -99,3 +99,32 @@ nav {
   right: 50%;
   transform: translate(50%, 50%);
 }
+
+.dialog {
+  margin: auto auto;
+  padding: 8rem;
+  background-color: yellowgreen;
+  border: 1px solid #374c1b;
+  border-radius: 15px;
+}
+
+.dialog-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: center;
+  border: 1px solid #374c1b;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #87b82a;
+  max-width: 60vw;
+  max-height: 60vh;
+}
+
+.dialog-card img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}

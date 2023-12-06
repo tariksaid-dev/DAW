@@ -1,4 +1,7 @@
-import { createCardElement } from "../components/Card";
+import {
+  createCardElement,
+  createCardElementForDialog,
+} from "../components/Card";
 import { getPokemons, getSinglePokemon } from "./useApi";
 import { backup, getLocalStorage } from "./useLocalStorage";
 
@@ -51,6 +54,6 @@ export async function paintSinglePokemon(htmlElement, query) {
     types: types.map((element) => element.type.name),
   };
 
-  const card = createCardElement(pokeTransformed);
+  const card = createCardElementForDialog(pokeTransformed);
   htmlElement.appendChild(card);
 }
