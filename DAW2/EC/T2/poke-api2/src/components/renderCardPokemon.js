@@ -1,4 +1,4 @@
-export function renderCardPokemon(container, pokemonData, callBack) {
+export function renderCardPokemon(pokemonData) {
   const card = document.createElement("div");
   card.classList.add("card");
   card.style.width = "18rem";
@@ -11,5 +11,5 @@ export function renderCardPokemon(container, pokemonData, callBack) {
   </div>
   `;
 
-  container.appendChild(card);
+  return card;
 }

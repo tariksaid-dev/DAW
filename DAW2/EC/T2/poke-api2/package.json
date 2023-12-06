@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "fetch_and_save": "node src/helpers/fetchAndSave.js",
     "json-server": "json-server --watch server/pokemons.json --port 4000",
-    "getPokInfo": "node src/helpers/getPokemonInfo.js",
-    "examen": "npm run getPokInfo && start /B npm run json-server && vite"
+    "getPokInfo": "node src/utils/getPokemonInfo.js",
+    "examen": "npm run getPokInfo & npm run json-server & npm run dev"
   },
   "devDependencies": {
     "json-server": "^0.17.4",

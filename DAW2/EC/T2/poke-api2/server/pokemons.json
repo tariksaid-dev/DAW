@@ -1,5 +1,5 @@
 {
-  "pokemons": [
+  "pokeArray": [
     {
       "url": "https://pokeapi.co/api/v2/pokemon/1/",
       "name": "bulbasaur",
@@ -7,7 +7,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png"
       },
-      "abilities": ["overgrow", "chlorophyll"]
+      "abilities": [
+        "overgrow",
+        "chlorophyll"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/2/",
@@ -16,7 +19,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/2.png"
       },
-      "abilities": ["overgrow", "chlorophyll"]
+      "abilities": [
+        "overgrow",
+        "chlorophyll"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/3/",
@@ -25,7 +31,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/3.png"
       },
-      "abilities": ["overgrow", "chlorophyll"]
+      "abilities": [
+        "overgrow",
+        "chlorophyll"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/4/",
@@ -34,7 +43,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/4.png"
       },
-      "abilities": ["blaze", "solar-power"]
+      "abilities": [
+        "blaze",
+        "solar-power"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/5/",
@@ -43,7 +55,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/5.png"
       },
-      "abilities": ["blaze", "solar-power"]
+      "abilities": [
+        "blaze",
+        "solar-power"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/6/",
@@ -52,7 +67,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png"
       },
-      "abilities": ["blaze", "solar-power"]
+      "abilities": [
+        "blaze",
+        "solar-power"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/7/",
@@ -61,7 +79,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/7.png"
       },
-      "abilities": ["torrent", "rain-dish"]
+      "abilities": [
+        "torrent",
+        "rain-dish"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/8/",
@@ -70,7 +91,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/8.png"
       },
-      "abilities": ["torrent", "rain-dish"]
+      "abilities": [
+        "torrent",
+        "rain-dish"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/9/",
@@ -79,7 +103,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/9.png"
       },
-      "abilities": ["torrent", "rain-dish"]
+      "abilities": [
+        "torrent",
+        "rain-dish"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/10/",
@@ -88,7 +115,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/10.png"
       },
-      "abilities": ["shield-dust", "run-away"]
+      "abilities": [
+        "shield-dust",
+        "run-away"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/11/",
@@ -97,7 +127,9 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/11.png"
       },
-      "abilities": ["shed-skin"]
+      "abilities": [
+        "shed-skin"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/12/",
@@ -106,7 +138,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/12.png"
       },
-      "abilities": ["compound-eyes", "tinted-lens"]
+      "abilities": [
+        "compound-eyes",
+        "tinted-lens"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/13/",
@@ -115,7 +150,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/13.png"
       },
-      "abilities": ["shield-dust", "run-away"]
+      "abilities": [
+        "shield-dust",
+        "run-away"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/14/",
@@ -124,7 +162,9 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png"
       },
-      "abilities": ["shed-skin"]
+      "abilities": [
+        "shed-skin"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/15/",
@@ -133,7 +173,10 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/15.png"
       },
-      "abilities": ["swarm", "sniper"]
+      "abilities": [
+        "swarm",
+        "sniper"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/16/",
@@ -142,7 +185,11 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/16.png"
       },
-      "abilities": ["keen-eye", "tangled-feet", "big-pecks"]
+      "abilities": [
+        "keen-eye",
+        "tangled-feet",
+        "big-pecks"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/17/",
@@ -151,7 +198,11 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/17.png"
       },
-      "abilities": ["keen-eye", "tangled-feet", "big-pecks"]
+      "abilities": [
+        "keen-eye",
+        "tangled-feet",
+        "big-pecks"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/18/",
@@ -160,7 +211,11 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/18.png"
       },
-      "abilities": ["keen-eye", "tangled-feet", "big-pecks"]
+      "abilities": [
+        "keen-eye",
+        "tangled-feet",
+        "big-pecks"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/19/",
@@ -169,7 +224,11 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/19.png"
       },
-      "abilities": ["run-away", "guts", "hustle"]
+      "abilities": [
+        "run-away",
+        "guts",
+        "hustle"
+      ]
     },
     {
       "url": "https://pokeapi.co/api/v2/pokemon/20/",
@@ -178,7 +237,11 @@
         "imgFront": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
         "imgBack": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/20.png"
       },
-      "abilities": ["run-away", "guts", "hustle"]
+      "abilities": [
+        "run-away",
+        "guts",
+        "hustle"
+      ]
     }
   ]
 }
