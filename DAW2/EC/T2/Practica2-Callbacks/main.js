@@ -1,19 +1,22 @@
 import pintarCallback from "./components/pintarCallback";
 
-// const div = document.getElementById("app");
+const div1 = document.getElementById("ej1");
+const div2 = document.getElementById("ej2");
+const div3 = document.getElementById("ej3");
+const div4 = document.getElementById("ej4");
 
-// // Ejercicio 1
-// function realizarOperacion(num1, num2, callback) {
-//   setTimeout(() => {
-//     callback(num1 + num2);
-//   }, 1000);
-// }
+// Ejercicio 1
+function realizarOperacion(num1, num2, callback) {
+  setTimeout(() => {
+    callback(num1 + num2);
+  }, 1000);
+}
 
-// function imprimirCallback(resultado) {
-//   pintarCallback(div, resultado);
-// }
+function imprimirCallback(resultado) {
+  pintarCallback(div, resultado);
+}
 
-// realizarOperacion(7, 3, imprimirCallback);
+realizarOperacion(7, 3, imprimirCallback);
 
 // // Ejercicio 2
 

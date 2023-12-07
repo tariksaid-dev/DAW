@@ -4,10 +4,6 @@
 
 **Enunciado:** Crear una función llamada realizarOperación que tome dos números y un callback y me devuelva la suma de didhcos números pasados 1 segundo.
 
-```javascript
-
-```
-
 ## Ejercicio 2
 
 **Enunciado:** Crear una función llamada filtrarParesAsíncronos que tome un array y un callback, y la función debe devolver un nuevo array con los números pares después de 1 segundo.
