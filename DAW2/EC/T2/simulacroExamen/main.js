@@ -13,7 +13,6 @@ import { saveOrderApi } from "./api/saveOrderApi";
 import { renderButton } from "./components/renderButton";
 import { renderCardFoods } from "./components/renderCardFoods";
 import { renderCardOrder } from "./components/renderCardOrder";
-import { dataTransform } from "./utils/dataTransform";
 import { backup } from "./utils/useLocalStorage";
 
 const URL = "http://localhost:3000/categories";
