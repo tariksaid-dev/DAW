@@ -117,7 +117,7 @@ orderDiv.addEventListener("click", async (e) => {
     await saveOrderApi(ORDERURL, newData);
 
     // limpiar todo el front
-    // globalThis.location.reload();
+    globalThis.location.reload();
   }
 });
 
