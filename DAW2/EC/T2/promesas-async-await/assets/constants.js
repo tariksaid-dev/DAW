@@ -1,1 +1,1 @@
-const USERURL = "https://jsonplaceholder.org/users";
+export const USERURL = "https://jsonplaceholder.org/users";

@@ -4,8 +4,6 @@
 
 3. Crear una función que realize un contador regresivo, desde un número dado hasta 0. La función debe devolver una promesa que se resuelva con el mensaje tiempo cumplido cuando el contador llegue a cero, no antes.
 
----
+4. Crear una función que le pase una URL y que a través de una promesa obtenga todos los usuarios de JSON de la URL JSON placeholder.
 
-1. Crear una función que le pase una URL y que a través de una promesa obtenga todos los usuarios de JSON de la URL JSON placeholder.
-
-2. Pintar en el front cada línea de la respuesta en un elemento html diferente, (username, password y un par de cosas) donde el nombre esté en rojo.
+5. Pintar en el front cada línea de la respuesta en un elemento html diferente, (username, password y un par de cosas) donde el nombre esté en rojo.

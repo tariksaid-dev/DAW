@@ -1,4 +1,4 @@
-function fetchApiJson(url) {
+export function useUsers(url) {
   return new Promise((resolve, reject) => {
     fetch(url)
       .then((res) => {
