@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {HTMLElement} element El elemento dónde se acoplará el nuevo tr
+ * @param {object} dataCheckin El objeto de la API con el que rellenaré los compos de mi tabla
+ */
 export function renderCheckin(
   element,
   {

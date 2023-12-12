@@ -75,24 +75,54 @@
   ],
   "checkins": [
     {
-      "id": 1,
       "nombre": "Laura Gómez",
       "correo": "laura@example.com",
       "numero_habitacion": 101,
       "numero_personas": 2,
       "fecha_entrada": "2023-12-10",
       "fecha_salida": "2023-12-15",
-      "precio_facturado": 200
+      "precio_facturado": 1000,
+      "id": 1
     },
     {
-      "nombre": "Tarik Said",
-      "correo": "asdfa",
-      "numero_habitacion": 304,
+      "nombre": "Roberto Fernández",
+      "correo": "roberto@example.com",
+      "numero_habitacion": 202,
       "numero_personas": 3,
       "fecha_entrada": "2023-12-12",
-      "fecha_salida": "2023-12-20",
-      "precio_facturado": 4080,
+      "fecha_salida": "2023-12-18",
+      "precio_facturado": 1620,
       "id": 2
+    },
+    {
+      "nombre": "Elena Pérez",
+      "correo": "elena@example.com",
+      "numero_habitacion": 303,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-14",
+      "fecha_salida": "2023-12-17",
+      "precio_facturado": 390,
+      "id": 3
+    },
+    {
+      "nombre": "Tarik",
+      "correo": "tarik@tarik.com",
+      "numero_habitacion": 201,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 660,
+      "id": 4
+    },
+    {
+      "nombre": "ASD",
+      "correo": "Asd",
+      "numero_habitacion": 203,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-13",
+      "precio_facturado": 390,
+      "id": 5
     }
   ],
   "checkouts": [
@@ -107,24 +137,74 @@
       "precio_facturado": 490
     },
     {
-      "nombre": "Roberto Fernández",
-      "correo": "roberto@example.com",
-      "numero_habitacion": 202,
-      "numero_personas": 1,
+      "nombre": "tarrr",
+      "correo": "tarrr",
+      "numero_habitacion": 204,
+      "numero_personas": 3,
       "fecha_entrada": "2023-12-12",
-      "fecha_salida": "2023-12-18",
-      "precio_facturado": 90,
+      "fecha_salida": "2023-12-21",
+      "precio_facturado": 4320,
       "id": 2
     },
     {
-      "nombre": "Elena Pérez",
-      "correo": "elena@example.com",
-      "numero_habitacion": 303,
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 103,
       "numero_personas": 3,
-      "fecha_entrada": "2023-12-14",
-      "fecha_salida": "2023-12-17",
-      "precio_facturado": 390,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-16",
+      "precio_facturado": 1440,
       "id": 3
+    },
+    {
+      "nombre": "Tarik Said",
+      "correo": "asdfa",
+      "numero_habitacion": 304,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-20",
+      "precio_facturado": 4080,
+      "id": 4
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 103,
+      "numero_personas": 1,
+      "fecha_entrada": "2023-12-08",
+      "fecha_salida": "2023-12-12",
+      "precio_facturado": 480,
+      "id": 5
+    },
+    {
+      "nombre": "asdfaa",
+      "correo": "asdfasa",
+      "numero_habitacion": 301,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 720,
+      "id": 6
+    },
+    {
+      "nombre": "Tarik",
+      "correo": "tarik@tarik.com",
+      "numero_habitacion": 201,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 660,
+      "id": 7
+    },
+    {
+      "nombre": "Tarik",
+      "correo": "tarik@tarik.com",
+      "numero_habitacion": 203,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 780,
+      "id": 8
     }
   ]
 }

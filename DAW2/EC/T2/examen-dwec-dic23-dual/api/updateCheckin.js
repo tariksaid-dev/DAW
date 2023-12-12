@@ -1,4 +1,4 @@
-export async function editCheckin(url, id, data) {
+export async function updateCheckin(url, id, data) {
   try {
     const response = await fetch(`${url}/${id}`, {
       method: "PUT",
@@ -7,7 +7,7 @@ export async function editCheckin(url, id, data) {
       },
       body: JSON.stringify(data),
     });
-    if (!response.ok) return new Error("Error al editar un checkin");
+    if (!response.ok) return new Error("Error al actualizar el checkin");
   } catch (error) {
     console.error("Error: ", error);
   }

@@ -1,7 +1,14 @@
 export async function getCheckout(url) {
-  const response = await fetch(url);
-  const data = await response.json();
+  try {
+    const response = await fetch(url);
 
-  console.log(data);
-  return data;
+    if (!response.ok) return new Error("Error al obtener los checkouts");
+
+    const data = await response.json();
+
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error("Error: ", error);
+  }
 }

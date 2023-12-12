@@ -1,10 +1,19 @@
+/**
+ * @author: Tarik Said Manjón
+ * @description: Web de control de habitaciones y aforo de un hotel, con sección de checkins y checkouts
+ * @version: 1.0
+ */
+
 import { cashiering } from "./api/cashiering";
 import { deleteCheckin } from "./api/deleteCheckin";
 import { getCheckin, getSingleCheckin } from "./api/getCheckin";
 import { getHabitaciones, getSingleHabitacion } from "./api/getHabitaciones";
 import { saveCheckin } from "./api/saveCheckin";
 import { saveCheckout } from "./api/saveCheckout";
+import { updateCheckin } from "./api/updateCheckin";
 import { renderCheckin } from "./components/renderCheckin";
+import { isValid } from "./utils/formValidation";
+import { priceCalculator } from "./utils/priceCalculator";
 import { randomSelector } from "./utils/randomSelector";
 
 // constantes URL
@@ -16,11 +25,10 @@ const URL_CHECKOUTS = "http://localhost:3000/checkouts";
 const section = document.querySelector(".tabla");
 
 // DOM tabla
-const table = document.getElementsByTagName("table")[0];
-const cabecera = table.getElementsByTagName("tr")[0];
 const tbody = document.getElementsByTagName("tbody")[0];
 
 // DOM formulario
+const form = document.querySelector(".contact__form");
 const formBtn = document.querySelector(".contact__cta");
 const formNombreCliente = document.getElementById("nombre");
 const formEmailCliente = document.getElementById("email");
@@ -40,21 +48,82 @@ currentCheckin.forEach((element) => {
 
 formBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  if (formBtn.textContent === "Editar") {
-    // TODO, necesito cambiar precio
 
+  // Si el botón es pulsado, hago las validaciones pertinentes (tanto para editar como para crear)
+  if (
+    !isValid(
+      formNombreCliente,
+      formEmailCliente,
+      formNumeroPersonas,
+      formFechaEntrada,
+      formFechaSalida
+    )
+  ) {
+    throw new Error("Error en el formulario");
+  }
+
+  if (formBtn.textContent === "Editar") {
+    // Consigo la data del checking mediante el id
+    const checkinId = formBtn.getAttribute("data-id");
+    const checkinData = await getSingleCheckin(URL_CHECKIN, checkinId);
+
+    // Consigo la data de la habitación
+    const numeroHabitacion = checkinData.numero_habitacion;
+    const habitacionData = await getSingleHabitacion(
+      URL_HABITACIONES,
+      numeroHabitacion
+    );
+
+    // Recalculo el precio final
+    const precioFinal = priceCalculator(
+      habitacionData,
+      formFechaEntrada.value,
+      formFechaSalida.value,
+      formNumeroPersonas.value
+    );
+
+    // creo el nuevo objeto
     const obj = {
       nombre: formNombreCliente.value,
       correo: formEmailCliente.value,
-      numero_habitacion: habitaciónAleatoria,
+      numero_habitacion: numeroHabitacion,
       numero_personas: Number(formNumeroPersonas.value),
       fecha_entrada: formFechaEntrada.value,
       fecha_salida: formFechaSalida.value,
       precio_facturado: precioFinal,
     };
-  } else {
-    // TODO RESTRICCIONES, REBAJAS, ETC
 
+    // Hago el update
+    await updateCheckin(URL_CHECKIN, checkinId, obj);
+
+    // Actualizo el front y el botón vuelve a la normalidad
+    // Reinicio form
+    form.reset();
+
+    //Cambio textContent de botón
+    formBtn.textContent = "Check-In";
+    formBtn.style.backgroundColor = null;
+
+    // Actualizo tabla
+    tbody.innerHTML = `
+    <tr>
+      <th>Num</th>
+      <th>Cliente</th>
+      <th>Personas</th>
+      <th>F. entrada</th>
+      <th>F. salida</th>
+      <th>Precio</th>
+      <th>Editar</th>
+      <th>Checkout</th>
+    </tr>
+    `;
+
+    // consigo la nueva data
+    const newData = await getCheckin(URL_CHECKIN);
+
+    // vuelvo a pintar el tbody
+    newData.forEach((el) => renderCheckin(tbody, el));
+  } else {
     // MANIPULACIÓN HABITACIONES
     // Hago un nuevo array con las habitaciones ocupadas
     const habitacionesOcupadas = currentCheckin.map((el) => {
@@ -84,21 +153,13 @@ formBtn.addEventListener("click", async (e) => {
       habitaciónAleatoria
     );
 
-    // 2. Saco el precio del objeto habitación
-    const precioHabitación = habitaciónData.precio_dia;
-
-    // 3. Calculo el número de días de la estancia
-    // Con getTime() transformo el tiempo a ms
-    const dateFechaEntrada = new Date(formFechaEntrada.value).getTime();
-    const dateFechaSalida = new Date(formFechaSalida.value).getTime();
-
-    // Calculo cuántos días son la diferencia en ms entre la fecha de salida y la de entrada
-    const diasDeEstancia =
-      (dateFechaSalida - dateFechaEntrada) / 1000 / 60 / 60 / 24;
-
-    // 3. Calculo el precio final en función a los demás parámetros
-    const precioFinal =
-      precioHabitación * formNumeroPersonas.value * diasDeEstancia;
+    // 2. Utilizo los datos de la habitación y los campos del formulario para calcular el precio final
+    const precioFinal = priceCalculator(
+      habitaciónData,
+      formFechaEntrada.value,
+      formFechaSalida.value,
+      formNumeroPersonas.value
+    );
 
     // Creo mi objeto
     const obj = {
@@ -115,8 +176,19 @@ formBtn.addEventListener("click", async (e) => {
     saveCheckin(URL_CHECKIN, obj);
 
     // Paso al front
-    // Limpio el tbody -> Esto se va a repetir, si hay tiempo refactorizar a una función
-    tbody.innerHTML = "";
+    // Limpio el tbody
+    tbody.innerHTML = `
+    <tr>
+      <th>Num</th>
+      <th>Cliente</th>
+      <th>Personas</th>
+      <th>F. entrada</th>
+      <th>F. salida</th>
+      <th>Precio</th>
+      <th>Editar</th>
+      <th>Checkout</th>
+    </tr>
+    `;
 
     // consigo la nueva data
     const newData = await getCheckin(URL_CHECKIN);
@@ -145,8 +217,10 @@ section.addEventListener("click", async (e) => {
 
     // Como necesito diferenciar un POST de un PUT, cambio el contenido del botón del formulario para poder hacer una acción u otra dependiendo del textContent del mismo
     formBtn.textContent = "Editar";
+    formBtn.style.backgroundColor = "grey";
+    formBtn.setAttribute("data-id", id);
 
-    // Prosigo en el if del eventListener del botón del formulario+
+    // Prosigo en el if del eventListener del botón del formulario
   }
 
   if (e.target.textContent === "Check-Out") {
@@ -172,15 +246,24 @@ section.addEventListener("click", async (e) => {
     await deleteCheckin(URL_CHECKIN, id);
 
     // Actualizo el front
-    tbody.innerHTML = "";
+    tbody.innerHTML = `
+    <tr>
+      <th>Num</th>
+      <th>Cliente</th>
+      <th>Personas</th>
+      <th>F. entrada</th>
+      <th>F. salida</th>
+      <th>Precio</th>
+      <th>Editar</th>
+      <th>Checkout</th>
+    </tr>
+    `;
 
     // consigo la nueva data
     const newCheckinData = await getCheckin(URL_CHECKIN);
 
     // vuelvo a pintar el tbody
     newCheckinData.forEach((el) => renderCheckin(tbody, el));
-    const m = await cashiering(URL_CHECKOUTS);
-    console.log(m);
   }
 });
 
