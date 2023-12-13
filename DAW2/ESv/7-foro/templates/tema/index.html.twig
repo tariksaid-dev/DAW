@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tema index
+{% endblock %}
+
+{% block body %}
+	<h1>Tema index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Date</th>
+				<th>Status</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for tema in temas %}
+				<tr>
+					<td>{{ tema.id }}</td>
+					<td>{{ tema.name }}</td>
+					<td>{{ tema.date ? tema.date|date('Y-m-d') : '' }}</td>
+					<td>{{ tema.status }}</td>
+					<td>
+						<a href="{{ path('app_tema_show', {'id': tema.id}) }}">show</a>
+						<a href="{{ path('app_tema_edit', {'id': tema.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="5">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	{# <a href="{{ path('app_tema_new', {'id': foro.id}) }}">Create new</a> #}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tema
+{% endblock %}
+
+{% block body %}
+	<h1>Tema
+		{{tema.name}}</h1>
+
+	{% for comment in tema.comments %}
+		<strong>{{comment.user.username}}:
+		</strong>
+		{{comment.text}}
+		<img style="width: 500px" src="/img/{{comment.imagen}}"/>
+		<br>
+	{% endfor %}
+
+
+	{% include 'comment/new.html.twig' %}
+
+	<a href="{{ path('app_tema_index') }}">back to list</a>
+	{% if is_granted("ROLE_ADMIN") %}
+		<a href="{{ path('app_tema_edit', {'id': tema.id}) }}">edit</a>
+		{{ include("tema/_delete_form.html.twig")}}
+	{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Foro
+{% endblock %}
+
+{% block body %}
+
+
+	<h1>{{ foro.name }}<h2>
+
+			{% for tema in foro.tema %}
+				<a href="{{ path("app_tema_show", {"id": tema.id})}}">{{tema.name}}
+				</a><br>
+				<br>
+			{% endfor %}
+
+		</tbody>
+	</table>
+	<a href="{{ path('app_foro_index') }}">back to list</a>
+	<a href="{{path('app_tema_new', {'id': foro.id})}}">Crear tema</a>
+	{% if is_granted("ROLE_ADMIN") %}
+		<a href="{{ path('app_foro_edit', {'id': foro.id}) }}">edit</a>
+		{{ include('foro/_delete_form.html.twig') }}
+	{% endif %}
+{% endblock %}
