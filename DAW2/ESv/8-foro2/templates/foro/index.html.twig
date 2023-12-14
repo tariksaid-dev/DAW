@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Foro index
+{% endblock %}
+
+{% block body %}
+	<h1>Foro index</h1>
+
+	{% for foro in foros %}
+		<h3>
+			<a href="{{ path('app_foro_show', {'id': foro.id}) }}">{{foro.name}}</a>
+		</h3><br>
+		{# <a href="{{ path('app_foro_edit', {'id': foro.id}) }}">edit</a> #}
+	{% else %}
+		<h2>No hay foros mamahuevo</h2>
+	{% endfor %}
+	<br>
+
+	<a href="{{ path('app_foro_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tema
+{% endblock %}
+
+{% block body %}
+	<h1>Tema
+		{{tema.name}}</h1>
+
+	{% if tema.comments|length > 0 %}
+		{% for comment in tema.comments %}
+			<strong>{{comment.user.username}}</strong>:
+			<span>{{comment.text}}</span>
+			<img style="width: 200px;" src="/img/{{comment.imagen}}"/>
+			<br>
+		{% endfor %}
+	{% else %}
+		<h3>No hay comentarios</h3>
+	{% endif %}
+
+
+	<a href="{{ path('app_foro_show', {'id': tema.foro.id}) }}">back to list</a>
+	<a href="{{ path('app_comment_new', {'id': tema.id})}}">nuevo comentario</a>
+	{# <a href="{{ path('app_tema_edit', {'id': tema.id}) }}">edit</a> #}
+
+	{{ include('tema/_delete_form.html.twig') }}
+{% endblock %}
