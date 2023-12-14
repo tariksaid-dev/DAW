@@ -1,11 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Tema{% endblock %}
+{% block title %}New Tema
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Tema</h1>
+	<h1>Create un nuevo tema</h1>
 
-    {{ include('tema/_form.html.twig') }}
 
-    <a href="{{ path('app_tema_index') }}">back to list</a>
+	{# {{form_start(commentForm)}}
+						{{form_widget(commentForm)}}
+						{{form_end(commentForm)}} #}
+
+	{{form_start(mainForm)}}
+	{{form_row(mainForm.tema.name)}}
+	{{form_row(mainForm.comment.text)}}
+	{{form_row(mainForm.comment.imagen)}}
+	<button class="btn">{{ button_label|default('Save') }}</button>
+	{{form_end(mainForm)}}
+
+	{# {{ include('tema/_form.html.twig') }} #}
+
+	<a href="{{ path('app_tema_index') }}">Volver a los temas</a>
 {% endblock %}

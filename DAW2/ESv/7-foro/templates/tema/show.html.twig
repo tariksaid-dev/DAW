@@ -12,6 +12,9 @@
 		</strong>
 		{{comment.text}}
 		<img style="width: 500px" src="/img/{{comment.imagen}}"/>
+		{% if is_granted("ROLE_ADMIN") %}
+			{{include("comment/_delete_form.html.twig" )}}
+		{% endif %}
 		<br>
 	{% endfor %}
 

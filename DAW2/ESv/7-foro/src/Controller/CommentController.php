@@ -43,7 +43,6 @@ class CommentController extends AbstractController
       $comment->setTema($tema);
 
       $img = $form->get("imagen")->getData();
-
       if ($img) {
         $originalFilename = pathinfo($img->getClientOriginalName(), PATHINFO_FILENAME);
         $safeFileName = $slugger->slug($originalFilename);
@@ -106,6 +105,6 @@ class CommentController extends AbstractController
       $entityManager->flush();
     }
 
-    return $this->redirectToRoute('app_comment_index', [], Response::HTTP_SEE_OTHER);
+    return $this->redirectToRoute('app_tema_show', ["id" => $comment->getTema()->getId()], Response::HTTP_SEE_OTHER);
   }
 }

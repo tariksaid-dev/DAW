@@ -10,6 +10,7 @@ use App\Form\TemaType;
 use App\Repository\TemaRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,36 +22,88 @@ class TemaController extends AbstractController
   #[Route('/', name: 'app_tema_index', methods: ['GET'])]
   public function index(TemaRepository $temaRepository): Response
   {
+
+    $temas = $temaRepository->findAll();
+
+    $foro ??= $temas[0]->getForo();
+
     return $this->render('tema/index.html.twig', [
-      'temas' => $temaRepository->findAll(),
+      'temas' => $temas,
+      "foro" => $foro,
     ]);
   }
 
   #[Route('/new/{id}', name: 'app_tema_new', methods: ['GET', 'POST'])]
-  public function new(Foro $foro, Request $request, EntityManagerInterface $entityManager): Response
+  public function new(Foro $foro, Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
   {
 
     $tema = new Tema();
-    $form = $this->createForm(TemaType::class, $tema);
-    $form->handleRequest($request);
+    $tema->setStatus(1);
+    $tema->setUser($this->getUser());
+    $tema->setDate(new \DateTime("now"));
+    $tema->setForo($foro);
 
-    if ($form->isSubmitted() && $form->isValid()) {
-      $tema->setStatus(1);
-      $tema->setUser($this->getUser());
+    $comment = new Comment();
+    $comment->setDate(new \DateTime("now"));
+    $comment->setStatus(1);
+    $comment->setUser($this->getUser());
 
-      $tema->setDate(new \DateTime("now"));
-      $tema->setForo($foro);
+    // Asociamos el comentario con el tema
+
+
+    $mainForm = $this->createFormBuilder()
+      ->add("tema", TemaType::class, ["data" => $tema])
+      ->add("comment", CommentType::class, ["data" => $comment])
+      ->getForm();
+    $mainForm->handleRequest($request);
+
+
+    // $commentForm = $this->createForm(CommentType::class, $comment);
+
+
+    // $form = $this->createForm(TemaType::class, $tema);
+    // $form->handleRequest($request);
+
+    if ($mainForm->isSubmitted() && $mainForm->isValid()) {
+
+      $tema = $mainForm->get("tema")->getData();
+      $comment = $mainForm->get("comment")->getData();
+
+      $comment->setTema($tema);
+      $tema->addComment($comment);
+
+      $img = $mainForm->get("comment")["imagen"]->getData();
+
+      if ($img) {
+        $originalFilename = pathinfo($img->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFileName = $slugger->slug($originalFilename);
+        $newFileName = $safeFileName . "-" . uniqid() . "." . $img->guessExtension();
+
+        try {
+          $img->move(
+            $this->getParameter("img_directory"),
+            $newFileName,
+          );
+        } catch (FileException $e) {
+          dd($e);
+        }
+
+        $comment->setImagen($newFileName);
+        $tema->addComment($comment);
+      }
 
       $entityManager->persist($tema);
+      $entityManager->persist($comment);
       $entityManager->flush();
 
-      return $this->redirectToRoute('app_tema_index', [], Response::HTTP_SEE_OTHER);
+      return $this->redirectToRoute('app_tema_show', ["id" => $tema->getId()], Response::HTTP_SEE_OTHER);
     }
 
     return $this->render('tema/new.html.twig', [
       'tema' => $tema,
-      'form' => $form,
+      'mainForm' => $mainForm->createView(),
       "foro" => $foro,
+      // "commentForm" => $commentForm->createView(),
     ]);
   }
 

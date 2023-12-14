@@ -25,7 +25,7 @@ class Tema
   #[ORM\Column(type: Types::SMALLINT)]
   private ?int $status = null;
 
-  #[ORM\OneToMany(mappedBy: 'tema', targetEntity: Comment::class, cascade: ["remove"])]
+  #[ORM\OneToMany(mappedBy: 'tema', targetEntity: Comment::class, cascade: ["remove", "persist"])]
   private Collection $comments;
 
   #[ORM\ManyToOne(inversedBy: 'temas')]
