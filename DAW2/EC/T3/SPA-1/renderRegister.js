@@ -1,4 +1,4 @@
-export function renderForm(elementHTML) {
+export function renderRegister(elementHTML) {
   const form = document.createElement("form");
   form.className =
     "border text-card-foreground max-w-md bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-4";
@@ -6,8 +6,8 @@ export function renderForm(elementHTML) {
 
   form.innerHTML = `
   <div class="flex flex-col space-y-1.5 p-4">
-  <h3 class="tracking-tight text-2xl font-bold">User Login</h3>
-  <p class="text-sm text-gray-500">Please enter your username and password to log in.</p>
+  <h3 class="tracking-tight text-2xl font-bold">Formulario de registro</h3>
+  <p class="text-sm text-gray-500">Introduce tu username y tu password.</p>
 </div>
 <div class="p-4">
   <div class="space-y-4">
@@ -22,7 +22,7 @@ export function renderForm(elementHTML) {
         class="flex h-10 bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full p-2 border border-gray-300 rounded-md"
         id="username"
         placeholder="Enter username"
-        required=""
+        required="true"
         type="text"
       />
     </div>
@@ -37,7 +37,22 @@ export function renderForm(elementHTML) {
         class="flex h-10 bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full p-2 border border-gray-300 rounded-md"
         id="password"
         placeholder="Enter password"
-        required=""
+        required="true"
+        type="password"
+      />
+    </div>
+    <div class="space-y-2">
+      <label
+        class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium text-gray-700"
+        for="password"
+      >
+        Password confirm
+      </label>
+      <input
+        class="flex h-10 bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full p-2 border border-gray-300 rounded-md"
+        id="password-confirm"
+        placeholder="Enter the same password"
+        required="true"
         type="password"
       />
     </div>
@@ -56,8 +71,7 @@ export function renderForm(elementHTML) {
 >
   ¿Necesitas registrarte?
 </button>
-</div>
-  `;
+</div> `;
 
   elementHTML.appendChild(form);
 }

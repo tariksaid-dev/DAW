@@ -1,13 +1,18 @@
 import { getUsers } from "./api/usersApi";
 import { renderForm } from "./renderForm";
+import { renderLogin } from "./renderLogged";
+import { renderRegister } from "./renderRegister";
 
 const users_url = "http://localhost:3000/users";
 
 const container = document.getElementById("app");
-
-let isLogin = false;
-
-renderForm(container);
+let isLogin = localStorage.getItem("isLogged");
+console.log(isLogin);
+if (!isLogin) {
+  renderForm(container);
+} else {
+  renderLogin(container);
+}
 
 container.addEventListener("click", async (e) => {
   e.preventDefault();
@@ -33,8 +38,21 @@ container.addEventListener("click", async (e) => {
       }
     });
 
+    localStorage.setItem("isLogged", isLogin);
+
     if (isLogin) {
-      container.innerHTML = "<h1>Estás logeado</h1>";
+      container.innerHTML = "";
+      renderLogin(container);
     }
+  }
+
+  if (e.target.textContent == "Log out") {
+    localStorage.removeItem("isLogged");
+    globalThis.location.reload();
+  }
+
+  if (e.target.id == "register") {
+    container.innerHTML = "";
+    renderRegister(container);
   }
 });
