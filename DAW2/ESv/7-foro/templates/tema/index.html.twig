@@ -12,6 +12,7 @@
 		<div>
 			<h1>
 				<a href="{{ path('app_tema_show', {'id': tema.id}) }}">{{tema.name}}</h1>
+				<img style="width: 200px" src="/img/{{tema.comments[0].imagen}}"/>
 			</a>
 			{% if is_granted("ROLE_ADMIN") %}
 				<a href="{{ path('app_tema_edit', {'id': tema.id}) }}">edit</a>
