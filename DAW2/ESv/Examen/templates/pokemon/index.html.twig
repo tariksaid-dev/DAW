@@ -16,7 +16,7 @@
 			<h2>{{ pokemon.name }}</h2>
 			<h2>Nº
 				{{ pokemon.number }}</h2>
-			<h2>{{ pokemon.type }}</h2>
+			<h2>{{ pokemon.type.nombre }}</h2>
 
 			<img src="/img/{{pokemon.imagen}}"/>
 			{% if is_granted("ROLE_MAESTRO") %}
@@ -32,7 +32,9 @@
 	{% endfor %}
 
 	{% if is_granted("ROLE_ADMIN") %}
-		<a href="{{ path('app_pokemon_new') }}">Create new</a>
+		<a href="{{ path('app_pokemon_new') }}">Crear nuevo pokemon</a>
+		<a href="{{ path('app_tipo_pokemon_new') }}">Crear nuevo tipo</a>
+
 	{% endif %}
 	<a href="/logout">Cerrar sesión</a>
 {% endblock %}

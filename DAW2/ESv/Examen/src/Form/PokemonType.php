@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Pokemon;
+use App\Entity\TipoPokemon;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -18,16 +20,11 @@ class PokemonType extends AbstractType
     $builder
       ->add('name')
       ->add('number')
-      ->add('type', ChoiceType::class, [
-        "choices" => [
-          'Fuego' => 'Fuego',
-          'Agua' => 'Agua',
-          'Tierra' => 'Tierra',
-          'Planta' => 'Planta',
-          'Psíquico' => 'Psiquico',
-        ],
+      ->add('type', EntityType::class, [
+        "class" => TipoPokemon::class,
+        "choice_label" => "nombre",
         "placeholder" => "Selecciona un tipo",
-        "required" => true
+        "required" => true,
       ])
       ->add('imagen', FileType::class, [
         "label" => "imagen",

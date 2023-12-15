@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TipoPokemon index
+{% endblock %}
+
+{% block body %}
+	<h1>TipoPokemon index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for tipo_pokemon in tipo_pokemons %}
+				<tr>
+					<td>{{ tipo_pokemon.id }}</td>
+					<td>{{ tipo_pokemon.nombre }}</td>
+					<td>
+						<a href="{{ path('app_tipo_pokemon_show', {'id': tipo_pokemon.id}) }}">show</a>
+						<a href="{{ path('app_tipo_pokemon_edit', {'id': tipo_pokemon.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('app_tipo_pokemon_new') }}">Create new</a>
+	<a href="{{ path('app_pokemon_index') }}">Volver a pokemons</a>
+
+{% endblock %}
