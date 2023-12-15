@@ -30,9 +30,13 @@ class Pokemon
     #[ORM\ManyToMany(targetEntity: Pokedex::class, mappedBy: 'pokemons')]
     private Collection $pokedexes;
 
+    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'equipo')]
+    private Collection $users;
+
     public function __construct()
     {
         $this->pokedexes = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -110,6 +114,33 @@ class Pokemon
     {
         if ($this->pokedexes->removeElement($pokedex)) {
             $pokedex->removePokemon($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, User>
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): static
+    {
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
+            $user->addEquipo($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): static
+    {
+        if ($this->users->removeElement($user)) {
+            $user->removeEquipo($this);
         }
 
         return $this;

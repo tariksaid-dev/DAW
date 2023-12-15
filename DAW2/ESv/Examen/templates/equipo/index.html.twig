@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipo pokemon
+{% endblock %}
+
+{% block body %}
+	<h1>Equipo de
+		{{app.user.username}}</h1>
+
+	{% for pokemon in equipo %}
+		<h3>Nombre:
+			<strong>{{pokemon.name}}</strong>
+		</h3>
+		<img src="/img/{{pokemon.imagen}}"/>
+	{% else %}
+		<h3>No tienes ningún pokemon en tu equipo</h3>
+	{% endfor %}
+	<br>
+	<a href="{{ path('app_pokedex_show', {'id': app.user.pokedex.id}) }}">Volver a pokedex</a>
+
+{% endblock %}
