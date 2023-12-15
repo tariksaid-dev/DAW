@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pokemon index
+{% endblock %}
+
+{% block body %}
+	{% if is_granted("ROLE_MAESTRO") %}
+		<a href="{{path('app_pokedex_show', {'id': userPokedex.id})}}">Ver tu pokedex</a>
+	{% endif %}
+
+	<h1>Pokemon index</h1>
+
+	{% for pokemon in pokemon %}
+		<div style="border: 1px solid black;">
+			<h2>{{ pokemon.name }}</h2>
+			<h2>Nº
+				{{ pokemon.number }}</h2>
+			<h2>{{ pokemon.type }}</h2>
+
+			<img src="/img/{{pokemon.imagen}}"/>
+			{% if is_granted("ROLE_MAESTRO") %}
+				<a href="{{ path('app_pokedex_edit', {'id': pokemon.id})}}">Añadir a pokedex</a>
+
+			{% endif %}
+
+			{# <a href="{{ path('app_pokemon_show', {'id': pokemon.id}) }}">show</a> #}
+			{# <a href="{{ path('app_pokemon_edit', {'id': pokemon.id}) }}">edit</a> #}
+		</div>
+	{% else %}
+		<h3>No hay pokemons</h3>
+	{% endfor %}
+
+	{% if is_granted("ROLE_ADMIN") %}
+		<a href="{{ path('app_pokemon_new') }}">Create new</a>
+	{% endif %}
+	<a href="/logout">Cerrar sesión</a>
+{% endblock %}
