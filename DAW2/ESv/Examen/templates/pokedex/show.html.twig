@@ -1,22 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Pokedex{% endblock %}
+{% block title %}Pokedex
+{% endblock %}
 
 {% block body %}
-    <h1>Pokedex</h1>
+	<h1>Pokedex</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ pokedex.id }}</td>
-            </tr>
-        </tbody>
-    </table>
+	{% for pokemon in pokedex.pokemons %}
+		<div style="border: 1px solid black;">
+			<h3>Nombre:
+				{{pokemon.name}}</h3>
+			<img src="/img/{{pokemon.imagen}}"/>
+		</div>
+	{% endfor %}
 
-    <a href="{{ path('app_pokedex_index') }}">back to list</a>
+	<a href="{{ path('app_pokedex_index') }}">back to list</a>
 
-    <a href="{{ path('app_pokedex_edit', {'id': pokedex.id}) }}">edit</a>
+	<a href="{{ path('app_pokedex_edit', {'id': pokedex.id}) }}">edit</a>
 
-    {{ include('pokedex/_delete_form.html.twig') }}
+	{{ include('pokedex/_delete_form.html.twig') }}
 {% endblock %}

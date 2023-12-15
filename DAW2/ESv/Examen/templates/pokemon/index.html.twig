@@ -6,6 +6,7 @@
 {% block body %}
 	{% if is_granted("ROLE_MAESTRO") %}
 		<a href="{{path('app_pokedex_show', {'id': userPokedex.id})}}">Ver tu pokedex</a>
+		<a href="{{path('app_pokedex_show', {'id': userPokedex.id})}}">Ver tu pokedex</a>
 	{% endif %}
 
 	<h1>Pokemon index</h1>
