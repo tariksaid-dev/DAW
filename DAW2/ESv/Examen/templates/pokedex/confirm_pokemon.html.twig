@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmar Pokémon
+{% endblock %}
+
+{% block body %}
+	<h1>Confirmar Pokémon</h1>
+
+	<p>Has encontrado un nuevo Pokémon:</p>
+
+	<div>
+		<img src="/img/{{randomPokemon.imagen}}" alt="{{ randomPokemon.name }}">
+		<p>{{ randomPokemon.name }}
+			({{ randomPokemon.number }})</p>
+		<p>Tipo:
+			{{ randomPokemon.type.nombre }}</p>
+	</div>
+
+	<form method="post" action="{{ path('app_confirm_pokemon_decision', {'decision': 'keep'}) }}">
+		<button type="submit">Quedarme con el Pokémon</button>
+	</form>
+
+	<form method="post" action="{{ path('app_confirm_pokemon_decision', {'decision': 'discard'}) }}">
+		<button type="submit">Descartar el Pokémon</button>
+	</form>
+{% endblock %}
