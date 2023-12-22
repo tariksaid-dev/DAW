@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index
+{% endblock %}
+
+{% block body %}
+	<h1>Product index</h1>
+
+	{% for product in products %}
+		<h2>{{product.name}}</h2>
+		<p>{{product.description}}</p>
+		<span>
+			<strong>{{product.price}}</span>
+		</strong>
+		<br>
+		<a href="{{ path('app_line_new', {'id': product.id})}}">Añadir al carro premo</a>
+
+
+		{# {% if is_granted() %}{% endif %}
+																								
+			<a href="{{ path('app_product_show', {'id': product.id}) }}">show</a>
+		
+		<a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a> #}
+		<br>
+	{% endfor %}
+
+
+	<a href="{{ path('app_product_new') }}">Create new</a>
+	<br>
+	<a href="{{ path('app_line_index') }}">Ver carrito</a>
+	{# <a href="{{ path('app_order_index') }}">Ver facturas</a> #}
+{% endblock %}
