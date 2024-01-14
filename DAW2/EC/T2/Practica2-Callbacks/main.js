@@ -13,7 +13,7 @@ function realizarOperacion(num1, num2, callback) {
 }
 
 function imprimirCallback(resultado) {
-  pintarCallback(div, resultado);
+  pintarCallback(div1, resultado);
 }
 
 realizarOperacion(7, 3, imprimirCallback);

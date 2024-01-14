@@ -78,10 +78,10 @@
       "nombre": "Laura Gómez",
       "correo": "laura@example.com",
       "numero_habitacion": 101,
-      "numero_personas": 2,
+      "numero_personas": 4,
       "fecha_entrada": "2023-12-10",
       "fecha_salida": "2023-12-15",
-      "precio_facturado": 1000,
+      "precio_facturado": 1600,
       "id": 1
     },
     {
@@ -105,24 +105,44 @@
       "id": 3
     },
     {
-      "nombre": "Tarik",
-      "correo": "tarik@tarik.com",
-      "numero_habitacion": 201,
-      "numero_personas": 2,
-      "fecha_entrada": "2023-12-12",
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 301,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-13",
       "fecha_salida": "2023-12-15",
-      "precio_facturado": 660,
+      "precio_facturado": 720,
       "id": 4
     },
     {
-      "nombre": "ASD",
-      "correo": "Asd",
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 102,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-13",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 480,
+      "id": 5
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 204,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-13",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 960,
+      "id": 6
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
       "numero_habitacion": 203,
       "numero_personas": 3,
-      "fecha_entrada": "2023-12-12",
-      "fecha_salida": "2023-12-13",
-      "precio_facturado": 390,
-      "id": 5
+      "fecha_entrada": "2023-12-13",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 780,
+      "id": 7
     }
   ],
   "checkouts": [
@@ -205,6 +225,176 @@
       "fecha_salida": "2023-12-15",
       "precio_facturado": 780,
       "id": 8
+    },
+    {
+      "nombre": "ASD",
+      "correo": "Asd",
+      "numero_habitacion": 203,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-13",
+      "precio_facturado": 390,
+      "id": 9
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 301,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 480,
+      "id": 10
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 302,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 400,
+      "id": 11
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 301,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 480,
+      "id": 12
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 102,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 320,
+      "id": 13
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 102,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 320,
+      "id": 14
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 204,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 640,
+      "id": 15
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 302,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 400,
+      "id": 16
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 204,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 640,
+      "id": 17
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 301,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 480,
+      "id": 18
+    },
+    {
+      "nombre": "Tarik",
+      "correo": "tarik@tarik.com",
+      "numero_habitacion": 201,
+      "numero_personas": 2,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 660,
+      "id": 19
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 204,
+      "numero_personas": 1,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 320,
+      "id": 20
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 304,
+      "numero_personas": 1,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 340,
+      "id": 21
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 102,
+      "numero_personas": 1,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 160,
+      "id": 22
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 103,
+      "numero_personas": 1,
+      "fecha_entrada": "2023-12-12",
+      "fecha_salida": "2023-12-14",
+      "precio_facturado": 240,
+      "id": 23
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 301,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-13",
+      "fecha_salida": "2023-12-15",
+      "precio_facturado": 720,
+      "id": 24
+    },
+    {
+      "nombre": "asdf",
+      "correo": "asdf",
+      "numero_habitacion": 204,
+      "numero_personas": 3,
+      "fecha_entrada": "2023-12-13",
+      "fecha_salida": "2023-12-13",
+      "precio_facturado": 0,
+      "id": 25
     }
   ]
 }
